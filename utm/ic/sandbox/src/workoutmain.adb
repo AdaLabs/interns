@@ -5,7 +5,9 @@ procedure Workoutmain is
      with
        Dimension_System => ((Unit_Name => Year, Unit_Symbol => 'y', Dim_Symbol => 'Y'),
                             (Unit_Name => Calorie, Unit_Symbol => "cal", Dim_Symbol => 'C'),
-                            (Unit_Name => Kilogram, Unit_Symbol => "kg", Dim_Symbol => 'M'));
+                            (Unit_Name => Kilogram, Unit_Symbol => "kg", Dim_Symbol => 'K'),
+                            (Unit_Name => Heart_Rate, Unit_Symbol => "bpm", Dim_Symbol => 'B'),
+                            (Unit_Name => Time, Unit_Symbol => "minute", Dim_Symbol => 'M'));
 
 
    subtype Age_Type is Body_Mks_Type
@@ -26,31 +28,43 @@ procedure Workoutmain is
       Kilogram => 1,
       others   => 0);
 
+ subtype Heart_Rate_Type is Body_Mks_Type
+   with Dimension =>
+     (Symbol   => "bpm",
+      Heart_Rate => 1,
+      others   => 0);
+
+    subtype Time_Type is Body_Mks_Type
+   with Dimension =>
+     (Symbol   => "minute",
+      Time => 1,
+      others   => 0);
 
 --     subtype Weight_Type is Body_Mks_Type;
 --     subtype Heart_Rate_Type is Body_Mks_Type;
 --     subtype Time_Type is Body_Mks_Type;
 --     subtype Calorie_Type is Body_Mks_Type;
 --
-   y   : constant Age_Type     := 1.0;
-   kg  : constant Mass_Type    := 1.0;
-   cal : constant Calorie_Type := 1.0;
-
+   y      : constant Age_Type     := 1.0;
+   kg     : constant Mass_Type    := 1.0;
+   cal    : constant Calorie_Type := 1.0;
+   bpm    : constant Heart_Rate_Type := 1.0;
+   minute : constant Time_Type := 1.0;
 --     subtype Age_Type is Float;
-   subtype Weight_Type is Float;
-   subtype Heart_Rate_Type is Float;
-   subtype Time_Type is Float;
+--   subtype Weight_Type is Float;
+--   subtype Heart_Rate_Type is Float;
+ --  subtype Time_Type is Float;
 --     subtype Calorie_Type is Float;
 
 
    function Total_Men_Calorie_Burned (Age        : Age_Type;
-                                      Weight     : Weight_Type;
+                                      Weight     : Mass_Type;
                                       Heart_Rate : Heart_Rate_Type;
                                       Time       : Time_Type) return Calorie_Type
    is
-      Total_Calorie_Burn  : Calorie_Type := 0.0 * cal;
+      Total_Calorie_Burn  : Calorie_Type := (0.0 * cal);
    begin
-      if Heart_Rate >= 90.0 then
+      if Heart_Rate >= (90.0 * bpm) then
          return 0.0 * cal;
       else
          Total_Calorie_Burn  := Total_Calorie_Burn +
