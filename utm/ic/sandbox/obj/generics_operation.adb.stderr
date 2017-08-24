@@ -1,3 +1,0 @@
-generics_operation.adb:17:16: prefix for "Range" attribute may not be private type
-generics_operation.adb:18:22: invalid prefix in selected component "Ada.Numerics.Discrete_Random"
-generics_operation.adb:18:38: prefixed call is only allowed for objects of a tagged type
