@@ -10,6 +10,8 @@ procedure Workoutmain is
                             (Unit_Name => Time, Unit_Symbol => "minute", Dim_Symbol => 'T'));
 
 
+
+
    subtype Age_Type is Body_Mks_Type
    with Dimension =>
      (Symbol => 'y',
@@ -34,6 +36,7 @@ procedure Workoutmain is
       Heart_Rate => 1,
       others   => 0);
 
+
     subtype Time_Type is Body_Mks_Type
    with Dimension =>
      (Symbol   => "minute",
@@ -48,6 +51,15 @@ procedure Workoutmain is
    minute : constant  Time_Type := 1.0;
 
 
+
+
+   y      : constant Age_Type     := 1.0;
+   kg     : constant Mass_Type    := 1.0;
+   cal    : constant Calorie_Type := 1.0;
+   bpm    : constant Heart_Rate_Type := 1.0;
+   minute : constant Time_Type := 1.0;
+
+
    pragma Warnings (On, "*assumed to be*");
 
    function Total_Men_Calorie_Burned (Age        : Age_Type;
@@ -55,8 +67,9 @@ procedure Workoutmain is
                                       Heart_Rate : Heart_Rate_Type;
                                       Time       : Time_Type) return Calorie_Type
    is
-      Total_Calorie_Burn  : Calorie_Type := 0.0 * cal;
+      Total_Calorie_Burn  : Calorie_Type := (0.0 * cal);
    begin
+
       if Heart_Rate >= 90.0*bpm then
          return 0.0 * cal;
       else
@@ -69,20 +82,6 @@ procedure Workoutmain is
    end Total_Men_Calorie_Burned;
 
 
---
---     function Women_Calculation (Age : Age_Type ; Weight:Weight_Type ; Heart_Rate : Heart_Rate_Type ; Time: Time_Type) return Total_Calorie_Burn_Type
---      Total_Calorie_Burn  : Total_Calorie_Burn_Type := 0.0;
---     begin
---
---        if Heart_Rate > 90.0 then
---           return 0.0;
---        else
---      Total_Calorie_Burn  := Total_Calorie_Burn + Float(((Age * 0.074) - (Weight * 0.05741)+(HeartRate * 0.4472)-  20.4022) * Time / 4.184);
---
---        end if;
---
---        return Total_Calorie_Burn;
---     end Women_Calculation;
 
 begin
    declare

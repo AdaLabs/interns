@@ -1,3 +1,8 @@
-workoutmain.adb:64:29: both operands for operation "-" must have same dimensions
-workoutmain.adb:64:29: left operand has dimension [Y]
-workoutmain.adb:64:29: right operand has dimension [M]
+workoutmain.adb:56:04: "y" conflicts with declaration at line 47
+workoutmain.adb:57:04: "kg" conflicts with declaration at line 48
+workoutmain.adb:58:04: "cal" conflicts with declaration at line 49
+workoutmain.adb:59:04: "bpm" conflicts with declaration at line 50
+workoutmain.adb:60:04: "minute" conflicts with declaration at line 51
+workoutmain.adb:77:29: both operands for operation "-" must have same dimensions
+workoutmain.adb:77:29: left operand has dimension [Y]
+workoutmain.adb:77:29: right operand has dimension [M]
