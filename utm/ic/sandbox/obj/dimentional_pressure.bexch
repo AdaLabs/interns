@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__dimentional_pressure.o
+[PROJECT FILES]
+/home/ingrid/adalabs/interns/utm/ic/sandbox/workoutdefault.gpr
+20170824172903
+[BOUND OBJECT FILES]
+/home/ingrid/adalabs/interns/utm/ic/sandbox/obj/dimentional_pressure.o
+[GENERATED SOURCE FILES]
+b__dimentional_pressure.ads
+b__dimentional_pressure.adb
+b__dimentional_pressure.ali
+[RESULTING OPTIONS]
+-L/home/ingrid/adalabs/interns/utm/ic/sandbox/obj/
+-L/home/ingrid/adalabs/interns/utm/ic/sandbox/obj/
+-L/opt/gnat2017/lib/gcc/x86_64-pc-linux-gnu/6.3.1/adalib/
+-static
+-static-libgcc
+/opt/gnat2017/lib/gcc/x86_64-pc-linux-gnu/6.3.1/adalib/libgnat.a
+-ldl

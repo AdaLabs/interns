@@ -1,0 +1,3 @@
+workoutmain.adb:64:29: both operands for operation "-" must have same dimensions
+workoutmain.adb:64:29: left operand has dimension [Y]
+workoutmain.adb:64:29: right operand has dimension [M]
