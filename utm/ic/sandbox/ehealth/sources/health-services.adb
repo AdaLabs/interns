@@ -4,6 +4,8 @@ package body Health.Services is
    -- Men_Calorie_Burned --
    ------------------------
 
+   case Gender is
+        when Male =>
    function Men_Calorie_Burned (Year       : Year_Type;
                                 Mass       : Mass_Type;
                                 Heart_Rate : Heart_Rate_Type;
@@ -22,5 +24,9 @@ package body Health.Services is
           * Minutes * cal / (4.184 * minute);
       return Calorie_Burned;
    end Men_Calorie_Burned;
-
+   when Female =>
+       raise Program_Error with "not yet implemented";
+   when Other =>
+        raise Program_Error with "not yet implemented";
+   end case;
 end Health.Services;
