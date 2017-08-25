@@ -1,0 +1,31 @@
+project Default is
+   for Source_Dirs use ("sources",
+                        "components/sources");
+   for Object_Dir use "objects";
+   for Exec_Dir use "binaries";
+
+   for Main use ("firstprojectmain.adb",
+                 "array_lengh.adb",
+                 "palinedrome.adb",
+                 "enumerations.adb",
+                 "workoutmain.adb");
+
+   Base_Compiler_Switches :=
+     ("-gnatn",
+      "-gnatQ",
+      "-g",
+      "-gnatf",
+      "-gnata",
+      "-gnato",
+      "-gnatVa",
+      "-gnat2012",
+      "-fstack-check",
+      "-gnatwcfkmruvz",
+      "-gnatycabfhnM140",
+      "-gnat12");
+
+   package Compiler is
+      for Default_Switches ("Ada") use Base_Compiler_Switches;
+   end Compiler;
+
+end Default;
