@@ -23,7 +23,6 @@ package body Health.Options is
       pragma Compile_Time_Warning (True, "FEATURE show help");
       pragma Compile_Time_Warning (True, "FEATURE show version");
 
-       Put_Line("test");
 
       Check_Present ('g');
       Check_Present ('y');

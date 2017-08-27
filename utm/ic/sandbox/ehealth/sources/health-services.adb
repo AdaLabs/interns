@@ -1,12 +1,10 @@
 package body Health.Services is
 
    ------------------------
-   -- Men_Calorie_Burned --
+   -- Calorie_Burned --
    ------------------------
 
-
-
-   function Men_Calorie_Burned (Year       : Year_Type;
+   function  Calorie_Burned (Year       : Year_Type;
                                 Mass       : Mass_Type;
                                 Heart_Rate : Heart_Rate_Type;
                                 Minutes    : Minute_Type;
@@ -24,13 +22,57 @@ package body Health.Services is
          - 55.0969
         )
           * Minutes * cal / (4.184 * minute);
-             when Female =>
-      raise Program_Error with "not yet implemented";
+         when Female =>
+      Calorie_Burned :=
+        (
+         Year * 0.074 * yr
+         - Mass * 0.05741 * mr
+         + Heart_Rate * 0.4472 * hr
+         - 40.4022
+        )
+          * Minutes * cal / (4.184 * minute);
+
       when Other =>
 
          raise Program_Error with "not yet implemented";
    end case;
       return Calorie_Burned;
-   end Men_Calorie_Burned;
+   end Calorie_Burned;
+
+   ------------------------
+   -- BMI-Body Mass Index--
+   ------------------------
+
+    function Body_Mass_Index (Mass  : Mass_Type;
+                           Height : Height_Type) return BMI_Type
+   is
+
+      Body_Index :  BMI_Type := 0.0 * mi;
+   begin
+      Body_Index :=
+              (
+               Mass * mr
+               / Height**2
+               / lr
+              ) * mi ;
+
+
+       return Body_Index;
+   end;
+
+
+
+     ------------------------------------------
+   -- Basal Metabolice (BMR) --
+   --------------------------------------------
+
+
+
+
+   ------------------------------------------
+   -- Total Daily Energy Expenditure(TDEE) --
+   --------------------------------------------
+
+--  TDEE = BMR * Activity
 
 end Health.Services;
