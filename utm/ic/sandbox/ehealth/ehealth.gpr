@@ -7,7 +7,9 @@ project EHealth is
 
    for Exec_Dir use "binaries";
 
-   for Main use ("health-main.adb");
+   for Main use ("health-main.adb",
+                 "health-options.adb",
+                  "health-services.adb");
 
    Base_Compiler_Switches :=
      ("-gnatn",
