@@ -14,7 +14,7 @@ is
  Calorie_Burned : Calorie_Type;
  Body_Index     : BMI_Type ;
  Daily_Calorie  : Calorie_Type;
- Ideal_Weight : Mass_Type;
+ Ideal_Weight   : Mass_Type;
 begin
 
   Options.Initialize;
@@ -41,7 +41,7 @@ begin
  Put_Line ("Daily Calorie Required : " & Calorie_Type'Image (Daily_Calorie));
 
 
- Ideal_Weight := Services.Ideal_Body_Weight (Height   => Height,
+ Ideal_Weight := Services.Ideal_Body_Weight (Height => Height,
                                              Gender => Gender);
 
  Put_Line ("Ideal Weight: " & Mass_Type'Image (Ideal_Weight));
