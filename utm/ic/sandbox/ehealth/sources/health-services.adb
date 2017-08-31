@@ -164,27 +164,26 @@ package body Health.Services is
 
  pragma Compile_Time_Warning (True, "Calculate calorie deficient required to reach ideal weight");
 
- -- function   Calorie_Defiency (Mass   : Mass_Type;
+ --  function   Calorie_Defiency (Mass   : Mass_Type;
  --                            Height : Height_Type;
  --                           Gender : Gender_Type) return Calorie_Type
- -- is
+ --  is
  --  Ideal_weight  : Mass_Type;
  --  Weight_Loss   : Mass_Type;
- -- begin
- -- 1kg = 7700 cal
+ --  begin
+ --  1kg = 7700 cal
  --   Weight_Loss = Current_weight - Ideal_weight
  --    Convert Weight_Loss in calorie
  --     calcuate calorie defficiency in 6month or 1year
  --  return 0.0 * cal ;
  --  null;
- -- end Calorie_Defiency;
+ --  end Calorie_Defiency;
 
  -----------------------------------
  ------ Projected_WEight ---------
  -----------------------------------
  pragma Compile_Time_Warning (True, "find weight in 1 year if consume more that TDEE");
- function   Projected_Weight (Calorie_consume : Calorie_Type;
-                              Activity : Activity_Kind;
+ function   Projected_Weight (Activity : Activity_Kind;
                               Mass     : Mass_Type;
                               Height   : Height_Type;
                               Year     : Year_Type;
@@ -202,15 +201,15 @@ package body Health.Services is
                          Year     => Year,
                          Gender   => Gender);
 
-  Total_Calorie_surplus = (Calorie_consume - Daily_Calorie) * 365;
+ --  Total_Calorie_surplus := (Calorie_consume - Daily_Calorie) * 365 * cr;
 
   Total_Kilo_Gain       := (
                             Total_Calorie_surplus * cr
                             / 7700.0) * kg ;
 
 
---1kilo = 7700;
-
+--  1kilo = 7700;
+        return Total_Kilo_Gain;
  end  Projected_Weight;
 
 

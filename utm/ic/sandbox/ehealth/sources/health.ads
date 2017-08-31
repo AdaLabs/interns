@@ -1,20 +1,20 @@
 package Health is
 
- type Gender_Type is (Male,
-                      Female,
-                      Other);
+   type Gender_Type is (Male,
+                        Female,
+                        Other);
 
- type Activity_Kind  is (Sedentary,
-                         Active);
+   type Activity_Kind  is (Sedentary,
+                           Active);
 
- type Body_Mks_Type is new Long_Long_Float
-  with
-   Dimension_System => ((Unit_Name => Year      , Unit_Symbol => 'y'     , Dim_Symbol => 'Y'),
-                        (Unit_Name => Kilogram  , Unit_Symbol => "kg"    , Dim_Symbol => 'M'),
-                        (Unit_Name => Heart_Rate, Unit_Symbol => "bpm"   , Dim_Symbol => 'B'),
-                        (Unit_Name => Time      , Unit_Symbol => "minute", Dim_Symbol => 'T'),
-                        (Unit_Name => Height    , Unit_Symbol => "cm"    , Dim_Symbol => 'H'),
-                        (Unit_Name      => Calorie   , Unit_Symbol => "cal"   , Dim_Symbol => 'C'),
+   type Body_Mks_Type is new Float
+     with
+       Dimension_System => ((Unit_Name => Year      , Unit_Symbol => 'y'     , Dim_Symbol => 'Y'),
+                            (Unit_Name => Kilogram  , Unit_Symbol => "kg"    , Dim_Symbol => 'M'),
+                            (Unit_Name => Heart_Rate, Unit_Symbol => "bpm"   , Dim_Symbol => 'B'),
+                            (Unit_Name => Time      , Unit_Symbol => "minute", Dim_Symbol => 'T'),
+                            (Unit_Name => Height    , Unit_Symbol => "cm"    , Dim_Symbol => 'H'),
+                        (Unit_Name => Calorie   , Unit_Symbol => "cal"   , Dim_Symbol => 'C'),
                         (Unit_Name => BMI       , Unit_Symbol => "mi"    , Dim_Symbol => 'I'));
 
  subtype Year_Type is Body_Mks_Type

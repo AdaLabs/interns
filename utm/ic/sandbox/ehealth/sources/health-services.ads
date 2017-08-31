@@ -5,15 +5,14 @@ package Health.Services is
 
  function Ideal_Body_Weight (Person : in Interfaces.Human'Class) return Mass_Type;
 
--- function   Calorie_Defiency (Mass   : Mass_Type;
+--  function   Calorie_Defiency (Mass   : Mass_Type;
 --                            Height : Height_Type;
 --                            Gender : Gender_Type) return Calorie_Type;
 
  function   Ideal_Body_Weight (Height : Height_Type;
                              Gender : Gender_Type) return Mass_Type;
 
-  function   Projected_Weight (Calorie_consume : Calorie_Type;
-                               Activity : Activity_Kind;
+  function   Projected_Weight (Activity : Activity_Kind;
                                Mass     : Mass_Type;
                                Height   : Height_Type;
                                Year     : Year_Type;
