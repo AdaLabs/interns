@@ -51,22 +51,24 @@ begin
    begin
       Create(File => Handler ,
              Mode => Out_File ,
-             Name => "ideal_body_weight.txt");
+             Name => "index.html");
+
+      Put_Line (File => Handler,
+                Item => Begin_Template);
       while Height /= Max_Height loop
 
          M.Set_Height (Height);
          F.Set_Height (Height);
          Ideal_Weight := Services.Ideal_Body_Weight (M);
-         Put_Line (File => Handler,
-                   Item => ("X:"  & Mass_Type'Image(Ideal_Weight) ));
 
          Put_Line (File => Handler,
-                   Item => ("Y:" & Height_Type'Image(M.Height) ));
+                   Item => ("{ x:" & Height_Type'Image(M.Height) &
+                            ", y: " & Mass_Type'Image(Ideal_Weight) & " }, "));
 
-         Put_Line ("Ideal Weight for a person of Height " & Height_Type'Image(M.Height) &
-                     " is: " & Mass_Type'Image (Ideal_Weight));
          Height := Height + Increment_Height;
       end loop;
+      Put_Line (File => Handler,
+                Item => End_Template);
       Close (File => Handler);
    end;
 

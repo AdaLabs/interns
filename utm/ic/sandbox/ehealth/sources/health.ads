@@ -1,5 +1,6 @@
 package Health is
 
+
    type Gender_Type is (Male,
                         Female,
                         Other);
@@ -98,5 +99,22 @@ package Health is
  br     : constant BMR_Height_Ratio_Type := 1.0;
  cr     : constant Calorie_Ratio_Type    := 1.0;
  pragma Warnings (On, "*assumed to be*");
+
+
+   Begin_Template : constant String :=
+                      "<html>" &
+                      "<head> " &
+                      "<script type='text/javascript' src='https://canvasjs.com/assets/script/jquery-1.11.1.min.js'></script> " &
+                      "<script type='text/javascript' src='https://canvasjs.com/assets/script/canvasjs.min.js'> </script> " &
+                      "<script>window.onload = function () {var chart = new CanvasJS.Chart('chartContainer', " &
+                      "{title: {text: 'Ideal Body Weight'},axisX:{minimum: 158,maximum: 220},data: [{type: 'spline',dataPoints: [ " ;
+
+
+   End_Template : constant String := "]}]}); chart.render(); " &
+                    "var record = false;var precisionLevel = 1;var xValue, yValue, parentOffset, relX, relY;" &
+                    "var selected;var timerId = null;}</script> </head><body><br/>" &
+                    "<div id='chartContainer' style='height: 500px; width: 80%;'></div></body></html>";
+
+
 
 end Health;

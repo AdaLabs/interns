@@ -143,9 +143,9 @@ package body Health.Services is
   case Gender is
    when Male =>
     Ideal_Weight := (
-                     Height * br - 100.0
-                     - Height * br - 100.0
-                    )*( 0.1 * kg);
+                      50.0
+                     + 0.9 * Height * br - 152.0
+                    )*( 1.0 * kg);
 
    when Female =>
     raise Program_Error with "not yet implemented";
