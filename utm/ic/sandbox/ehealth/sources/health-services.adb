@@ -1,7 +1,6 @@
 package body Health.Services is
-
  ------------------------
- -- Ideal_Body_Weight ------
+ ---Ideal_Body_Weight----
  ------------------------
 
  function Ideal_Body_Weight (Person : in Interfaces.Human'Class) return Mass_Type
@@ -57,7 +56,7 @@ package body Health.Services is
  ------------------------
 
  function Body_Mass_Index (Mass   : Mass_Type;
-                           Height : Height_Type) return BMI_Type
+                          Height : Height_Type) return BMI_Type
  is
   Body_Index : BMI_Type := 0.0 * mi;
  begin
@@ -84,14 +83,19 @@ package body Health.Services is
   case Gender is
    when Male =>
     Mebabolice_Rate := (
-                        Height * 6.25 * br
-                        + Mass * 9.99 * mr
-                        - Year * 4.92 * yr
-                        + 5.0
+                        Height * 5.003 * br
+                        + Mass * 13.75 * mr
+                        - Year * 6.755 * yr
+                        + 66.5
                        ) * cal ;
 
    when Female =>
-    raise Program_Error with "not yet implemented";
+     Mebabolice_Rate := (
+                        Height * 4.7 * br
+                        + Mass * 4.35 * mr
+                        - Year * 4.7 * yr
+                        + 655.1
+                       ) * cal ;
 
    when Other =>
     raise Program_Error with "not yet implemented";
@@ -143,14 +147,16 @@ package body Health.Services is
   case Gender is
    when Male =>
     Ideal_Weight := (
-                      50.0
-                     + 0.9 * Height * br - 152.0
-                    )*( 1.0 * kg);
+                                             50.0
+                     + 0.9 * Height * br - 152.0)
+                     *( 1.0 * kg);
 
    when Female =>
     raise Program_Error with "not yet implemented";
-    --  Women: Ideal Body Weight (kg) = [Height (cm) - 100] + ([Height (cm) - 100] x 15%)
-
+    Ideal_Weight := (
+                                             45.5
+                     + 0.9 * Height * br - 152.0)
+                     *( 1.0 * kg);
    when Other =>
     raise Program_Error with "not yet implemented";
 

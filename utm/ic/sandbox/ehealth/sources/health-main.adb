@@ -60,16 +60,21 @@ begin
          M.Set_Height (Height);
          F.Set_Height (Height);
          Ideal_Weight := Services.Ideal_Body_Weight (M);
+         Ideal_Weight := Services.Ideal_Body_Weight (F);
 
          Put_Line (File => Handler,
                    Item => ("{ x:" & Height_Type'Image(M.Height) &
-                            ", y: " & Mass_Type'Image(Ideal_Weight) & " }, "));
+                                      ", y: " & Mass_Type'Image(Ideal_Weight) & " }, "));
+
+         Put_Line (File => Handler,
+                   Item => ("{ x:" & Height_Type'Image(F.Height) &
+                                        ", y: " & Mass_Type'Image(Ideal_Weight) & " }, "));
 
          Height := Height + Increment_Height;
       end loop;
       Put_Line (File => Handler,
                 Item => End_Template);
-      Close (File => Handler);
+      Close    (File => Handler);
    end;
 
 
