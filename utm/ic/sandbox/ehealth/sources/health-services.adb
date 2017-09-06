@@ -1,17 +1,42 @@
 package body Health.Services is
 
-   -------------------------
-   ------ Person_Profil----
-   -------------------------
-   function Person_Profile (Person : in Interfaces.Human'Class) return Calorie_Type
+  ------------------------------------------
+   -- Total Daily Energy Expenditure(TDEE) --
+   ------ TDEE = BMR * Activity-----------
+   -------------------------------------------
+   function   Total_Daily_Energy_Expenditure (Person : in Interfaces.Human'Class) return Calorie_Type
    is
-      Daily_Calorie_Expected : Calorie_Type  := 0.0 * cal;
-      Mebabolice_Rate : Calorie_Type := 0.0 * cal;
+       Daily_Calorie_for_sendary  : Calorie_Type := 0.0 * cal;
+      Mebabolice_Rate : Calorie_Type;
    begin
+
+
+         Mebabolice_Rate:= BMR (Mass   => Person.Weight,
+                                Height => Person.Height,
+                                Year   => Person.Age,
+                                Gender => Person.Gender);
+
+  Daily_Calorie_for_Sendary  := Mebabolice_Rate * 1.2;
+  Daily_Calorie_for_Lightly  := Mebabolice_Rate * 1.375;
+  Daily_Calorie_for_Moderate := Mebabolice_Rate * 1.55;
+  Daily_Calorie_for_Very     := Mebabolice_Rate * 1.725;
+
    --  Sedentary = BMR X 1.2 (little or no exercise, desk job)
    --  Lightly active = BMR X 1.375 (light exercise or sports 1-3 days/wk)
    --  Moderate active = BMR X 1.55 (moderate exercise or sports 3-5 days/wk)
    --  Very active = BMR X 1.725 (hard exercise or sports 6-7 days/wk)
+      return Daily_Calorie;
+   end  Total_Daily_Energy_Expenditure;
+
+
+   -------------------------
+   ------ Person_Profil----
+   -------------------------
+   function  Person_Profile (Person : in Interfaces.Human'Class) return Calorie_Type
+   is
+      Daily_Calorie_Expected : Calorie_Type  := 0.0 * cal;
+      Mebabolice_Rate        : Calorie_Type  := 0.0 * cal;
+   begin
       Mebabolice_Rate := BMR (Mass   => Person.Weight,
                               Height => Person.Height,
                               Year   => Person.Age,
