@@ -6,7 +6,18 @@ package Health is
                         Other);
 
    type Activity_Kind  is (Sedentary,
-                           Active);
+                           Lightly,
+                           Moderately,
+                           Very);
+
+
+   type Activity_Factor  is
+      record
+         Sedentary         : Float := 1.2;
+         Lightly_Active    : Float := 1.375;
+         Moderately_Active : Float := 1.55;
+         Very_Active       : Float := 1.725;
+      end record;
 
    type Body_Mks_Type is new Float
      with
@@ -15,8 +26,8 @@ package Health is
                             (Unit_Name => Heart_Rate, Unit_Symbol => "bpm"   , Dim_Symbol => 'B'),
                             (Unit_Name => Time      , Unit_Symbol => "minute", Dim_Symbol => 'T'),
                             (Unit_Name => Height    , Unit_Symbol => "cm"    , Dim_Symbol => 'H'),
-                        (Unit_Name => Calorie   , Unit_Symbol => "cal"   , Dim_Symbol => 'C'),
-                        (Unit_Name => BMI       , Unit_Symbol => "mi"    , Dim_Symbol => 'I'));
+                            (Unit_Name => Calorie   , Unit_Symbol => "cal"   , Dim_Symbol => 'C'),
+                            (Unit_Name => BMI       , Unit_Symbol => "mi"    , Dim_Symbol => 'I'));
 
  subtype Year_Type is Body_Mks_Type
   with Dimension => (Symbol => 'y',
@@ -104,16 +115,15 @@ package Health is
    Begin_Template : constant String :=
                       "<html>" &
                       "<head> " &
-                      "<script type='text/javascript' src='https://canvasjs.com/assets/script/jquery-1.11.1.min.js'></script> " &
-                      "<script type='text/javascript' src='https://canvasjs.com/assets/script/canvasjs.min.js'> </script> " &
+                      "<script type='text/javascript' src='https://canvasjs.com/assets/script/canvasjs.min.js'></script> " &
                       "<script>window.onload = function () {var chart = new CanvasJS.Chart('chartContainer', " &
-                      "{title: {text: 'Ideal Body Weight'},axisX:{minimum: 158,maximum: 220},data: [{type: 'spline',dataPoints: [ " ;
+                      "{title: {text: 'Ideal Body Weight'},axisX:{minimum: 0,maximum: 13},data: [{type: 'spline',dataPoints: [ " ;
 
 
    End_Template : constant String := "]}]}); chart.render(); " &
                     "var record = false;var precisionLevel = 1;var xValue, yValue, parentOffset, relX, relY;" &
                     "var selected;var timerId = null;}</script> </head><body><br/>" &
-                    "<div id='chartContainer' style='height: 500px; width: 80%;'></div></body></html>";
+                    "<div id='chartContainer' style='height: 500px; width: 100%;'></div></body></html>";
 
 
 

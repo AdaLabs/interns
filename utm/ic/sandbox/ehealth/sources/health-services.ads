@@ -4,7 +4,8 @@ with Health.Interfaces;
 package Health.Services is
 
  function Ideal_Body_Weight (Person : in Interfaces.Human'Class) return Mass_Type;
-
+ function Person_Ideal_Body_Weight (Person : in Interfaces.Human'Class) return Mass_Type;
+ function Person_Profile (Person : in Interfaces.Human'Class) return Calorie_Type ;
 --  function   Calorie_Defiency (Mass   : Mass_Type;
 --                            Height : Height_Type;
 --                            Gender : Gender_Type) return Calorie_Type;

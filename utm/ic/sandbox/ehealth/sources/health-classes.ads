@@ -15,6 +15,9 @@ package Health.Classes is
    overriding procedure Set_Height (H      : in out Human_Being;
                                     Height : in     Height_Type);
 
+   overriding procedure Set_Weight (H      : in out Human_Being;
+                                   Weight  : in     Mass_Type);
+
  --  overriding procedure Set_Gender (H : in out Human_Being);
 
    type Male_Human_Being is new Human_Being with private;

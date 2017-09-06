@@ -41,6 +41,13 @@ package body Health.Classes is
      H.Height := Height;
    end Set_Height;
 
+
+   procedure  Set_Weight (H      : in out Human_Being;
+                          Weight : in     Mass_Type)
+   is
+   begin
+     H.Weight := Weight;
+   end Set_Weight;
   ---------------
   -- Set_Gender--
   ----------------
