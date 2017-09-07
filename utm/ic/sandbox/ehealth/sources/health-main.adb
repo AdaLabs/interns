@@ -93,11 +93,12 @@ begin
       Put_Line (File => Handler,
                 Item => Begin_Template);
       Put_Line (File => Handler,
-                Item => ("{ x: 0, y: " & Mass_Type'Image(M.Weight) & " }, "));
+                Item => ("{ x: 0, y: " & Mass_Type'Image(M.Weight) & ", indexLabel:'Start' }, "));
          Put_Line (File => Handler,
-                Item => ("{ x: 6 , y: " & Mass_Type'Image (Ideal_Weight) & " }]}, "));
+                Item => ("{ x: 6 , y: " & Mass_Type'Image (Ideal_Weight) & ",indexLabel:'" & Mass_Type'Image (Six_Month) & "' }]}, "));
       Put_Line (File => Handler,
-                Item => ("{ type:'spline', dataPoints: [ { x: 0, y: " & Mass_Type'Image(M.Weight) & " },{x: 12 , y: " & Mass_Type'Image (Ideal_Weight) & " }, "));
+                Item => ("{ type:'spline', dataPoints: [ { x: 0, y: " & Mass_Type'Image(M.Weight) &
+                         " },{x: 12 , y: " & Mass_Type'Image (Ideal_Weight) & ",indexLabel:'" & Mass_Type'Image (One_Year) &"' }, "));
 
       Put_Line (File => Handler,
                 Item => End_Template);
