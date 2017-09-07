@@ -16,6 +16,7 @@ is
    Body_Index             : BMI_Type ;
    Daily_Calorie          : Calorie_Type;
    Ideal_Weight           : Mass_Type;
+   Weight_Gain            : Mass_Type;
    Handler                : Ada.Text_IO.File_Type;
    M                      : Classes.Male_Human_Being;
    F                      : Classes.Female_Human_Being;
@@ -46,9 +47,9 @@ begin
    Put_Line ("Daily Calorie Required : " & Calorie_Type'Image (Daily_Calorie));
 
    declare
-      Increment_Height           : Height_Type := 10.0 * cm;
+   Increment_Height           : constant Height_Type := 10.0 * cm;
       Min_Height                 : Height_Type := 160.0 * cm;
-      Max_Height                 : Height_Type := 220.0 * cm;
+      Max_Height                 : constant Height_Type := 220.0 * cm;
    begin
       Create(File => Handler ,
              Mode => Out_File ,
@@ -85,6 +86,7 @@ begin
       Six_Month    := Services.Person_Ideal_Body_Weight (M)/6.0;
       One_Year     := Services.Person_Ideal_Body_Weight (M)/12.0;
       Ideal_Weight := Services.Ideal_Body_Weight (M);
+      Weight_Gain  := Services.Project_Weight (M);
 
       Create(File => Handler ,
              Mode => Out_File ,
@@ -109,6 +111,8 @@ begin
       Put_Line ("Amount of kg to reach ideal weight: " & Mass_Type'Image (Ideal_Mass ));
       Put_Line ("To reach Ideal weight in 6 Month : " & Mass_Type'Image (Six_Month));
       Put_Line("To reach Ideal weight in 1 year :" & Mass_Type'Image (One_Year));
+      Put_Line("Weight Gain in a year :" & Mass_Type'Image ( Weight_Gain));
+
 
    end;
 

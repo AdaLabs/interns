@@ -1,0 +1,47 @@
+<html>
+
+<head>  
+	<script type="text/javascript">
+	window.onload = function () {
+		var chart = new CanvasJS.Chart("chartContainer",
+		{
+			title: {
+				text: "Growth of Gangnam Style on YouTube"
+			},
+			axisX:{      
+				valueFormatString: "DD-MMM" ,
+				interval: 1,
+				intervalType: "month",
+				labelAngle: -50,
+				labelFontColor: "rgb(0,75,141)",
+				minimum: new Date(2017,01,1)
+			},
+			
+			data: [
+			{        
+				indexLabelFontColor: "darkSlateGray",
+				name: "views",
+				type: "area",
+				color: "rgba(0,75,141,0.7)",
+				markerSize:8,
+				dataPoints: [
+				{ x: new Date(2017,01,1), y: 0,  indexLabel: "Released", indexLabelOrientation: "vertical", indexLabelFontColor: "orangered", markerColor: "orangered"},
+				{ x: new Date(2017, 01, 21), y: 60},	
+				{ x: new Date(2017, 05, 24), y: 70},	
+				{ x: new Date(2017, 08, 26), y: 80},	
+				{ x: new Date(2017, 11, 28), y: 90, indexLabel:"300m"}	
+				]
+			}			
+			]
+		});
+
+chart.render();
+}
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+	<div id="chartContainer" style="height: 400px; width: 100%;">
+	</div>
+</body>
+</html>
