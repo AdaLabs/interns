@@ -6,87 +6,82 @@ use Ada.Text_IO;
 
 with Health.Options,
      Health.Classes,
-     Health.Services;
-
+     Health.Objects;
 use Health.Options;
 
 procedure Health.Main
 is
-   Calorie_Burned         : Calorie_Type;
-   Body_Index             : BMI_Type ;
-   Daily_Calorie          : Calorie_Type;
-   Ideal_Weight           : Mass_Type;
-   Weight_Gain            : Mass_Type;
-   Handler                : Ada.Text_IO.File_Type;
-   M                      : Classes.Male_Human_Being;
-   F                      : Classes.Female_Human_Being;
+
+
+ Calorie_Burned         : Calorie_Type;
+ Body_Index             : BMI_Type ;
+ BMR_Calorie            : Calorie_Type;
+ Ideal_Weight           : Mass_Type;
+ Weight_Gain            : Mass_Type;
+ Handler                : Ada.Text_IO.File_Type;
+ M                      : Classes.Male_Human_Being;
+ F                      : Classes.Female_Human_Being;
+
+
 
 
 begin
 
    Options.Initialize;
-   Calorie_Burned := Services.Calorie_Burned (Year       => Age,
-                                              Mass       => Weight,
-                                              Heart_Rate => Heart_Rate,
-                                              Minutes    =>  Minutes,
-                                              Gender     => Gender);
 
-   Put_Line ("calories burned : " & Calorie_Type'Image (Calorie_Burned));
-
-   Body_Index := Services.Body_Mass_Index (Mass   => Weight,
-                                           Height => Height);
-
-   Put_Line ("BMI : " & BMI_Type'Image (Body_Index));
-
-   Daily_Calorie := Services.DTEE (Activity => Activity,
-                                   Mass     => Weight,
-                                   Height   => Height,
-                                   Year     => Age,
-                                   Gender   => Gender);
-
-   Put_Line ("Daily Calorie Required : " & Calorie_Type'Image (Daily_Calorie));
-
+     case Gender is
+   when Male =>
    declare
-   Increment_Height           : constant Height_Type := 10.0 * cm;
-      Min_Height                 : Height_Type := 160.0 * cm;
-      Max_Height                 : constant Height_Type := 220.0 * cm;
+ Weight_Loss_Required    : Mass_Type ;
+ Weight_Six_Month        : Mass_Type;
+ Weight_One_Year         : Mass_Type;
+ Calorie_for_Sendary     : Calorie_Type;
+ Calorie_for_Lightly     : Calorie_Type;
+ Calorie_for_Moderate    : Calorie_Type;
+ Calorie_for_Very_Active : Calorie_Type;
    begin
-      Create(File => Handler ,
-             Mode => Out_File ,
-             Name => "index.html");
 
-      Put_Line (File => Handler,
-                Item => Begin_Template);
-      while Min_Height /= Max_Height loop
+    M.Set_Height (Height);
+    M.Set_Weight (Weight);
+    M.Set_Age(Age);
+    M.Set_Activity(Activity);
 
-         M.Set_Height (Min_Height);
-         F.Set_Height (Min_Height);
-         Ideal_Weight := Services.Ideal_Body_Weight (M);
+   Calorie_Burned := Objects.Person_Calorie_burned (M);
 
-         Put_Line (File => Handler,
-                   Item => ("{ x:" & Height_Type'Image(M.Height) &
-                            ", y: " & Mass_Type'Image(Ideal_Weight) & " }, "));
+   Body_Index     := Objects.Person_BMI (M);
 
-         Min_Height := Min_Height + Increment_Height;
-      end loop;
-      Put_Line (File => Handler,
-                Item => End_Template);
-      Close    (File => Handler);
-   end;
+   if Body_Index < (18.5 * mi) then
+   Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are underweight");
+   else if
+   Body_Index > (18.0 * mi) or  Body_Index < (25.0 * mi) then
+      Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Normal weight");
+   else if
+   Body_Index > (25.0 * mi) or   Body_Index < (30.0 * mi) then
+      Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Overweight");
+else
+      Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Obese");
 
-   declare
-      Ideal_Mass             : Mass_Type ;
-      Six_Month              : Mass_Type;
-      One_Year               : Mass_Type;
-   begin
-      M.Set_Height (Height);
-      M.Set_Weight (Weight);
+   end if;
 
-      Ideal_Mass   := Services.Person_Ideal_Body_Weight (M);
-      Six_Month    := Services.Person_Ideal_Body_Weight (M)/6.0;
-      One_Year     := Services.Person_Ideal_Body_Weight (M)/12.0;
-      Ideal_Weight := Services.Ideal_Body_Weight (M);
-      Weight_Gain  := Services.Project_Weight (M);
+
+
+   Weight_Gain    := Objects.Project_Weight_Gain (M);
+   Ideal_Weight   := Objects.Ideal_Body_Weight (M);
+
+   Weight_Loss_Required := Objects.Weight_Loss_Required (M);
+   Weight_Six_Month     := Objects.Weight_Loss_Required (M)/6.0; -- Weight loss permonth to reach in ibw 6month
+   Weight_One_Year      := Objects.Weight_Loss_Required (M)/12.0; -- Weight loss permonth to reach in ibw 1year
+
+   BMR_Calorie := Objects.Total_Daily_Energy_Expenditure (M);
+
+   --  Calorie Required depend on activity level
+    Calorie_for_Sendary     := BMR_Calorie * 1.2;
+    Calorie_for_Lightly     := BMR_Calorie * 1.375;
+    Calorie_for_Moderate    := BMR_Calorie * 1.55;
+    Calorie_for_Very_Active := BMR_Calorie * 1.725;
+
+
+
 
       Create(File => Handler ,
              Mode => Out_File ,
@@ -94,27 +89,49 @@ begin
 
       Put_Line (File => Handler,
                 Item => Begin_Template);
+
       Put_Line (File => Handler,
-                Item => ("{ x: 0, y: " & Mass_Type'Image(M.Weight) & ", indexLabel:'Start' }, "));
-         Put_Line (File => Handler,
-                Item => ("{ x: 6 , y: " & Mass_Type'Image (Ideal_Weight) & ",indexLabel:'" & Mass_Type'Image (Six_Month) & "' }]}, "));
+                Item => ("{ x: new Date(2017,01,6), y: " & Mass_Type'Image(M.Weight) &
+                ", indexLabel:'Start' }, indexlabelOrientation:'vertical',indexlabelfontSize:10," &
+                " indexLabelFontcolor: 'oranged', markerColor:'orangered' }, "));
+
       Put_Line (File => Handler,
-                Item => ("{ type:'spline', dataPoints: [ { x: 0, y: " & Mass_Type'Image(M.Weight) &
-                         " },{x: 12 , y: " & Mass_Type'Image (Ideal_Weight) & ",indexLabel:'" & Mass_Type'Image (One_Year) &"' }, "));
+                Item => ("{ x: new Date(2017, 06, 6) , y: " & Mass_Type'Image (Ideal_Weight) & "}, "));
+
+      Put_Line (File => Handler,
+                Item => ("{ x: new Date(2017, 12, 6) , y: " & Mass_Type'Image (Ideal_Weight) &
+                          ",indexLabel:'" & Mass_Type'Image (Weight_Six_Month) & "'per month }]}, "));
+
+            Put_Line (File => Handler,
+                Item => Center_Template);
+
+       Put_Line (File => Handler,
+                Item => ("{ x: new Date(2017,01,6), y: " & Mass_Type'Image(M.Weight) &
+                ", indexLabel:'Start' }, indexlabelOrientation:'vertical',indexlabelfontSize:10," &
+                " indexLabelFontcolor: 'oranged', markerColor:'orangered' }, "));
+
+      Put_Line (File => Handler,
+                Item => ("{ x: new Date(2017, 06, 6) , y: " & Mass_Type'Image (Ideal_Weight) & "}, "));
+
+      Put_Line (File => Handler,
+                Item => ("{ x: new Date(2017, 12, 6) , y: " & Mass_Type'Image (Ideal_Weight) & " }]} "));
+
 
       Put_Line (File => Handler,
                 Item => End_Template);
       Close    (File => Handler);
 
-      Put_Line ("Current Weight: " & Mass_Type'Image (M.Weight));
-      Put_Line ("Ideal Weight: " & Mass_Type'Image (Ideal_Weight));
-      Put_Line ("Amount of kg to reach ideal weight: " & Mass_Type'Image (Ideal_Mass ));
-      Put_Line ("To reach Ideal weight in 6 Month : " & Mass_Type'Image (Six_Month));
-      Put_Line("To reach Ideal weight in 1 year :" & Mass_Type'Image (One_Year));
-      Put_Line("Weight Gain in a year :" & Mass_Type'Image ( Weight_Gain));
+Put_Line ("Amount of kg to reach ideal weight: ");
+
 
 
    end;
+      when Female =>
+    F.Set_Height (Height);
+    F.Set_Weight (Weight);
+   when Other =>
+    raise Program_Error with "not yet implemented";
+  end case;
 
 exception
    when E : others =>

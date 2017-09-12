@@ -112,19 +112,20 @@ package Health is
  pragma Warnings (On, "*assumed to be*");
 
 
-   Begin_Template : constant String :=
-                      "<html>" &
-                      "<head> " &
-                      "<script type='text/javascript' src='https://canvasjs.com/assets/script/canvasjs.min.js'></script> " &
-                      "<script>window.onload = function () {var chart = new CanvasJS.Chart('chartContainer', " &
-                      "{title: {text: 'Ideal Body Weight'},axisX:{minimum: 0,maximum: 13},data: [{type: 'spline',dataPoints: [ " ;
+ Begin_Template : constant String :="<html><head> <script type='text/javascript'> window.onload = function () { " &
+  " var chart = new CanvasJS.Chart('chartContainer', { title: text: 'EHEALTH' },axisX:{  valueFormatString: 'DD-MMM' , " &
+  "interval: 1, intervalType: 'month', labelAngle: -50,labelFontColor: 'rgb(0,75,141)', minimum: new Date(2017,01,1) }," &
+  "data: [{ indexLabelFontColor: 'darkSlateGray',name: 'IBW',type: 'spline',markerSize:8, dataPoints: [ ";
+
+  Center_Template : constant String := "{ indexLabelFontColor: 'darkSlateGray'," &
+  "name: 'Project_Weight', " &
+  "type: 'spline', " &
+  "markerSize: 8, " &
+  "dataPoints: [";
 
 
-   End_Template : constant String := "]}]}); chart.render(); " &
-                    "var record = false;var precisionLevel = 1;var xValue, yValue, parentOffset, relX, relY;" &
-                    "var selected;var timerId = null;}</script> </head><body><br/>" &
-                    "<div id='chartContainer' style='height: 500px; width: 100%;'></div></body></html>";
-
+   End_Template : constant String := "]}); chart.render();} </script><script type='text/javascript' src='https://canvasjs.com/assets/script/canvasjs.min.js'></script>"&
+   "</head><body><p>BMI :</p> <div id='chartContainer' style='height: 400px; width: 100%;'></div></body></html>";
 
 
 end Health;

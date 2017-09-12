@@ -12,11 +12,20 @@ package Health.Classes is
    overriding function Height   (H : in Human_Being) return Height_Type;
    overriding function Activity (H : in Human_Being) return Activity_Kind;
 
+
    overriding procedure Set_Height (H      : in out Human_Being;
-                                    Height : in     Height_Type);
+                                 Height : in     Height_Type);
 
    overriding procedure Set_Weight (H      : in out Human_Being;
-                                   Weight  : in     Mass_Type);
+                                 Weight  : in     Mass_Type);
+
+   overriding  procedure Set_Age (H   : in out Human_Being;
+                               Age : in      Year_Type);
+
+   overriding procedure Set_Activity (H       : in out Human_Being;
+                                   Activity : in     Activity_Kind);
+
+
 
  --  overriding procedure Set_Gender (H : in out Human_Being);
 

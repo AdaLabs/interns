@@ -16,9 +16,9 @@ package body Health.Options is
   end Check_Present;
 
  begin
-  pragma Compile_Time_Warning (True, "FEATURE show usage on error");
-  pragma Compile_Time_Warning (True, "FEATURE show help");
-  pragma Compile_Time_Warning (True, "FEATURE show version");
+--    pragma Compile_Time_Warning (True, "FEATURE show usage on error");
+--    pragma Compile_Time_Warning (True, "FEATURE show help");
+--    pragma Compile_Time_Warning (True, "FEATURE show version");
 
 
   Check_Present ('g');

@@ -31,6 +31,8 @@ package body Health.Classes is
       return H.Activity;
    end Activity;
 
+
+
   ---------------
   -- Set_Height--
   ----------------
@@ -48,6 +50,22 @@ package body Health.Classes is
    begin
      H.Weight := Weight;
    end Set_Weight;
+
+       procedure Set_Age (H      : in out Human_Being;
+                    Age  : in     Year_Type)
+                    is
+                    begin
+  H.Age := Age;
+end Set_Age;
+
+   procedure Set_Activity (H      : in out Human_Being;
+                        Activity  : in     Activity_Kind)
+                        is
+                        begin
+  H.Activity := Activity;
+end Set_Activity;
+
+
   ---------------
   -- Set_Gender--
   ----------------
