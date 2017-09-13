@@ -17,15 +17,15 @@ package body Health.Services is
                                 Gender => Person.Gender);
 
   Daily_Calorie_for_Sendary  := Mebabolice_Rate * 1.2;
-  Daily_Calorie_for_Lightly  := Mebabolice_Rate * 1.375;
-  Daily_Calorie_for_Moderate := Mebabolice_Rate * 1.55;
-  Daily_Calorie_for_Very     := Mebabolice_Rate * 1.725;
+--  Daily_Calorie_for_Lightly  := Mebabolice_Rate * 1.375;
+--  Daily_Calorie_for_Moderate := Mebabolice_Rate * 1.55;
+--  Daily_Calorie_for_Very     := Mebabolice_Rate * 1.725;
 
    --  Sedentary = BMR X 1.2 (little or no exercise, desk job)
    --  Lightly active = BMR X 1.375 (light exercise or sports 1-3 days/wk)
    --  Moderate active = BMR X 1.55 (moderate exercise or sports 3-5 days/wk)
    --  Very active = BMR X 1.725 (hard exercise or sports 6-7 days/wk)
-      return Daily_Calorie;
+      return Daily_Calorie_for_Sendary;
    end  Total_Daily_Energy_Expenditure;
 
 
