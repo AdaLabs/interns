@@ -113,7 +113,7 @@ package Health is
 
 
  Begin_Template : constant String :="<html><head> <script type='text/javascript'> window.onload = function () { " &
-  " var chart = new CanvasJS.Chart('chartContainer', { title: text: 'EHEALTH' },axisX:{  valueFormatString: 'DD-MMM' , " &
+  " var chart = new CanvasJS.Chart('chartContainer', { title:{ text: 'EHEALTH' },axisX:{  valueFormatString: 'DD-MMM' , " &
   "interval: 1, intervalType: 'month', labelAngle: -50,labelFontColor: 'rgb(0,75,141)', minimum: new Date(2017,01,1) }," &
   "data: [{ indexLabelFontColor: 'darkSlateGray',name: 'IBW',type: 'spline',markerSize:8, dataPoints: [ ";
 

@@ -14,9 +14,9 @@ package Health.Interfaces is
                        Height : in     Height_Type) is abstract;
 
     procedure Set_Weight (H      : in out Human;
-                        Weight  : in     Mass_Type) is abstract;
+                       Weight  : in     Mass_Type) is abstract;
 
-    procedure Set_Age (H      : in out Human;
+    procedure Set_Age     (H   : in out Human;
                     Age  : in     Year_Type) is abstract;
 
    procedure Set_Activity (H      : in out Human;

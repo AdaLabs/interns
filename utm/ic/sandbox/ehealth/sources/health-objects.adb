@@ -8,7 +8,8 @@ package body Health.Objects is
 
  function  Person_Calorie_burned (Person : in Interfaces.Human'Class) return Calorie_Type
  is
-  Calorie_Burned : Calorie_Type := 0.0 * cal;
+ pragma Unreferenced (Person);
+ Calorie_Burned : constant Calorie_Type := 0.0 * cal;
  begin
 
 --    Calorie_Burned :=  Services.Calorie_Burned(Year       => Person.Age,
@@ -93,12 +94,6 @@ package body Health.Objects is
                          Height => Person.Height,
                          Year   => Person.Age,
                          Gender => Person.Gender);
-
-
-  --  Sedentary = BMR X 1.2 (little or no exercise, desk job)
-  --  Lightly active = BMR X 1.375 (light exercise or sports 1-3 days/wk)
-  --  Moderate active = BMR X 1.55 (moderate exercise or sports 3-5 days/wk)
-  --  Very active = BMR X 1.725 (hard exercise or sports 6-7 days/wk)
   return Mebabolice_Rate;
  end  Total_Daily_Energy_Expenditure;
  -----------------------------------
