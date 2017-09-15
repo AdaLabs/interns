@@ -4,24 +4,15 @@ with Ada.Text_IO,
 
 use Ada.Text_IO;
 
-with
---Health.Options,
+with Health.Options,
      Health.Classes,
      Health.Objects;
---use Health.Options;
+ use Health.Options;
 
 procedure Health.Main
 is
 
-   Gender         : constant Gender_Type     := Gender_Type'Value (Get_Line);
-   Age            : constant Year_Type       := Year_Type'Value (Get_Line);
-   Weight         : constant Mass_Type       := Mass_Type'Value (Get_Line);
-   Heart_Rate     : constant Heart_Rate_Type := Heart_Rate_Type'Value( Get_Line);
-   Minutes        : constant Minute_Type     := Minute_Type'Value (Get_Line);
-   Height         : constant Height_Type     := Height_Type'Value (Get_Line);
-   Activity       : constant Activity_Kind     := Activity_Kind'Value (Get_Line);
-
-   Calorie_Burned         : Calorie_Type;
+  Calorie_Burned         : Calorie_Type;
  Body_Index             : BMI_Type ;
  BMR_Calorie            : Calorie_Type;
  Ideal_Weight           : Mass_Type;
@@ -33,7 +24,7 @@ is
 
 begin
 
- --  Options.Initialize;
+   Options.Initialize;
 
      case Gender is
    when Male =>
@@ -71,7 +62,7 @@ begin
 
 
 
-   Weight_Gain    := Objects.Project_Weight_Gain (M);
+   Weight_Gain    := Objects.Project_Weight_Gain (M) * 12.0;
    Ideal_Weight   := Objects.Ideal_Body_Weight (M);
 
    Weight_Loss_Required := Objects.Weight_Loss_Required (M);
@@ -126,7 +117,7 @@ begin
                 " indexLabelFontcolor: 'orangered', markerColor:'orangered' }, "));
 
       Put_Line (File => Handler,
-                Item => ("{ x: new Date(2017, 06, 6) , y: " & Mass_Type'Image (Ideal_Weight) & "}, "));
+                Item => ("{ x: new Date(2017, 06, 6) , y: " & Mass_Type'Image (Weight_Gain/2.0) & "}, "));
 
       Put_Line (File => Handler,
                 Item => ("{ x: new Date(2017, 12, 6) , y: " & Mass_Type'Image (Weight_Gain) & " }]} "));
