@@ -12,7 +12,7 @@ with Health.Options,
 procedure Health.Main
 is
 
-  Calorie_Burned         : Calorie_Type;
+ Calorie_Burned         : Calorie_Type;
  Body_Index             : BMI_Type ;
  BMR_Calorie            : Calorie_Type;
  Ideal_Weight           : Mass_Type;
@@ -32,10 +32,7 @@ begin
  Weight_Loss_Required    : Mass_Type ;
  Weight_Six_Month        : Mass_Type;
  Weight_One_Year         : Mass_Type;
- Calorie_for_Sendary     : Calorie_Type;
- Calorie_for_Lightly     : Calorie_Type;
- Calorie_for_Moderate    : Calorie_Type;
- Calorie_for_Very_Active : Calorie_Type;
+
    begin
 
     M.Set_Height (Height);
@@ -43,7 +40,6 @@ begin
     M.Set_Age(Age);
     M.Set_Activity(Activity);
 
-    Calorie_Burned := Objects.Person_Calorie_burned (M);
 
    Body_Index     := Objects.Person_BMI (M);
 
@@ -69,25 +65,13 @@ begin
    Weight_Six_Month     := Objects.Weight_Loss_Required (M)/6.0; -- Weight loss permonth to reach in ibw 6month
    Weight_One_Year      := Objects.Weight_Loss_Required (M)/12.0; -- Weight loss permonth to reach in ibw 1year
 
-    Put_Line ("Calorie burn: " & Calorie_Type'Image(Calorie_Burned));
+ Put_Line ("Calorie burn: " & Calorie_Type'Image(Calorie_Burned));
   Put_Line ("Weight gain in 1year: " & Mass_Type'Image(Weight_Gain));
   Put_Line ("Ideal body weight: " & Mass_Type'Image(Ideal_Weight));
   Put_Line ("Amount of weight to be loss: " & Mass_Type'Image(Weight_Loss_Required));
   Put_Line ("Amount of weight loss to reach ideal weight loss in 6 month: " & Mass_Type'Image( Weight_Six_Month));
   Put_Line ("Amount of weight loss to reach ideal weight loss in 1year: " & Mass_Type'Image( Weight_One_Year));
 
-   BMR_Calorie := Objects.Total_Daily_Energy_Expenditure (M);
-
-   --  Calorie Required depend on activity level
-    Calorie_for_Sendary     := BMR_Calorie * 1.2;
-    Calorie_for_Lightly     := BMR_Calorie * 1.375;
-    Calorie_for_Moderate    := BMR_Calorie * 1.55;
-    Calorie_for_Very_Active := BMR_Calorie * 1.725;
-
-  Put_Line ("Calorie required for little or no exercise, desk job " & Calorie_Type'Image(Calorie_for_Sendary));
-  Put_Line ("Calorie required for light exercise or sports 1-3 days/wk " & Calorie_Type'Image(Calorie_for_Lightly));
-  Put_Line ("Calorie required for moderate exercise or sports 3-5 days/wk " & Calorie_Type'Image(Calorie_for_Moderate));
-  Put_Line ("Calorie required for hard exercise or sports 6-7 days/wk" & Calorie_Type'Image(Calorie_for_Very_Active));
 
       Create(File => Handler ,
              Mode => Out_File ,
@@ -127,10 +111,22 @@ begin
                 Item => End_Template);
       Close    (File => Handler);
 
-Put_Line ("Amount of kg to reach ideal weight: ");
+
+ pragma Compile_Time_Warning (True, "TODO:Nurition goals and target");
+
+ BMR_Calorie := Objects.Total_Daily_Energy_Expenditure (M);
+ Put_Line ("Calorie consume/day: " & Calorie_Type'Image( BMR_Calorie));
+ Put_Line ("Carbs: " & Calorie_Type'Image( BMR_Calorie * 0.4));
+ Put_Line ("Fats: " & Calorie_Type'Image( BMR_Calorie * 0.3));
+ Put_Line ("Protein: " & Calorie_Type'Image( BMR_Calorie * 0.3));
 
 
+ pragma Compile_Time_Warning (True, "TODO:Fitness goals and target");
+  Calorie_Burned := Objects.Person_Calorie_burned (M);
 
+ pragma Compile_Time_Warning (True, "TODO:Project Weight loss goal");
+ pragma Compile_Time_Warning (True, "TODO:Your Daily Dairy summary summary");
+ pragma Compile_Time_Warning (True, "TODO:Nutrition calorie breakdown");
    end;
       when Female =>
     F.Set_Height (Height);
