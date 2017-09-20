@@ -1,8 +1,5 @@
 package body Health.Services is
 
-
-
-
  ------------------------
  -- Calorie_Burned ------
  ------------------------
@@ -42,12 +39,13 @@ package body Health.Services is
 
   return Calorie_Burned;
  end Calorie_Burned;
+
  ------------------------
  -- BMI-Body Mass Index--
  ------------------------
 
  function Body_Mass_Index (Mass   : Mass_Type;
-                           Height : Height_Type) return BMI_Type
+                          Height : Height_Type) return BMI_Type
  is
   Body_Index : BMI_Type := 0.0 * mi;
  begin
@@ -64,9 +62,9 @@ package body Health.Services is
  ----------------
 
  function   BMR (Mass   : Mass_Type;
-                 Height : Height_Type;
-                 Year   : Year_Type;
-                 Gender : Gender_Type) return Calorie_Type
+               Height : Height_Type;
+               Year   : Year_Type;
+               Gender : Gender_Type) return Calorie_Type
  is
 
   Mebabolice_Rate : Calorie_Type := 0.0 * cal;
@@ -94,15 +92,17 @@ package body Health.Services is
 
   return Mebabolice_Rate;
  end  BMR;
+
  ------------------------------------------
  -- Total Daily Energy Expenditure(TDEE) --
- ------ TDEE = BMR * Activity-----------
+ ------ TDEE = BMR * Activity--------------
  -------------------------------------------
+
  function   DTEE (Activity : Activity_Kind;
-                  Mass     : Mass_Type;
-                  Height   : Height_Type;
-                  Year     : Year_Type;
-                  Gender   : Gender_Type) return Calorie_Type
+                Mass     : Mass_Type;
+                Height   : Height_Type;
+                Year     : Year_Type;
+                Gender   : Gender_Type) return Calorie_Type
  is
   Daily_Calorie   : Calorie_Type := 0.0 * cal;
   Mebabolice_Rate : Calorie_Type;
@@ -134,7 +134,7 @@ package body Health.Services is
  ------------------------------------
 
  function   Ideal_Body_Weight (Height : Height_Type;
-                               Gender : Gender_Type) return Mass_Type
+                             Gender : Gender_Type) return Mass_Type
  is
   Ideal_Weight : Mass_Type := 0.0 * kg;
  begin
@@ -160,12 +160,12 @@ package body Health.Services is
  -----------------------------------
  ------ Projected_WEight ---------
  -----------------------------------
- pragma Compile_Time_Warning (True, "find weight in 1 year if consume more that TDEE");
+
  function   Projected_Weight (Activity : Activity_Kind;
-                              Mass     : Mass_Type;
-                              Height   : Height_Type;
-                              Year     : Year_Type;
-                              Gender   : Gender_Type) return Mass_Type
+                            Mass     : Mass_Type;
+                            Height   : Height_Type;
+                            Year     : Year_Type;
+                            Gender   : Gender_Type) return Mass_Type
  is
 
   Daily_Calorie         : Calorie_Type := 0.0 * cal;

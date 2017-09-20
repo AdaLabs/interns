@@ -13,23 +13,23 @@ package body Health.Objects is
   Total_Calorie_Burned : constant Calorie_Type := 0.0 * cal;
 
  begin
- Calorie_Burned :=  Services.Calorie_Burned(Year       => Person.Age,
-                                               Mass       => Person.Weight,
-                                               Heart_Rate => Person.Heart_Rate,
-                                               Minutes    =>  Person.Minutes,
-                                               Gender     => Person.Gender);
+  Calorie_Burned :=  Services.Calorie_Burned(Year       => Person.Age,
+                                             Mass       => Person.Weight,
+                                             Heart_Rate => Person.Heart_Rate,
+                                             Minutes    =>  Person.Minutes,
+                                             Gender     => Person.Gender);
 
   case Activity_Kind is
    when Sedentary =>
     Total_Calorie_Burned := Calorie_Burned * 1.0 ;
    when Lightly =>
-       Total_Calorie_Burned := Calorie_Burned * 3.0 ;
+    Total_Calorie_Burned := Calorie_Burned * 3.0 ;
 
    when Moderately =>
-        Total_Calorie_Burned := Calorie_Burned * 5.0 ;
+    Total_Calorie_Burned := Calorie_Burned * 5.0 ;
 
    when Very =>
-       Total_Calorie_Burned := Calorie_Burned * 7.0;
+    Total_Calorie_Burned := Calorie_Burned * 7.0;
 
   end case;
   return Total_Calorie_Burned;
@@ -49,11 +49,10 @@ package body Health.Objects is
   return Body_Index;
  end Person_BMI;
 
-
-
  -------------------------
- ------ Project_Weight_Gain_----
+ -- Project_Weight_Gain_--
  -------------------------
+
  function  Project_Weight_Gain (Person : in Interfaces.Human'Class) return Mass_Type
  is
   Calorie_Consume       : constant Calorie_Type  := 2000.0 * cal;
@@ -134,15 +133,16 @@ package body Health.Objects is
 
   return Mebabolice_Rate;
  end  Total_Daily_Energy_Expenditure;
+
  -----------------------------------
  ------ Person_Ideal_Body_Weight --
  -----------------------------------
 
  function  Weight_Loss_Required (Person : in Interfaces.Human'Class) return Mass_Type
  is
-  IBW              : Mass_Type    := 0.0 * kg;
+  IBW                   : Mass_Type         := 0.0 * kg;
   Excess_Weight_Loss    : Mass_Type;
-  Current_weight   : constant Mass_Type    := Person.Weight;
+  Current_weight        : constant Mass_Type := Person.Weight;
 
  begin
   IBW := Services.Ideal_Body_Weight (Height => Person.Height,

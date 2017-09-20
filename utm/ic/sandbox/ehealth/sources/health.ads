@@ -2,13 +2,13 @@ package Health is
 
 
    type Gender_Type is (Male,
-                        Female,
-                        Other);
+                     Female,
+                     Other);
 
    type Activity_Kind  is (Sedentary,
-                           Lightly,
-                           Moderately,
-                           Very);
+                        Lightly,
+                        Moderately,
+                        Very);
 
 
    type Activity_Factor  is
