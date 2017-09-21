@@ -1,5 +1,9 @@
 package Health.Interfaces is
 
+   ----------------
+   --  Human
+   ----------------
+
    type Human is interface;
 
    function Name     (H : in Human) return String        is abstract;
