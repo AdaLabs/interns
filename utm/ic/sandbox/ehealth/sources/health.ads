@@ -1,8 +1,8 @@
 package Health is
 
 
-   type Gender_Type is (Male,
-                        Female,
+   type Gender_Type is (Man,
+                        Women,
                         Other);
 
    type Activity_Kind  is (Sedentary,

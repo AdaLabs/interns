@@ -50,7 +50,7 @@ package Health.Classes is
 
    type Male_Human_Being is new Human_Being with private;
 
-   overriding function Gender   (H : in Male_Human_Being) return Gender_Type is (Male);
+   overriding function Gender   (H : in Male_Human_Being) return Gender_Type is (Man);
 
    ----------------
    --  Female_Human_Being
@@ -58,7 +58,7 @@ package Health.Classes is
 
    type Female_Human_Being is new Human_Being with private;
 
-   overriding function Gender   (H : in Female_Human_Being) return Gender_Type is (Female);
+   overriding function Gender   (H : in Female_Human_Being) return Gender_Type is (Women);
 
 private
 
