@@ -15,7 +15,7 @@ package Health.Options is
 private
 
    package Analyzer is new Options_Analyzer (Binary_Options => "vh",
-                                             Valued_Options => "ywrmcga",
+                                             Valued_Options => "ywrmcgah",
                                              Tail_Separator => "--");
 
 end Health.Options;

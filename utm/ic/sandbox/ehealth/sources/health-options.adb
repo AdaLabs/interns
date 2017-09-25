@@ -1,3 +1,4 @@
+with Ada.Text_IO; use Ada.Text_IO;
 
 package body Health.Options is
 
@@ -7,6 +8,15 @@ package body Health.Options is
 
    procedure Initialize
    is
+        procedure Show_Usage (Option  : Character)
+      is
+      begin
+      if not Analyzer.Is_Present (Option) then
+      Put_Line("-g Gender -y Age -w Weight -r bpm -m Minutes -c Height -a Activity   ");
+              end if;
+     end Show_Usage;
+
+
       procedure Check_Present (Option  : Character)
       is
       begin
@@ -16,10 +26,8 @@ package body Health.Options is
       end Check_Present;
 
    begin
-      --    pragma Compile_Time_Warning (True, "FEATURE show usage on error");
-      --    pragma Compile_Time_Warning (True, "FEATURE show help");
-      --    pragma Compile_Time_Warning (True, "FEATURE show version");
 
+      Show_Usage('h');
       Check_Present ('g');
       Check_Present ('y');
       Check_Present ('w');
