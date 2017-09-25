@@ -123,7 +123,6 @@ end Set_Minuites;
                                                   Heart_Rate => Person.Heart_Rate, --  Person.Heart_Rate,
                                                   Minutes    => Person.Min, --  Person.Minutes,
                                                   Gender     => Person.Gender);
-      pragma Compile_Time_Warning (True, "TODO, sort out the heart_rate and minutes information above");
 
       case Options.Activity is
       when Sedentary =>

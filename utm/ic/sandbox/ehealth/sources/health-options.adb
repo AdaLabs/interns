@@ -12,8 +12,16 @@ package body Health.Options is
       is
       begin
       if not Analyzer.Is_Present (Option) then
-      Put_Line("-g Gender -y Age -w Weight -r bpm -m Minutes -c Height -a Activity   ");
-              end if;
+      Put_Line("Usage: ./health-main -g Gender -y Age -w Weight -r bpm -m Minutes -c Height -a Activity");
+      Put_Line("-g  Men/Women");
+      Put_Line("-y  Age of user");
+      Put_Line("-w  Weight of user");
+      Put_Line("-m  Minuit of workout user done per day");
+      Put_Line("-c  Height of user ");
+      Put_Line("-a  Activity Level of  user");
+
+
+             end if;
      end Show_Usage;
 
 
