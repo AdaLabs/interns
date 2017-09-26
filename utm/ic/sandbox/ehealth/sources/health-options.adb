@@ -8,10 +8,10 @@ package body Health.Options is
 
    procedure Initialize
    is
-        procedure Show_Usage (Option  : Character)
+        procedure Show_Usage
       is
       begin
-      if not Analyzer.Is_Present (Option) then
+
       Put_Line("Usage: ./health-main -g Gender -y Age -w Weight -r bpm -m Minutes -c Height -a Activity");
       Put_Line("-g  Men/Women");
       Put_Line("-y  Age of user");
@@ -21,7 +21,7 @@ package body Health.Options is
       Put_Line("-a  Activity Level of  user");
 
 
-             end if;
+
      end Show_Usage;
 
 
@@ -35,7 +35,7 @@ package body Health.Options is
 
    begin
 
-      Show_Usage('h');
+      Show_Usage;
       Check_Present ('g');
       Check_Present ('y');
       Check_Present ('w');

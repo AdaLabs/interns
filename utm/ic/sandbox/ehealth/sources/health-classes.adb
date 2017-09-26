@@ -207,35 +207,43 @@ end Set_Minuites;
    is
       Mebabolice_Rate : Calorie_Type;
       BMR             : Calorie_Type;
+      Activity        : Activity_Immutable_Variant_Record (Option => Options.Activity);
    begin
 
-      case Options.Activity is
-      when Sedentary =>
+           BMR := Services.BMR (Mass   => Person.Weight,
+                                Height => Person.Height,
+                                Year   => Person.Age,
+                                Gender => Person.Gender);
+           Mebabolice_Rate :=  BMR  * 1.2 ;
+--           Mebabolice_Rate :=  BMR  * Activity ;
 
-         BMR := Services.BMR (Mass   => Person.Weight,
-                              Height => Person.Height,
-                              Year   => Person.Age,
-                              Gender => Person.Gender);
-         Mebabolice_Rate :=  BMR  * 1.2;
-      when Lightly =>
-         BMR := Services.BMR (Mass   => Person.Weight,
-                              Height => Person.Height,
-                              Year   => Person.Age,
-                              Gender => Person.Gender);
-         Mebabolice_Rate :=  BMR  * 1.375;
-      when Moderately =>
-         BMR := Services.BMR (Mass   => Person.Weight,
-                              Height => Person.Height,
-                              Year   => Person.Age,
-                              Gender => Person.Gender);
-         Mebabolice_Rate :=  BMR  * 1.55;
-      when Very =>
-         BMR := Services.BMR (Mass   => Person.Weight,
-                              Height => Person.Height,
-                              Year   => Person.Age,
-                              Gender => Person.Gender);
-         Mebabolice_Rate :=  BMR  * 1.725;
-      end case;
+--      case Options.Activity is
+--        when Sedentary =>
+--
+--           BMR := Services.BMR (Mass   => Person.Weight,
+--                                Height => Person.Height,
+--                                Year   => Person.Age,
+--                                Gender => Person.Gender);
+--           Mebabolice_Rate :=  BMR  * 1.2;
+--        when Lightly =>
+--           BMR := Services.BMR (Mass   => Person.Weight,
+--                                Height => Person.Height,
+--                                Year   => Person.Age,
+--                                Gender => Person.Gender);
+--           Mebabolice_Rate :=  BMR  * 1.375;
+--        when Moderately =>
+--           BMR := Services.BMR (Mass   => Person.Weight,
+--                                Height => Person.Height,
+--                                Year   => Person.Age,
+--                                Gender => Person.Gender);
+--           Mebabolice_Rate :=  BMR  * 1.55;
+--        when Very =>
+--           BMR := Services.BMR (Mass   => Person.Weight,
+--                                Height => Person.Height,
+--                                Year   => Person.Age,
+--                                Gender => Person.Gender);
+--           Mebabolice_Rate :=  BMR  * 1.725;
+--        end case;
 
       return Mebabolice_Rate;
    end  Total_Daily_Energy_Expenditure;

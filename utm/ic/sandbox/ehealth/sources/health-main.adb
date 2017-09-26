@@ -23,9 +23,6 @@ begin
 
    Options.Initialize;
 
-   pragma Compile_Time_Warning (True, "TODO show usage");
-
-
    case Gender is
    when Man =>
       declare
@@ -115,32 +112,10 @@ begin
 
       end;
    when Women =>
-      declare
-         Weight_Loss_Required    : Mass_Type ;
-         Weight_Six_Month        : Mass_Type;
-         Weight_One_Year         : Mass_Type;
-
-      begin
-         F.Set_Height (Height);
-         F.Set_Weight (Weight);
-         F.Set_Age(Age);
-         F.Set_Activity(Activity);
-
-         Weight_Gain    := F.Project_Weight_Gain * 12.0;
-         Ideal_Weight   := F.Ideal_Body_Weight;
-
-         Weight_Loss_Required := F.Weight_Loss_Required;
-         Weight_Six_Month     := F.Weight_Loss_Required / 6.0; -- Weight loss permonth to reach in ibw 6month
-         Weight_One_Year      := F.Weight_Loss_Required / 12.0; -- Weight loss permonth to reach in ibw 1year
-
-         Put_Line ("Weight gain in 1year: " & Mass_Type'Image(Weight_Gain));
-         Put_Line ("Ideal body weight: " & Mass_Type'Image(Ideal_Weight));
-         Put_Line ("Amount of weight to be loss: " & Mass_Type'Image(Weight_Loss_Required));
-         Put_Line ("Amount of weight loss to reach ideal weight loss in 6 month: " & Mass_Type'Image( Weight_Six_Month));
-         Put_Line ("Amount of weight loss to reach ideal weight loss in 1year: " & Mass_Type'Image( Weight_One_Year));
+      raise Program_Error with "not yet implemented";
 
          pragma Compile_Time_Warning (True, "TODO it seems most part of this can be reused between man and women");
-      end;
+
    when Other =>
       raise Program_Error with "not yet implemented";
    end case;
