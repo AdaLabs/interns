@@ -15,6 +15,8 @@ package Health.Classes is
    overriding function Weight   (H : in Human_Being) return Mass_Type;
    overriding function Height   (H : in Human_Being) return Height_Type;
    overriding function Activity (H : in Human_Being) return Activity_Kind;
+ overriding function Heart_Rate (H : in Human_Being) return Heart_Rate_Type;
+ overriding  function Minutes (H : in Human_Being) return Minute_Type;
 
 
    overriding procedure Set_Height (H      : in out Human_Being;
@@ -28,6 +30,11 @@ package Health.Classes is
 
    overriding procedure Set_Activity (H        : in out Human_Being;
                                       Activity : in       Activity_Kind);
+    overriding  procedure Set_Heart_Rate (H         : in out Human_Being;
+                         Heart_Rate  : in        Heart_Rate_Type);
+
+    overriding  procedure Set_Minuites (H         : in out Human_Being;
+                           Min  : in        Minute_Type);
 
    function Person_Calorie_burned          (Person : in Human_Being'Class) return Calorie_Type;
 
@@ -42,7 +49,6 @@ package Health.Classes is
    function Total_Daily_Energy_Expenditure (Person : in Human_Being'Class) return Calorie_Type;
 
 
-   pragma Compile_Time_Warning (True, "TODO switch namings to man and women");
 
    ----------------
    --  Male_Human_Being
@@ -50,7 +56,7 @@ package Health.Classes is
 
    type Male_Human_Being is new Human_Being with private;
 
-   overriding function Gender   (H : in Male_Human_Being) return Gender_Type is (Male);
+   overriding function Gender   (H : in Male_Human_Being) return Gender_Type is (Man);
 
    ----------------
    --  Female_Human_Being
@@ -58,7 +64,7 @@ package Health.Classes is
 
    type Female_Human_Being is new Human_Being with private;
 
-   overriding function Gender   (H : in Female_Human_Being) return Gender_Type is (Female);
+   overriding function Gender   (H : in Female_Human_Being) return Gender_Type is (Women);
 
 private
 
@@ -68,6 +74,9 @@ private
       Weight     : Mass_Type;
       Height     : Height_Type;
       Activity   : Activity_Kind;
+      Heart_Rate : Heart_Rate_Type;
+      Min        : Minute_Type;
+
    end record;
 
    type Male_Human_Being is new Human_Being with null record;

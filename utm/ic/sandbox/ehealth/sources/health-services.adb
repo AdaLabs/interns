@@ -97,7 +97,7 @@ package body Health.Services is
       Calorie_Burned : Calorie_Type := 0.0 * cal;
    begin
       case Gender is
-      when Male =>
+      when Man =>
          Calorie_Burned :=
            (
             Year * 0.2017 * yr
@@ -107,7 +107,7 @@ package body Health.Services is
            )
              * Minutes * cal / (4.184 * minute);
 
-      when Female =>
+      when Women =>
          Calorie_Burned :=
            (
             Year * 0.074 * yr
@@ -155,7 +155,7 @@ package body Health.Services is
       Mebabolice_Rate : Calorie_Type := 0.0 * cal;
    begin
       case Gender is
-      when Male =>
+      when Man =>
          Mebabolice_Rate := (
                              Height * 5.003 * br
                              + Mass * 13.75 * mr
@@ -163,7 +163,7 @@ package body Health.Services is
                              + 66.5
                             ) * cal ;
 
-      when Female =>
+      when Women =>
          Mebabolice_Rate := (
                              Height * 4.7 * br
                              + Mass * 4.35 * mr
@@ -224,13 +224,13 @@ package body Health.Services is
       Ideal_Weight : Mass_Type := 0.0 * kg;
    begin
       case Gender is
-      when Male =>
+      when Man =>
          Ideal_Weight := (
                           50.0
                           + 0.9 * Height * br - 152.0)
            *( 1.0 * kg);
 
-      when Female =>
+      when Women =>
          Ideal_Weight := (
                           45.5
                           + 0.9 * Height * br - 152.0)

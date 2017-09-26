@@ -25,8 +25,9 @@ begin
 
    pragma Compile_Time_Warning (True, "TODO show usage");
 
+
    case Gender is
-   when Male =>
+   when Man =>
       declare
          Weight_Loss_Required    : Mass_Type ;
          Weight_Six_Month        : Mass_Type;
@@ -113,7 +114,7 @@ begin
          Put_Line ("Calorie burn: " & Calorie_Type'Image(Calorie_Burned));
 
       end;
-   when Female =>
+   when Women =>
       declare
          Weight_Loss_Required    : Mass_Type ;
          Weight_Six_Month        : Mass_Type;

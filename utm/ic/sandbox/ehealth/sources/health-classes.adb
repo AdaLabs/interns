@@ -33,6 +33,17 @@ package body Health.Classes is
       return H.Activity;
    end Activity;
 
+   function Heart_Rate (H : in Human_Being) return Heart_Rate_Type
+   is
+   begin
+      return H.Heart_Rate;
+   end Heart_Rate;
+
+ function Minutes (H : in Human_Being) return Minute_Type
+ is
+ begin
+        return H.Min;
+end Minutes;
    ---------------
    -- Set_Height--
    ----------------
@@ -77,8 +88,29 @@ package body Health.Classes is
       H.Activity := Activity;
    end Set_Activity;
 
+   ------------------
+   -- Set_heartrate---
+   ------------------
+
+   procedure Set_Heart_Rate (H         : in out Human_Being;
+                           Heart_Rate  : in        Heart_Rate_Type)
+   is
+   begin
+      H.Heart_Rate := Heart_Rate;
+   end Set_Heart_Rate;
+
+   ------------------
+   -- Set_Minuites----
+   ------------------
+
+ procedure Set_Minuites (H    : in out Human_Being;
+                        Min  : in        Minute_Type)
+ is
+ begin
+  H.Min := Min;
+end Set_Minuites;
    -------------------------
-   --  Person_Calorie_Burned---
+   -- Person_Calorie_Burned--
    -------------------------
 
    function  Person_Calorie_Burned (Person : in Human_Being'Class) return Calorie_Type
@@ -88,10 +120,9 @@ package body Health.Classes is
    begin
       Calorie_Burned :=  Services.Calorie_Burned (Year       => Person.Age,
                                                   Mass       => Person.Weight,
-                                                  Heart_Rate => 10.0 * bpm, --  Person.Heart_Rate,
-                                                  Minutes    => 20.0 * minute, --  Person.Minutes,
+                                                  Heart_Rate => Person.Heart_Rate, --  Person.Heart_Rate,
+                                                  Minutes    => Person.Min, --  Person.Minutes,
                                                   Gender     => Person.Gender);
-      pragma Compile_Time_Warning (True, "TODO, sort out the heart_rate and minutes information above");
 
       case Options.Activity is
       when Sedentary =>
