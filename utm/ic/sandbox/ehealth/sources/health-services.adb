@@ -1,5 +1,6 @@
 package body Health.Services is
 
+<<<<<<< HEAD
   ------------------------------------------
    -- Total Daily Energy Expenditure(TDEE) --
    ------ TDEE = BMR * Activity-----------
@@ -81,6 +82,8 @@ package body Health.Services is
       return IBW;
    end Ideal_Body_Weight;
 
+=======
+>>>>>>> 3021b847391d27e0bcf2c4f3abb5756d71b5140c
    ------------------------
    -- Calorie_Burned ------
    ------------------------
@@ -120,6 +123,7 @@ package body Health.Services is
 
       return Calorie_Burned;
    end Calorie_Burned;
+
    ------------------------
    -- BMI-Body Mass Index--
    ------------------------
@@ -137,6 +141,7 @@ package body Health.Services is
         ) * mi ;
       return Body_Index;
    end Body_Mass_Index;
+
    ----------------
    ------BMR -----
    ----------------
@@ -172,10 +177,12 @@ package body Health.Services is
 
       return Mebabolice_Rate;
    end  BMR;
+
    ------------------------------------------
    -- Total Daily Energy Expenditure(TDEE) --
-   ------ TDEE = BMR * Activity-----------
+   ------ TDEE = BMR * Activity--------------
    -------------------------------------------
+
    function   DTEE (Activity : Activity_Kind;
                     Mass     : Mass_Type;
                     Height   : Height_Type;
@@ -200,10 +207,10 @@ package body Health.Services is
                                 Year   => Year,
                                 Gender => Gender);
          Daily_Calorie := Mebabolice_Rate * 1.5;
-         when Moderately =>
-            raise Program_Error with "not yet implemented";
-         when Very =>
-            raise Program_Error with "not yet implemented";
+      when Moderately =>
+         raise Program_Error with "not yet implemented";
+      when Very =>
+         raise Program_Error with "not yet implemented";
       end case;
       return Daily_Calorie;
    end  DTEE;
@@ -238,7 +245,7 @@ package body Health.Services is
    -----------------------------------
    ------ Projected_WEight ---------
    -----------------------------------
-   pragma Compile_Time_Warning (True, "find weight in 1 year if consume more that TDEE");
+
    function   Projected_Weight (Activity : Activity_Kind;
                                 Mass     : Mass_Type;
                                 Height   : Height_Type;
@@ -267,6 +274,5 @@ package body Health.Services is
       --  1kilo = 7700;
       return Total_Kilo_Gain;
    end  Projected_Weight;
-
 
 end Health.Services;

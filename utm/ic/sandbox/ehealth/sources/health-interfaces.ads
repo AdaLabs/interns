@@ -1,5 +1,9 @@
 package Health.Interfaces is
 
+   ----------------
+   --  Human
+   ----------------
+
    type Human is interface;
 
    function Name     (H : in Human) return String        is abstract;
@@ -9,12 +13,17 @@ package Health.Interfaces is
    function Height   (H : in Human) return Height_Type   is abstract;
    function Activity (H : in Human) return Activity_Kind is abstract;
 
+
    procedure Set_Height (H      : in out Human;
-                         Height : in     Height_Type) is abstract;
+                       Height : in        Height_Type) is abstract;
 
     procedure Set_Weight (H      : in out Human;
-                         Weight  : in     Mass_Type) is abstract;
- --  procedure Set_Height   (H      : in out Human) is abstract;
+                       Weight  : in       Mass_Type) is abstract;
 
+    procedure Set_Age     (H   : in out Human;
+                         Age : in       Year_Type) is abstract;
+
+   procedure Set_Activity (H         : in out Human;
+                         Activity  : in        Activity_Kind) is abstract;
 
 end Health.Interfaces;
