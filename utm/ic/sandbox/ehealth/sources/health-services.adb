@@ -107,7 +107,7 @@ package body Health.Services is
    is
       Daily_Calorie   : Calorie_Type := 0.0 * cal;
       Mebabolice_Rate : Calorie_Type;
-      Activity_Level : Immutable_Variant_Record (Option => Activity);
+      --        Activity_Level : Immutable_Variant_Record (Option => Activity);
    begin
 
       case  Activity is
@@ -171,7 +171,7 @@ package body Health.Services is
    is
 
       Daily_Calorie         : Calorie_Type := 0.0 * cal;
-      Total_Calorie_surplus : Calorie_Type := 0.0 * cal;
+ --     Total_Calorie_surplus : Calorie_Type := 0.0 * cal;
       Total_Kilo_Gain       : Mass_Type    := 0.0 * kg;
    begin
 
@@ -184,7 +184,7 @@ package body Health.Services is
       --  Total_Calorie_surplus := (Calorie_consume - Daily_Calorie) * 365 * cr;
 
       Total_Kilo_Gain       := (
-                                Total_Calorie_surplus * cr
+                                Daily_Calorie * cr
                                 / 7700.0) * kg ;
 
 

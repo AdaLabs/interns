@@ -39,17 +39,17 @@ package body Health.Classes is
       return H.Heart_Rate;
    end Heart_Rate;
 
- function Minutes (H : in Human_Being) return Minute_Type
- is
- begin
-        return H.Min;
-end Minutes;
+   function Minutes (H : in Human_Being) return Minute_Type
+   is
+   begin
+      return H.Min;
+   end Minutes;
    ---------------
    -- Set_Height--
    ----------------
 
    procedure  Set_Height (H      : in out Human_Being;
-                          Height : in         Height_Type)
+                          Height : in     Height_Type)
    is
    begin
       H.Height := Height;
@@ -60,7 +60,7 @@ end Minutes;
    ----------------
 
    procedure  Set_Weight (H      : in out Human_Being;
-                          Weight : in          Mass_Type)
+                          Weight : in     Mass_Type)
    is
    begin
       H.Weight := Weight;
@@ -71,47 +71,47 @@ end Minutes;
    ----------------
 
    procedure Set_Age (H      : in out Human_Being;
-                      Age    : in        Year_Type)
+                      Age    : in     Year_Type)
    is
    begin
       H.Age := Age;
    end Set_Age;
 
-   ----------------
-   --  Set_Activity-
-   ----------------
+   -----------------
+   -- Set_Activity--
+   -----------------
 
    procedure Set_Activity (H         : in out Human_Being;
-                           Activity  : in        Activity_Kind)
+                           Activity  : in     Activity_Kind)
    is
    begin
       H.Activity := Activity;
    end Set_Activity;
 
-   ------------------
+   --------------------
    -- Set_heartrate---
-   ------------------
+   --------------------
 
-   procedure Set_Heart_Rate (H         : in out Human_Being;
-                           Heart_Rate  : in        Heart_Rate_Type)
+   procedure Set_Heart_Rate (H           : in out Human_Being;
+                             Heart_Rate  : in     Heart_Rate_Type)
    is
    begin
       H.Heart_Rate := Heart_Rate;
    end Set_Heart_Rate;
 
-   ------------------
+   -------------------
    -- Set_Minuites----
-   ------------------
+   -------------------
 
- procedure Set_Minuites (H    : in out Human_Being;
-                        Min  : in        Minute_Type)
- is
- begin
-  H.Min := Min;
-end Set_Minuites;
-   -------------------------
+   procedure Set_Minuites (H    : in out Human_Being;
+                           Min  : in     Minute_Type)
+   is
+   begin
+      H.Min := Min;
+   end Set_Minuites;
+   --------------------------
    -- Person_Calorie_Burned--
-   -------------------------
+   --------------------------
 
    function  Person_Calorie_Burned (Person : in Human_Being'Class) return Calorie_Type
    is
@@ -200,50 +200,50 @@ end Set_Minuites;
 
    ------------------------------------------
    -- Total Daily Energy Expenditure(TDEE) --
-   ------ TDEE = BMR * Activity-----------
+   ------ TDEE = BMR * Activity--------------
    -------------------------------------------
 
    function Total_Daily_Energy_Expenditure (Person : in Human_Being'Class) return Calorie_Type
    is
       Mebabolice_Rate : Calorie_Type;
       BMR             : Calorie_Type;
-      Activity        : Activity_Immutable_Variant_Record (Option => Options.Activity);
+  --   Activity        : Activity_Immutable_Variant_Record (Option => Options.Activity);
    begin
 
-           BMR := Services.BMR (Mass   => Person.Weight,
-                                Height => Person.Height,
-                                Year   => Person.Age,
-                                Gender => Person.Gender);
-           Mebabolice_Rate :=  BMR  * 1.2 ;
---           Mebabolice_Rate :=  BMR  * Activity ;
+      BMR := Services.BMR (Mass   => Person.Weight,
+                           Height => Person.Height,
+                           Year   => Person.Age,
+                           Gender => Person.Gender);
+      Mebabolice_Rate :=  BMR  * 1.2 ;
+      --           Mebabolice_Rate :=  BMR  * Activity ;
 
---      case Options.Activity is
---        when Sedentary =>
---
---           BMR := Services.BMR (Mass   => Person.Weight,
---                                Height => Person.Height,
---                                Year   => Person.Age,
---                                Gender => Person.Gender);
---           Mebabolice_Rate :=  BMR  * 1.2;
---        when Lightly =>
---           BMR := Services.BMR (Mass   => Person.Weight,
---                                Height => Person.Height,
---                                Year   => Person.Age,
---                                Gender => Person.Gender);
---           Mebabolice_Rate :=  BMR  * 1.375;
---        when Moderately =>
---           BMR := Services.BMR (Mass   => Person.Weight,
---                                Height => Person.Height,
---                                Year   => Person.Age,
---                                Gender => Person.Gender);
---           Mebabolice_Rate :=  BMR  * 1.55;
---        when Very =>
---           BMR := Services.BMR (Mass   => Person.Weight,
---                                Height => Person.Height,
---                                Year   => Person.Age,
---                                Gender => Person.Gender);
---           Mebabolice_Rate :=  BMR  * 1.725;
---        end case;
+      --      case Options.Activity is
+      --        when Sedentary =>
+      --
+      --           BMR := Services.BMR (Mass   => Person.Weight,
+      --                                Height => Person.Height,
+      --                                Year   => Person.Age,
+      --                                Gender => Person.Gender);
+      --           Mebabolice_Rate :=  BMR  * 1.2;
+      --        when Lightly =>
+      --           BMR := Services.BMR (Mass   => Person.Weight,
+      --                                Height => Person.Height,
+      --                                Year   => Person.Age,
+      --                                Gender => Person.Gender);
+      --           Mebabolice_Rate :=  BMR  * 1.375;
+      --        when Moderately =>
+      --           BMR := Services.BMR (Mass   => Person.Weight,
+      --                                Height => Person.Height,
+      --                                Year   => Person.Age,
+      --                                Gender => Person.Gender);
+      --           Mebabolice_Rate :=  BMR  * 1.55;
+      --        when Very =>
+      --           BMR := Services.BMR (Mass   => Person.Weight,
+      --                                Height => Person.Height,
+      --                                Year   => Person.Age,
+      --                                Gender => Person.Gender);
+      --           Mebabolice_Rate :=  BMR  * 1.725;
+      --        end case;
 
       return Mebabolice_Rate;
    end  Total_Daily_Energy_Expenditure;

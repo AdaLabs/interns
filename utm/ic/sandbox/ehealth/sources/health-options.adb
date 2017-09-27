@@ -7,7 +7,7 @@ package body Health.Options is
 
    procedure Initialize
    is
-<<<<<<< HEAD
+
       procedure Show_Usage
       is
       begin
@@ -19,24 +19,6 @@ package body Health.Options is
          Put_Line("-c  Height of user ");
          Put_Line("-a  Activity Level of  user");
       end Show_Usage;
-=======
-        procedure Show_Usage
-      is
-      begin
-
-      Put_Line("Usage: ./health-main -g Gender -y Age -w Weight -r bpm -m Minutes -c Height -a Activity");
-      Put_Line("-g  Men/Women");
-      Put_Line("-y  Age of user");
-      Put_Line("-w  Weight of user");
-      Put_Line("-m  Minuit of workout user done per day");
-      Put_Line("-c  Height of user ");
-      Put_Line("-a  Activity Level of  user");
-
-
-
-     end Show_Usage;
->>>>>>> 776188cd4c008933f6117f534fdf9f3f7b36d5e1
-
 
       procedure Check_Present (Option  : Character)
       is
@@ -48,11 +30,8 @@ package body Health.Options is
 
    begin
 
-<<<<<<< HEAD
-    Show_Usage;
-=======
       Show_Usage;
->>>>>>> 776188cd4c008933f6117f534fdf9f3f7b36d5e1
+
       Check_Present ('g');
       Check_Present ('y');
       Check_Present ('w');

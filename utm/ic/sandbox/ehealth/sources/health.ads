@@ -1,22 +1,14 @@
 package Health is
 
-
    type Gender_Type is (Man,
                         Women,
                         Other);
 
-<<<<<<< HEAD
-
    type Activity_Kind  is (Sedentary,
-=======
-type Activity_Kind  is (Sedentary,
->>>>>>> 776188cd4c008933f6117f534fdf9f3f7b36d5e1
                            Lightly,
                            Moderately,
                            Very);
 
-
-<<<<<<< HEAD
    type Immutable_Variant_Record (Option : Activity_Kind) is
       record
 
@@ -31,9 +23,6 @@ type Activity_Kind  is (Sedentary,
                Very_Active              : Float := 1.725;
          end case;
       end record;
-=======
-
->>>>>>> 776188cd4c008933f6117f534fdf9f3f7b36d5e1
 
    type Body_Mks_Type is new Float
      with
@@ -42,73 +31,73 @@ type Activity_Kind  is (Sedentary,
                             (Unit_Name => Heart_Rate, Unit_Symbol => "bpm"   , Dim_Symbol => 'B'),
                             (Unit_Name => Time      , Unit_Symbol => "minute", Dim_Symbol => 'T'),
                             (Unit_Name => Height    , Unit_Symbol => "cm"    , Dim_Symbol => 'H'),
-                            (Unit_Name      => Calorie   , Unit_Symbol => "cal"   , Dim_Symbol => 'C'),
+                            (Unit_Name => Calorie   , Unit_Symbol => "cal"   , Dim_Symbol => 'C'),
                             (Unit_Name => BMI       , Unit_Symbol => "mi"    , Dim_Symbol => 'I'));
 
    subtype Year_Type is Body_Mks_Type
-     with Dimension => (Symbol => 'y',
-                        Year   => 1,
-                        others => 0);
+   with Dimension => (Symbol => 'y',
+                      Year   => 1,
+                      others => 0);
 
    subtype Calorie_Type is Body_Mks_Type
-     with Dimension => (Symbol  => "cal",
-                        Calorie => 1,
-                        others  => 0);
+   with Dimension => (Symbol  => "cal",
+                      Calorie => 1,
+                      others  => 0);
 
    subtype Mass_Type is Body_Mks_Type
-     with Dimension => (Symbol   => "kg",
-                        Kilogram => 1,
-                        others   => 0);
+   with Dimension => (Symbol   => "kg",
+                      Kilogram => 1,
+                      others   => 0);
 
    subtype Heart_Rate_Type is Body_Mks_Type
-     with Dimension => (Symbol     => "bpm",
-                        Heart_Rate => 1,
-                        others     => 0);
+   with Dimension => (Symbol     => "bpm",
+                      Heart_Rate => 1,
+                      others     => 0);
 
    subtype Minute_Type is Body_Mks_Type
-     with Dimension => (Symbol => "minute",
-                        Time   => 1,
-                        others => 0);
+   with Dimension => (Symbol => "minute",
+                      Time   => 1,
+                      others => 0);
 
    subtype Height_Type is Body_Mks_Type
-     with Dimension => (Symbol => "cm",
-                        Height => 1,
-                        others => 0);
+   with Dimension => (Symbol => "cm",
+                      Height => 1,
+                      others => 0);
 
    subtype BMI_Type is Body_Mks_Type
-     with Dimension => (Symbol => "mi",
-                        BMI    => 1,
-                        others => 0);
+   with Dimension => (Symbol => "mi",
+                      BMI    => 1,
+                      others => 0);
 
    subtype Year_Ratio_Type is Body_Mks_Type
-     with Dimension => (Symbol => "yr",
-                        Year   => -1,
-                        others => 0);
+   with Dimension => (Symbol => "yr",
+                      Year   => -1,
+                      others => 0);
 
    subtype Mass_Ratio_Type is Body_Mks_Type
-     with Dimension => (Symbol   => "mr",
-                        Kilogram => -1,
-                        others   => 0);
+   with Dimension => (Symbol   => "mr",
+                      Kilogram => -1,
+                      others   => 0);
 
    subtype Heart_Rate_Ratio_Type is Body_Mks_Type
-     with Dimension => (Symbol     => "hr",
-                        Heart_Rate => -1,
-                        others     => 0);
+   with Dimension => (Symbol     => "hr",
+                      Heart_Rate => -1,
+                      others     => 0);
 
    subtype Height_Ratio_Type is Body_Mks_Type
-     with Dimension => (Symbol => "lr",
-                        Height => -2,
-                        others => 0);
+   with Dimension => (Symbol => "lr",
+                      Height => -2,
+                      others => 0);
 
    subtype BMR_Height_Ratio_Type is Body_Mks_Type
-     with Dimension => (Symbol => "br",
-                        Height => -1,
-                        others => 0);
+   with Dimension => (Symbol => "br",
+                      Height => -1,
+                      others => 0);
 
    subtype Calorie_Ratio_Type is Body_Mks_Type
-     with Dimension => (Symbol  => "cr",
-                        Calorie => -1,
-                        others  => 0);
+   with Dimension => (Symbol  => "cr",
+                      Calorie => -1,
+                      others  => 0);
 
    pragma Warnings (Off, "*assumed to be*");
    y      : constant Year_Type       := 1.0;
