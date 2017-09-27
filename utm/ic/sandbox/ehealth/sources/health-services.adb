@@ -1,89 +1,5 @@
 package body Health.Services is
 
-<<<<<<< HEAD
-  ------------------------------------------
-   -- Total Daily Energy Expenditure(TDEE) --
-   ------ TDEE = BMR * Activity-----------
-   -------------------------------------------
-   function   Total_Daily_Energy_Expenditure (Person : in Interfaces.Human'Class) return Calorie_Type
-   is
-       Daily_Calorie_for_sendary  : Calorie_Type := 0.0 * cal;
-      Mebabolice_Rate : Calorie_Type;
-   begin
-
-
-         Mebabolice_Rate:= BMR (Mass   => Person.Weight,
-                                Height => Person.Height,
-                                Year   => Person.Age,
-                                Gender => Person.Gender);
-
-  Daily_Calorie_for_Sendary  := Mebabolice_Rate * 1.2;
---  Daily_Calorie_for_Lightly  := Mebabolice_Rate * 1.375;
---  Daily_Calorie_for_Moderate := Mebabolice_Rate * 1.55;
---  Daily_Calorie_for_Very     := Mebabolice_Rate * 1.725;
-
-   --  Sedentary = BMR X 1.2 (little or no exercise, desk job)
-   --  Lightly active = BMR X 1.375 (light exercise or sports 1-3 days/wk)
-   --  Moderate active = BMR X 1.55 (moderate exercise or sports 3-5 days/wk)
-   --  Very active = BMR X 1.725 (hard exercise or sports 6-7 days/wk)
-      return Daily_Calorie_for_Sendary;
-   end  Total_Daily_Energy_Expenditure;
-
-
-   -------------------------
-   ------ Person_Profil----
-   -------------------------
-   function  Person_Profile (Person : in Interfaces.Human'Class) return Calorie_Type
-   is
-      Daily_Calorie_Expected : Calorie_Type  := 0.0 * cal;
-      Mebabolice_Rate        : Calorie_Type  := 0.0 * cal;
-   begin
-      Mebabolice_Rate := BMR (Mass   => Person.Weight,
-                              Height => Person.Height,
-                              Year   => Person.Age,
-                              Gender => Person.Gender);
-
-     --  profil = Mebabolice_Rate * activity fatcory
-      return Daily_Calorie_Expected;
-   end Person_Profile;
-
-   -----------------------------------
-   ------ Person_Ideal_Body_Weight --
-   -----------------------------------
-
-   function   Person_Ideal_Body_Weight (Person : in Interfaces.Human'Class) return Mass_Type
-   is
-      IBW              : Mass_Type    := 0.0 * kg;
-      Ideal_Mass       : Mass_Type;
-      Current_weight   : Mass_Type    := Person.Weight;
-
-   begin
-      IBW := Ideal_Body_Weight (Height => Person.Height,
-                                Gender => Person.Gender);
-      if Current_weight >= IBW then
-         Ideal_Mass  := Current_weight - IBW;
-      else
-         Ideal_Mass  := IBW - Current_weight;
-      end if;
-
-      return Ideal_Mass ;
-   end Person_Ideal_Body_Weight;
-
-   ------------------------
-   ---Ideal_Body_Weight----
-   ------------------------
-
-   function Ideal_Body_Weight (Person : in Interfaces.Human'Class) return Mass_Type
-   is
-      IBW : Mass_Type := 0.0 * kg;
-   begin
-      IBW := Ideal_Body_Weight (Height => Person.Height,
-                                Gender => Person.Gender);
-      return IBW;
-   end Ideal_Body_Weight;
-
-=======
->>>>>>> 3021b847391d27e0bcf2c4f3abb5756d71b5140c
    ------------------------
    -- Calorie_Burned ------
    ------------------------
@@ -191,6 +107,7 @@ package body Health.Services is
    is
       Daily_Calorie   : Calorie_Type := 0.0 * cal;
       Mebabolice_Rate : Calorie_Type;
+      Activity_Level : Immutable_Variant_Record (Option => Activity);
    begin
 
       case  Activity is

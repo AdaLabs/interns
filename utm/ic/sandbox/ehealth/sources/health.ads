@@ -5,18 +5,26 @@ package Health is
                         Women,
                         Other);
 
+
    type Activity_Kind  is (Sedentary,
                            Lightly,
                            Moderately,
                            Very);
 
 
-   type Activity_Factor  is
+   type Immutable_Variant_Record (Option : Activity_Kind) is
       record
-         Sedentary         : Float := 1.2;
-         Lightly_Active    : Float := 1.375;
-         Moderately_Active : Float := 1.55;
-         Very_Active       : Float := 1.725;
+
+         case Option is
+            when Sedentary =>
+               Sedentary_Active         : Float := 1.2;
+            when Lightly =>
+               Lightly_Active           : Float := 1.375;
+            when Moderately =>
+               Moderately_Active        : Float := 1.55;
+            when Very =>
+               Very_Active              : Float := 1.725;
+         end case;
       end record;
 
    type Body_Mks_Type is new Float
