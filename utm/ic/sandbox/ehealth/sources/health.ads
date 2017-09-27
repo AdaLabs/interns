@@ -5,13 +5,18 @@ package Health is
                         Women,
                         Other);
 
+<<<<<<< HEAD
 
    type Activity_Kind  is (Sedentary,
+=======
+type Activity_Kind  is (Sedentary,
+>>>>>>> 776188cd4c008933f6117f534fdf9f3f7b36d5e1
                            Lightly,
                            Moderately,
                            Very);
 
 
+<<<<<<< HEAD
    type Immutable_Variant_Record (Option : Activity_Kind) is
       record
 
@@ -26,6 +31,9 @@ package Health is
                Very_Active              : Float := 1.725;
          end case;
       end record;
+=======
+
+>>>>>>> 776188cd4c008933f6117f534fdf9f3f7b36d5e1
 
    type Body_Mks_Type is new Float
      with
@@ -119,6 +127,20 @@ package Health is
    cr     : constant Calorie_Ratio_Type    := 1.0;
    pragma Warnings (On, "*assumed to be*");
 
+   type Activity_Immutable_Variant_Record (Option : Activity_Kind) is
+      record
+
+         case Option is
+            when Sedentary =>
+               Sedentary_Active         : Calorie_Type := 1.2 * cal;
+            when Lightly =>
+               Lightly_Active           : Float := 1.375;
+            when Moderately =>
+               Moderately_Active        : Float := 1.55;
+            when Very =>
+               Very_Active              : Float := 1.725;
+         end case;
+      end record;
 
    Begin_Template : constant String :="<html><head> <script type='text/javascript'> window.onload = function () { " &
                       " var chart = new CanvasJS.Chart('chartContainer', { title:{ text: 'EHEALTH' },axisX:{  valueFormatString: 'DD-MMM' , " &

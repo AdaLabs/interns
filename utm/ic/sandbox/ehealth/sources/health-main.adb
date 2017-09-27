@@ -19,10 +19,20 @@ is
    Handler                : Ada.Text_IO.File_Type;
    M                      : Classes.Male_Human_Being;
    F                      : Classes.Female_Human_Being;
+<<<<<<< HEAD
 
 begin
     Options.Initialize;
    declare
+=======
+begin
+
+   Options.Initialize;
+
+   case Gender is
+   when Man =>
+      declare
+>>>>>>> 776188cd4c008933f6117f534fdf9f3f7b36d5e1
          Weight_Loss_Required    : Mass_Type ;
          Weight_Six_Month        : Mass_Type;
          Weight_One_Year         : Mass_Type;
@@ -108,6 +118,17 @@ begin
          Put_Line ("Calorie burn: " & Calorie_Type'Image(Calorie_Burned));
 
       end;
+<<<<<<< HEAD
+=======
+   when Women =>
+      raise Program_Error with "not yet implemented";
+
+         pragma Compile_Time_Warning (True, "TODO it seems most part of this can be reused between man and women");
+
+   when Other =>
+      raise Program_Error with "not yet implemented";
+   end case;
+>>>>>>> 776188cd4c008933f6117f534fdf9f3f7b36d5e1
 exception
    when E : others =>
       Put_Line ("(FF)" & Ada.Exceptions.Exception_Information (E));
