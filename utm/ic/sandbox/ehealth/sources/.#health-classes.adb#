@@ -208,23 +208,23 @@ package body Health.Classes is
  is
   Mebabolice_Rate : Calorie_Type;
   BMR             : Calorie_Type;
---   Activity       : Activity_Immutable_Variant_Record (Option => Activies);
+  --   Activity       : Activity_Immutable_Variant_Record (Option => Activies);
  begin
-            BMR := Services.BMR (Mass   => Person.Weight,
-                                Height => Person.Height,
-                                 Year   => Person.Age,
-                                 Gender => Person.Gender);
+  BMR := Services.BMR (Mass   => Person.Weight,
+                       Height => Person.Height,
+                       Year   => Person.Age,
+                       Gender => Person.Gender);
 
-       case Person.Activity is
-          when Sedentary =>
-             Mebabolice_Rate :=  BMR  * 1.2;
-          when Lightly =>
-            Mebabolice_Rate :=  BMR  * 1.375;
-          when Moderately =>
-             Mebabolice_Rate :=  BMR  * 1.55;
-          when Very =>
-             Mebabolice_Rate :=  BMR  * 1.725;
-          end case;
+  case Person.Activity is
+   when Sedentary =>
+    Mebabolice_Rate :=  BMR  * 1.2;
+   when Lightly =>
+    Mebabolice_Rate :=  BMR  * 1.375;
+   when Moderately =>
+    Mebabolice_Rate :=  BMR  * 1.55;
+   when Very =>
+    Mebabolice_Rate :=  BMR  * 1.725;
+  end case;
 
   return Mebabolice_Rate;
  end  Total_Daily_Energy_Expenditure;

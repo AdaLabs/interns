@@ -48,8 +48,6 @@ package Health.Classes is
 
    function Total_Daily_Energy_Expenditure (Person : in Human_Being'Class) return Calorie_Type;
 
-
-
    ----------------
    --  Women_Human_Being
    ----------------
@@ -66,6 +64,8 @@ package Health.Classes is
 
    overriding function Gender   (H : in Women_Human_Being) return Gender_Type is (Women);
 
+
+
 private
 
    type Human_Being is abstract new Interfaces.Human with record
@@ -78,6 +78,8 @@ private
       Min        : Minute_Type;
 
    end record;
+
+
 
    type Man_Human_Being is new Human_Being with null record;
    type Women_Human_Being is new Human_Being with null record;
