@@ -1,5 +1,4 @@
-with Health.Options,
-     Health.Services;
+with Health.Services;
 
 package body Health.Classes is
 
@@ -109,6 +108,29 @@ package body Health.Classes is
  begin
   H.Min := Min;
  end Set_Minuites;
+
+ ------------------------
+ -- Create_Activity ------
+ ------------------------
+
+ function Create_Activity (A : Activity_Kind) return Calorie_Type
+ is
+ begin
+  case A is
+   when Sedentary =>
+    return   1.2 * cal ;
+   when Lightly =>
+    return   1.375 * cal ;
+   when Moderately =>
+    return   1.55 * cal ;
+   when Very =>
+    return   1.725 * cal ;
+  end case;
+ end Create_Activity;
+
+
+
+
  --------------------------
  -- Person_Calorie_Burned--
  --------------------------
@@ -117,6 +139,7 @@ package body Health.Classes is
  is
   Calorie_Burned       : Calorie_Type := 0.0 * cal;
   Total_Calorie_Burned : Calorie_Type := 0.0 * cal;
+
  begin
   Calorie_Burned :=  Services.Calorie_Burned (Year       => Person.Age,
                                               Mass       => Person.Weight,
@@ -124,20 +147,11 @@ package body Health.Classes is
                                               Minutes    => Person.Min, --  Person.Minutes,
                                               Gender     => Person.Gender);
 
-
-  case Options.Activity is
-   when Sedentary =>
-    Total_Calorie_Burned := Calorie_Burned * 1.0 ;
-   when Lightly =>
-    Total_Calorie_Burned := Calorie_Burned * 3.0 ;
-
-   when Moderately =>
-    Total_Calorie_Burned := Calorie_Burned * 5.0 ;
-
-   when Very =>
-    Total_Calorie_Burned := Calorie_Burned * 7.0;
-
-  end case;
+  declare
+  Activity_level       : constant Calorie_Type := Create_Activity (Person.Activity);
+  begin
+   Total_Calorie_Burned := Calorie_Burned * Activity_level * cr;
+  end;
 
   return Total_Calorie_Burned;
  end Person_Calorie_burned;
@@ -153,6 +167,20 @@ package body Health.Classes is
 
   Body_Index := Services.Body_Mass_Index (Mass   => Person.Weight,
                                           Height => Person.Height);
+
+           if Body_Index < (18.5 * mi) then
+         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are underweight");
+      elsif
+        Body_Index > (18.0 * mi) or  Body_Index < (25.0 * mi) then
+         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Normal weight");
+      elsif
+        Body_Index > (25.0 * mi) or   Body_Index < (30.0 * mi) then
+         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Overweight");
+      else
+         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Obese");
+      end if;
+
+
   return Body_Index;
  end Person_BMI;
 
@@ -208,23 +236,18 @@ package body Health.Classes is
  is
   Mebabolice_Rate : Calorie_Type;
   BMR             : Calorie_Type;
---   Activity       : Activity_Immutable_Variant_Record (Option => Activies);
+  --   Activity       : Activity_Immutable_Variant_Record (Option => Activies);
  begin
-            BMR := Services.BMR (Mass   => Person.Weight,
-                                Height => Person.Height,
-                                 Year   => Person.Age,
-                                 Gender => Person.Gender);
+  BMR := Services.BMR (Mass   => Person.Weight,
+                       Height => Person.Height,
+                       Year   => Person.Age,
+                       Gender => Person.Gender);
 
-       case Person.Activity is
-          when Sedentary =>
-             Mebabolice_Rate :=  BMR  * 1.2;
-          when Lightly =>
-            Mebabolice_Rate :=  BMR  * 1.375;
-          when Moderately =>
-             Mebabolice_Rate :=  BMR  * 1.55;
-          when Very =>
-             Mebabolice_Rate :=  BMR  * 1.725;
-          end case;
+                         declare
+  Activity_level       : constant Calorie_Type := Create_Activity (Person.Activity);
+  begin
+   Mebabolice_Rate := BMR * Activity_level * cr;
+  end;
 
   return Mebabolice_Rate;
  end  Total_Daily_Energy_Expenditure;

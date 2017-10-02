@@ -28,7 +28,7 @@ is
                null;
             end return;
          when Women =>
-            return M : Classes.Man_Human_Being do
+            return F : Classes.Women_Human_Being do
                null;
             end return;
          when Other =>
@@ -114,9 +114,6 @@ begin
 
       BMR_Calorie := H.Total_Daily_Energy_Expenditure;
       Put_Line ("Calorie consume/day: " & Calorie_Type'Image(BMR_Calorie));
-      --      Put_Line ("Carbs: " & Calorie_Type'Image( BMR_Calorie * 0.4));
-      --      Put_Line ("Fats: " & Calorie_Type'Image( BMR_Calorie * 0.3));
-      --      Put_Line ("Protein: " & Calorie_Type'Image( BMR_Calorie * 0.3));
 
       Calorie_Burned := H.Person_Calorie_burned;
       Put_Line ("Calorie burn: " & Calorie_Type'Image(Calorie_Burned));

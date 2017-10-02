@@ -36,6 +36,7 @@ package Health.Services is
                             Heart_Rate : Heart_Rate_Type;
                             Minutes    : Minute_Type;
                             Gender     : Gender_Type) return Calorie_Type;
+
    --  with Pre => Heart_Rate >= 90.0 * bpm;
    --
    --  above commented because of gnat 2014 potential bug
