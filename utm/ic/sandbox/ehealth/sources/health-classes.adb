@@ -168,19 +168,6 @@ package body Health.Classes is
   Body_Index := Services.Body_Mass_Index (Mass   => Person.Weight,
                                           Height => Person.Height);
 
-           if Body_Index < (18.5 * mi) then
-         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are underweight");
-      elsif
-        Body_Index > (18.0 * mi) or  Body_Index < (25.0 * mi) then
-         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Normal weight");
-      elsif
-        Body_Index > (25.0 * mi) or   Body_Index < (30.0 * mi) then
-         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Overweight");
-      else
-         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Obese");
-      end if;
-
-
   return Body_Index;
  end Person_BMI;
 

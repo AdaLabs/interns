@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file />
+    <file_marker column=" 20" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/src/project-main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/spark.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 26" >
+      <vfs_project />
+      <vfs_file>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/spark.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/sources/project-main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 11" line=" 6" >
+      <vfs_project>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/spark.gpr</vfs_project>
+      <vfs_file>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/sources/spark-main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 1" >
+      <vfs_project>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/spark.gpr</vfs_project>
+      <vfs_file>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/sources/spark-main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 6" >
+      <vfs_project>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/spark.gpr</vfs_project>
+      <vfs_file>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/sources/spark-services.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/spark.gpr</vfs_project>
+      <vfs_file>/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/sources/spark.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

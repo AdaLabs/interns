@@ -8,20 +8,6 @@ package Health is
                            Lightly,
                            Moderately,
                            Very);
-   type Activity_Immutable_Variant_Record (Option : Activity_Kind) is
-      record
-
-         case Option is
-            when Sedentary =>
-               Sedentary_Active         : Float := 1.2;
-            when Lightly =>
-               Lightly_Active           : Float := 1.375;
-            when Moderately =>
-               Moderately_Active        : Float := 1.55;
-            when Very =>
-               Very_Active              : Float := 1.725;
-         end case;
-      end record;
 
 
    type Body_Mks_Type is new Float
@@ -116,6 +102,10 @@ package Health is
    cr     : constant Calorie_Ratio_Type    := 1.0;
    pragma Warnings (On, "*assumed to be*");
 
+      subtype Under_Weight is BMI_Type range 0.0..18.5;
+      subtype Normal_Weight is BMI_Type range 18.6..25.0;
+       subtype Over_Weight is BMI_Type range 25.1..30.0;
+      subtype Obese is BMI_Type range 30.1..100.0;
 
 
    Begin_Template : constant String :="<html><head> <script type='text/javascript'> window.onload = function () { " &

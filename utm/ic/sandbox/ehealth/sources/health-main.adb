@@ -51,17 +51,31 @@ begin
       H.Set_Activity (Activity);
 
       Body_Index     := H.Person_BMI;
-      if Body_Index < (18.5 * mi) then
-         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are underweight");
-      elsif
-        Body_Index > (18.0 * mi) or  Body_Index < (25.0 * mi) then
-         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Normal weight");
-      elsif
-        Body_Index > (25.0 * mi) or   Body_Index < (30.0 * mi) then
-         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Overweight");
-      else
-         Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Obese");
-      end if;
+--      case Body_Index is
+--     when Under_Weight =>
+--    Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are underweight");
+--     when Normal_Weight =>
+--      return   1.375  ;
+--     when Over_Weight =>
+--      return   1.55  ;
+--     when Obese =>
+--      return   1.0;
+--    end case;
+
+
+
+             if Body_Index < (18.5 * mi) then
+           Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are underweight");
+        elsif
+          Body_Index > (18.0 * mi) or  Body_Index < (25.0 * mi) then
+           Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Normal weight");
+        elsif
+          Body_Index > (25.0 * mi) or   Body_Index < (30.0 * mi) then
+          Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Overweight");
+        else
+          Put_Line ("Your BMI is: " & Mass_Type'Image(Body_Index) & " you are Obese");
+        end if;
+
 
       Weight_Gain    := H.Project_Weight_Gain * 12.0;
       Ideal_Weight   := H.Ideal_Body_Weight;
@@ -77,7 +91,7 @@ begin
 
       Create(File => Handler ,
              Mode => Out_File ,
-             Name => "result.html");
+             Name => "ui/result.html");
 
       Put_Line (File => Handler,
                 Item => Begin_Template);

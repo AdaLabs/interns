@@ -8,6 +8,7 @@ package Health.Classes is
    --  Human_Being
    ----------------
 
+
    type Human_Being is abstract new Interfaces.Human with private;
 
    overriding function Name     (H : in Human_Being) return String;
