@@ -1,1 +1,26 @@
+Summary of SPARK analysis
+=========================
 
+-----------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   Interval   CodePeer   Provers   Justified   Unproved
+-----------------------------------------------------------------------------------------------------
+Data Dependencies                 .          .          .          .         .           .          .
+Flow Dependencies                 .          .          .          .         .           .          .
+Initialization                    8          7          .          .         .           .          1
+Non-Aliasing                      .          .          .          .         .           .          .
+Run-time Checks                   .          .          .          .         .           .          .
+Assertions                        .          .          .          .         .           .          .
+Functional Contracts              .          .          .          .         .           .          .
+LSP Verification                  .          .          .          .         .           .          .
+-----------------------------------------------------------------------------------------------------
+Total                             8    7 (88%)          .          .         .           .    1 (13%)
+
+
+Analyzed 3 units
+in unit project-main, 0 subprograms and packages out of 1 analyzed
+  Project_Main at project-main.adb:1 skipped
+in unit spark-main, 0 subprograms and packages out of 1 analyzed
+  Spark.Main at spark-main.adb:1 skipped
+in unit spark-services, 2 subprograms and packages out of 2 analyzed
+  Spark.Services at spark-services.ads:1 flow analyzed (0 errors and 0 warnings)
+  Spark.Services.Search at spark-services.ads:25 flow analyzed (0 errors and 1 warnings)

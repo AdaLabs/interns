@@ -24,4 +24,5 @@ project Spark is
    package Compiler is
       for Default_Switches ("Ada") use Base_Compiler_Switches;
    end Compiler;
+
 end Spark;
