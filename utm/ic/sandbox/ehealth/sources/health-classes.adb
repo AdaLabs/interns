@@ -43,6 +43,12 @@ package body Health.Classes is
  begin
   return H.Min;
  end Minutes;
+
+   function Calorie_Intake (H : in Human_Being) return Calorie_Type
+   is
+   begin
+  return H.Calorie_Intake;
+end;
  ---------------
  -- Set_Height--
  ----------------
@@ -109,6 +115,17 @@ package body Health.Classes is
   H.Min := Min;
  end Set_Minuites;
 
+ -------------------------
+ -- Set_Calorie_Intake----
+ -------------------------
+
+  procedure Set_Calorie_Intake (H         : in out Human_Being;
+                               Calorie_Intake       : in     Calorie_Type)
+                               is
+                               begin
+  H.Calorie_Intake := Calorie_Intake;
+end;
+
  ------------------------
  -- Create_Activity ------
  ------------------------
@@ -171,33 +188,29 @@ package body Health.Classes is
   return Body_Index;
  end Person_BMI;
 
+
+
+
+
  -------------------------
  -- Project_Weight_Gain_--
  -------------------------
 
  function  Project_Weight_Gain (Person : in Human_Being'Class) return Mass_Type
  is
-  Calorie_Consume       : constant Calorie_Type := 2000.0 * cal;
-  Daily_Calorie_Intake  :          Calorie_Type := 0.0 * cal;
-  Excess_Calorie_Intake :          Calorie_Type := 0.0 * cal;
-  Weight_Gain           :          Mass_Type    := 0.0 * kg;
+  Daily_Calorie_Required  :        Calorie_Type := 0.0 * cal;
+   Excess_Calorie  :    Calorie_Type := 0.0 * cal;
+  Weight_Gain           : Mass_Type    := 0.0 * kg;
  begin
 
-  Daily_Calorie_Intake := Services.DTEE (Activity => Person.Activity,
+  Daily_Calorie_Required := Services.DTEE (Activity => Person.Activity,
                                          Mass     => Person.Weight,
                                          Height   => Person.Height,
                                          Year     => Person.Age,
                                          Gender   => Person.Gender);
 
-  if Calorie_Consume > Daily_Calorie_Intake then
-   Excess_Calorie_Intake :=  (Calorie_Consume - Daily_Calorie_Intake) * 365.0;
-   Weight_Gain := (Excess_Calorie_Intake / 7700.0 * cr)*kg;
-
-  else
-   Excess_Calorie_Intake := (Daily_Calorie_Intake - Calorie_Consume) * 365.0;
-   Weight_Gain := (Excess_Calorie_Intake / 7700.0 * cr) * kg;
-  end if;
-
+    Excess_Calorie :=  (Person.Calorie_Intake - Daily_Calorie_Required) * 365.0; -- Excess calorie consume per year
+    Weight_Gain := ( Excess_Calorie / 7700.0 * cr)*kg;
   return Weight_Gain;
  end Project_Weight_Gain;
 
@@ -245,19 +258,15 @@ package body Health.Classes is
 
  function  Weight_Loss_Required (Person : in Human_Being'Class) return Mass_Type
  is
-  Current_weight        : constant Mass_Type := Person.Weight;
   IBW                   :          Mass_Type := 0.0 * kg;
-  Excess_Weight_Loss    :          Mass_Type;
+  Excess_Weight    :          Mass_Type;
  begin
   IBW := Services.Ideal_Body_Weight (Height => Person.Height,
                                      Gender => Person.Gender);
-  if Current_weight >= IBW then
-   Excess_Weight_Loss  := Current_weight - IBW;
-  else
-   Excess_Weight_Loss  := IBW - Current_weight;
-  end if;
+  Excess_Weight  := Person.Weight - IBW;
 
-  return Excess_Weight_Loss;
+
+  return Excess_Weight;
  end Weight_Loss_Required;
 
 end Health.Classes;

@@ -9,13 +9,14 @@ package Health.Options is
    Minutes    : Minute_Type;
    Height     : Height_Type;
    Activity   : Activity_Kind;
+   Calorie_Intake : Calorie_Type;
 
    procedure Initialize;
 
 private
 
    package Analyzer is new Options_Analyzer (Binary_Options => "vh",
-                                             Valued_Options => "ywrmcga",
+                                             Valued_Options => "ywrmcgai",
                                              Tail_Separator => "--");
 
 end Health.Options;

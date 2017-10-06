@@ -11,11 +11,11 @@
       "spark": "all"
     },
     {
-      "name": "Spark.Services.Search",
+      "name": "Spark.Services.test",
       "sloc": [
         {
           "file": "spark-services.ads",
-          "line": 25
+          "line": 23
         }
       ],
       "spark": "all"
@@ -24,162 +24,42 @@
   "flow": [
     {
       "file": "spark-services.adb",
-      "line": 32,
-      "col": 15,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
+      "line": 28,
+      "col": 2,
+      "rule": "INEFFECTIVE",
+      "severity": "warning",
       "entity": {
-        "name": "Spark.Services.Search",
+        "name": "Spark.Services.test",
         "sloc": [
           {
             "file": "spark-services.ads",
-            "line": 25
+            "line": 23
           }
         ]
       },
       "check_tree": {
       },
-      "tracefile": "spark-services__flow__33.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "spark-services.adb",
-      "line": 33,
-      "col": 29,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Spark.Services.Search",
-        "sloc": [
-          {
-            "file": "spark-services.ads",
-            "line": 25
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "spark-services__flow__33.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "spark-services.adb",
-      "line": 35,
-      "col": 20,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Spark.Services.Search",
-        "sloc": [
-          {
-            "file": "spark-services.ads",
-            "line": 25
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "spark-services__flow__33.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "spark-services.adb",
-      "line": 35,
-      "col": 20,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Spark.Services.Search",
-        "sloc": [
-          {
-            "file": "spark-services.ads",
-            "line": 25
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "spark-services__flow__33.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "spark-services.adb",
-      "line": 38,
-      "col": 17,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Spark.Services.Search",
-        "sloc": [
-          {
-            "file": "spark-services.ads",
-            "line": 25
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "spark-services__flow__33.trace",
+      "tracefile": "spark-services__flow__32.trace",
       "how_proved": "flow"
     },
     {
       "file": "spark-services.adb",
       "line": 31,
-      "col": 13,
+      "col": 10,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
-        "name": "Spark.Services.Search",
+        "name": "Spark.Services.test",
         "sloc": [
           {
             "file": "spark-services.ads",
-            "line": 25
+            "line": 23
           }
         ]
       },
       "check_tree": {
       },
-      "tracefile": "spark-services__flow__33.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "spark-services.adb",
-      "line": 42,
-      "col": 14,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Spark.Services.Search",
-        "sloc": [
-          {
-            "file": "spark-services.ads",
-            "line": 25
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "spark-services__flow__33.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "spark-services.adb",
-      "line": 42,
-      "col": 14,
-      "rule": "UNINITIALIZED",
-      "severity": "high",
-      "entity": {
-        "name": "Spark.Services.Search",
-        "sloc": [
-          {
-            "file": "spark-services.ads",
-            "line": 25
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "spark-services__flow__33.trace",
+      "tracefile": "spark-services__flow__35.trace",
       "how_proved": "flow"
     }
   ],
@@ -190,11 +70,11 @@
       "claim": {
         "predicate": "CLAIM_EFFECTS",
         "arg": {
-          "name": "Spark.Services.Search",
+          "name": "Spark.Services.test",
           "sloc": [
             {
               "file": "spark-services.ads",
-              "line": 25
+              "line": 23
             }
           ]
         }
@@ -202,9 +82,9 @@
     }
   ],
   "timings": {
-    "marking": 3.10000003082678E-04,
-    "globals (basic)": 2.45000002905726E-04,
-    "globals/properties (advanced)": 4.79999987874180E-04,
-    "flow analysis": 4.49899993836880E-02
+    "marking": 1.88999998499639E-04,
+    "globals (basic)": 1.61999996635132E-04,
+    "globals/properties (advanced)": 2.77000013738871E-04,
+    "flow analysis": 1.30300002638251E-03
   }
 }
