@@ -16,11 +16,13 @@ LSP Verification                  .           .          .          .         . 
 Total                             1    1 (100%)          .          .         .           .          .
 
 
-Analyzed 3 units
+Analyzed 4 units
+in unit division_check-main, 0 subprograms and packages out of 1 analyzed
+  Division_Check.Main at division_check-main.adb:3 skipped
 in unit project-main, 0 subprograms and packages out of 1 analyzed
   Project_Main at project-main.adb:1 skipped
 in unit spark-main, 0 subprograms and packages out of 1 analyzed
-  Spark.Main at spark-main.adb:4 skipped
+  Spark.Main at spark-main.adb:3 skipped
 in unit spark-services, 2 subprograms and packages out of 2 analyzed
   Spark.Services at spark-services.ads:1 flow analyzed (0 errors and 0 warnings)
   Spark.Services.test at spark-services.ads:23 flow analyzed (0 errors and 1 warnings)

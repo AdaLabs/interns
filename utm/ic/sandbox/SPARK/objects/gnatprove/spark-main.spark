@@ -5,7 +5,7 @@
       "sloc": [
         {
           "file": "spark-main.adb",
-          "line": 4
+          "line": 3
         }
       ],
       "spark": "no"
@@ -16,9 +16,9 @@
   "assumptions": [
   ],
   "timings": {
-    "marking": 1.55100005213171E-03,
-    "globals (basic)": 6.28199987113476E-03,
-    "globals/properties (advanced)": 3.59100010246038E-03,
-    "flow analysis": 1.10000000859145E-04
+    "marking": 1.66399998124689E-03,
+    "globals (basic)": 6.03799987584352E-03,
+    "globals/properties (advanced)": 5.38100022822618E-03,
+    "flow analysis": 1.06999999843538E-04
   }
 }

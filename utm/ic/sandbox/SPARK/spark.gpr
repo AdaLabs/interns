@@ -5,7 +5,10 @@ project Spark is
 
        for Exec_Dir use "binaries";
 
-    for Main use ("spark-main.adb");
+    for Main use ("spark-main.adb",
+                               "division_Check-main.adb",
+                               "index_check.adb",
+                               "overflow_check.adb");
 
      Base_Compiler_Switches :=
      ("-gnatn",

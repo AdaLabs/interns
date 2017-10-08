@@ -1,8 +1,0 @@
-spark-services.adb:1:20: missing body for "Index_checking" declared at spark-services.ads:11
-spark-services.adb:13:12: "Index_checking" conflicts with declaration at spark-services.ads:11
-spark-services.adb:14:02: "is" should be ";"
-spark-services.adb:17:11: "I" is undefined
-spark-services.adb:17:15: "J" is undefined
-spark-services.adb:18:03: illegal context for return statement
-spark-services.adb:20:04: declarations must come before "begin"
-spark-services.adb:24:18: parentheses required for unary minus
