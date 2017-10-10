@@ -1,0 +1,22 @@
+[MAPPING FILE]
+/tmp/GNAT-TEMP-000006.TMP
+[TOOLCHAIN VERSION]
+ada
+GNAT 2017
+[MAIN BASE NAME]
+overflow_check
+[COMPILER PATH]
+/opt/gnat2017/bin/gcc
+[COMPILER LEADING SWITCHES]
+-c
+-x
+ada
+-gnatA
+[MAIN DEPENDENCY FILE]
+/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/objects/overflow_check.ali
+[DEPENDENCY FILES]
+[BINDING OPTIONS]
+gnatbind_prefix=
+[PROJECT FILES]
+/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/spark.gpr
+20171008095552

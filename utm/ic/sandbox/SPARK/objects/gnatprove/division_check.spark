@@ -1,0 +1,179 @@
+{
+  "spark": [
+    {
+      "name": "Division_Check",
+      "sloc": [
+        {
+          "file": "division_check.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Division_Check.Division_Checking",
+      "sloc": [
+        {
+          "file": "division_check.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "division_check.adb",
+      "line": 10,
+      "col": 10,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Division_Check.Division_Checking",
+        "sloc": [
+          {
+            "file": "division_check.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "division_check__flow__29.trace",
+      "how_proved": "flow"
+    }
+  ],
+  "proof": [
+    {
+      "file": "division_check.adb",
+      "line": 9,
+      "col": 17,
+      "rule": "VC_FP_OVERFLOW_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "Division_Check.Division_Checking",
+        "sloc": [
+          {
+            "file": "division_check.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Timeout",
+              "steps": -1,
+              "time": 1.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 0,
+      "how_proved": "prover"
+    },
+    {
+      "file": "division_check.adb",
+      "line": 9,
+      "col": 17,
+      "rule": "VC_DIVISION_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Division_Check.Division_Checking",
+        "sloc": [
+          {
+            "file": "division_check.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 365,
+              "time": 8.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 366,
+          "max_time": 7.99999982118607E-02
+        }
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Division_Check.Division_Checking",
+          "sloc": [
+            {
+              "file": "division_check.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Division_Check",
+          "sloc": [
+            {
+              "file": "division_check.ads",
+              "line": 1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 1.51000000187196E-04,
+    "globals (basic)": 1.27999999676831E-04,
+    "globals/properties (advanced)": 2.28999997489154E-04,
+    "flow analysis": 1.16900005377829E-03,
+    "codepeer results": 1.99999999495049E-06,
+    "init_why_sections": 1.44000005093403E-04,
+    "translation of standard": 2.36000004224479E-03,
+    "translation of compilation unit": 4.26999991759658E-04,
+    "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_inductive": 4.00000018998981E-03,
+    "gnatwhy3.register_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_if": 8.00000037997961E-03,
+    "gnatwhy3.transformations.explode_record_param": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eval_match": 8.00000037997961E-03,
+    "gnatwhy3.schedule_vcs": 8.00000037997961E-03,
+    "gnatwhy3.init": 1.67999997735023E-01,
+    "gnatwhy3.transformations.inline_trivial": 1.20000001043081E-02,
+    "gnatwhy3.transformations.inline_tagged": 4.00000018998981E-03,
+    "gnatwhy3.transformations.simplify_formula": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_let": 8.00000037997961E-03,
+    "gnatwhy3.save_session": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_builtin": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_algebraic": 8.00000037997961E-03,
+    "gnatwhy3.transformations.eliminate_literal": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_recursion": 0.00000000000000E+00,
+    "proof": 1.40375602245331E+00
+  }
+}

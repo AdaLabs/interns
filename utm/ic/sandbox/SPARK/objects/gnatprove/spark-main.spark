@@ -5,7 +5,7 @@
       "sloc": [
         {
           "file": "spark-main.adb",
-          "line": 3
+          "line": 4
         }
       ],
       "spark": "no"
@@ -13,12 +13,19 @@
   ],
   "flow": [
   ],
+  "proof": [
+  ],
   "assumptions": [
   ],
   "timings": {
-    "marking": 1.66399998124689E-03,
-    "globals (basic)": 6.03799987584352E-03,
-    "globals/properties (advanced)": 5.38100022822618E-03,
-    "flow analysis": 1.06999999843538E-04
+    "marking": 2.73000012384728E-04,
+    "globals (basic)": 1.76000001374632E-04,
+    "globals/properties (advanced)": 2.55999999353662E-04,
+    "flow analysis": 2.80000003840541E-05,
+    "codepeer results": 1.99999999495049E-06,
+    "init_why_sections": 1.80000002728775E-04,
+    "translation of standard": 2.36500008031726E-03,
+    "translation of compilation unit": 1.92199996672571E-03,
+    "proof": 1.99999999495049E-06
   }
 }

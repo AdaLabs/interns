@@ -1,0 +1,31 @@
+{
+  "spark": [
+    {
+      "name": "Index_Check.Main",
+      "sloc": [
+        {
+          "file": "index_check-main.adb",
+          "line": 4
+        }
+      ],
+      "spark": "no"
+    }
+  ],
+  "flow": [
+  ],
+  "proof": [
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "marking": 1.59200001507998E-03,
+    "globals (basic)": 4.79600019752979E-03,
+    "globals/properties (advanced)": 4.92799980565906E-03,
+    "flow analysis": 1.15000002551824E-04,
+    "codepeer results": 1.99999999495049E-06,
+    "init_why_sections": 1.76000001374632E-04,
+    "translation of standard": 2.97800009138882E-03,
+    "translation of compilation unit": 2.80879996716976E-02,
+    "proof": 9.99999997475243E-07
+  }
+}

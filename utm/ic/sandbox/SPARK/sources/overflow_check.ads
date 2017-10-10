@@ -4,8 +4,6 @@ is
 
 
 
- type check_Array  is array (Integer  range <>)  of Natural;
- A : check_Array (1 .. 10);
- function Overflow_checking (I, J: Integer) return Integer;
+ function Overflow_checking (I: Integer) return Integer;
 
 end  Overflow_Check;

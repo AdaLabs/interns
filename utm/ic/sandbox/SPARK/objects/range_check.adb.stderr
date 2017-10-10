@@ -1,0 +1,2 @@
+range_check.adb:16:16: value not in range of type "Number" defined at range_check.ads:6
+range_check.adb:16:16: "Constraint_Error" would have been raised at run time

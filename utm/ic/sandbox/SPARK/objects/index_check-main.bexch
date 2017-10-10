@@ -1,0 +1,20 @@
+[GENERATED OBJECT FILE]
+b__index_check-main.o
+[PROJECT FILES]
+/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/spark.gpr
+20171009154807
+[BOUND OBJECT FILES]
+/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/objects/index_check.o
+/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/objects/index_check-main.o
+[GENERATED SOURCE FILES]
+b__index_check-main.ads
+b__index_check-main.adb
+b__index_check-main.ali
+[RESULTING OPTIONS]
+-L/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/objects/
+-L/home/ingrid/adalabs/interns/utm/ic/sandbox/SPARK/objects/
+-L/opt/gnat2017/lib/gcc/x86_64-pc-linux-gnu/6.3.1/adalib/
+-static
+-static-libgcc
+/opt/gnat2017/lib/gcc/x86_64-pc-linux-gnu/6.3.1/adalib/libgnat.a
+-ldl

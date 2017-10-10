@@ -1,0 +1,83 @@
+{
+  "spark": [
+    {
+      "name": "Range_Check",
+      "sloc": [
+        {
+          "file": "range_check.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Range_Check.Print_and_Increment",
+      "sloc": [
+        {
+          "file": "range_check.ads",
+          "line": 7
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Range_Check.Print_and_Increment.Next",
+      "sloc": [
+        {
+          "file": "range_check.adb",
+          "line": 10
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+  ],
+  "proof": [
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Range_Check.Print_and_Increment",
+          "sloc": [
+            {
+              "file": "range_check.ads",
+              "line": 7
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Range_Check.Print_and_Increment.Next",
+          "sloc": [
+            {
+              "file": "range_check.adb",
+              "line": 10
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 1.65000004926696E-04,
+    "globals (basic)": 1.08000000182074E-04,
+    "globals/properties (advanced)": 3.23999993270263E-04,
+    "flow analysis": 1.15799997001886E-03,
+    "codepeer results": 9.99999997475243E-07,
+    "init_why_sections": 2.96000012895092E-04,
+    "translation of standard": 2.69100000150502E-03,
+    "translation of compilation unit": 4.56999987363815E-04,
+    "proof": 1.99999999495049E-06
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "spark": [
+    {
+      "name": "Index_Check",
+      "sloc": [
+        {
+          "file": "index_check.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Index_Check.sumEmUp",
+      "sloc": [
+        {
+          "file": "index_check.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "index_check.adb",
+      "line": 11,
+      "col": 28,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Index_Check.sumEmUp",
+        "sloc": [
+          {
+            "file": "index_check.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "index_check__flow__30.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "index_check.adb",
+      "line": 13,
+      "col": 24,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Index_Check.sumEmUp",
+        "sloc": [
+          {
+            "file": "index_check.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "index_check__flow__30.trace",
+      "how_proved": "flow"
+    }
+  ],
+  "proof": [
+    {
+      "file": "index_check.adb",
+      "line": 11,
+      "col": 32,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "Index_Check.sumEmUp",
+        "sloc": [
+          {
+            "file": "index_check.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Unknown (none)",
+              "steps": -1,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 0,
+      "how_proved": "prover"
+    },
+    {
+      "file": "index_check.adb",
+      "line": 11,
+      "col": 32,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "Index_Check.sumEmUp",
+        "sloc": [
+          {
+            "file": "index_check.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Unknown (none)",
+              "steps": -1,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 1,
+      "how_proved": "prover"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Index_Check",
+          "sloc": [
+            {
+              "file": "index_check.ads",
+              "line": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Index_Check.sumEmUp",
+          "sloc": [
+            {
+              "file": "index_check.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 2.43999995291233E-04,
+    "globals (basic)": 1.44000005093403E-04,
+    "globals/properties (advanced)": 2.87000002572313E-04,
+    "flow analysis": 1.72599998768419E-03,
+    "codepeer results": 1.99999999495049E-06,
+    "init_why_sections": 2.18999994103797E-04,
+    "translation of standard": 3.51399998180568E-03,
+    "translation of compilation unit": 1.62400002591312E-03,
+    "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "gnatwhy3.register_vcs": 0.00000000000000E+00,
+    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
+    "gnatwhy3.init": 2.19999998807907E-01,
+    "gnatwhy3.save_session": 0.00000000000000E+00,
+    "proof": 3.30473989248276E-01
+  }
+}

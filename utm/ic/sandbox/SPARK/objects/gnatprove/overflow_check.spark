@@ -1,0 +1,142 @@
+{
+  "spark": [
+    {
+      "name": "Overflow_Check",
+      "sloc": [
+        {
+          "file": "overflow_check.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Overflow_Check.Overflow_checking",
+      "sloc": [
+        {
+          "file": "overflow_check.ads",
+          "line": 7
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "overflow_check.adb",
+      "line": 10,
+      "col": 10,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Overflow_Check.Overflow_checking",
+        "sloc": [
+          {
+            "file": "overflow_check.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "overflow_check__flow__26.trace",
+      "how_proved": "flow"
+    }
+  ],
+  "proof": [
+    {
+      "file": "overflow_check.adb",
+      "line": 9,
+      "col": 11,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "Overflow_Check.Overflow_checking",
+        "sloc": [
+          {
+            "file": "overflow_check.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Unknown (other)",
+              "steps": -1,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 0,
+      "how_proved": "prover"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Overflow_Check.Overflow_checking",
+          "sloc": [
+            {
+              "file": "overflow_check.ads",
+              "line": 7
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Overflow_Check",
+          "sloc": [
+            {
+              "file": "overflow_check.ads",
+              "line": 1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 2.05999996978790E-04,
+    "globals (basic)": 1.59000002895482E-04,
+    "globals/properties (advanced)": 2.96000012895092E-04,
+    "flow analysis": 1.30700005684048E-03,
+    "codepeer results": 1.99999999495049E-06,
+    "init_why_sections": 2.22000002395362E-04,
+    "translation of standard": 3.62399988807738E-03,
+    "translation of compilation unit": 4.92000021040440E-04,
+    "gnatwhy3.run_vcs": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
+    "gnatwhy3.register_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_if": 0.00000000000000E+00,
+    "gnatwhy3.transformations.explode_record_param": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eval_match": 0.00000000000000E+00,
+    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
+    "gnatwhy3.init": 2.03999996185303E-01,
+    "gnatwhy3.transformations.inline_trivial": 0.00000000000000E+00,
+    "gnatwhy3.transformations.inline_tagged": 4.00000018998981E-03,
+    "gnatwhy3.transformations.simplify_formula": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_epsilon": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_let": 0.00000000000000E+00,
+    "gnatwhy3.save_session": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_algebraic": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_literal": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_recursion": 0.00000000000000E+00,
+    "proof": 3.45838993787766E-01
+  }
+}
