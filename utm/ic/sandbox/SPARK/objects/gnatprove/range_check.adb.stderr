@@ -1,0 +1,1 @@
+range_check.ads:12:20: function with output global "total_sum" is not allowed in SPARK[#0]

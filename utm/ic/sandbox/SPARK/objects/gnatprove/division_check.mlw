@@ -1505,72 +1505,68 @@ module Standard__universal_integer__rep
 
 end
 
-(* Module for defining the constant "valuea" defined at division_check.ads:5, created in Gnat2Why.Decls.Translate_Constant *)
-module Division_check__division_checking__valuea
+(* Module for defining the constant "kg" defined at division_check.ads:5, created in Gnat2Why.Decls.Translate_Constant *)
+module Division_check__bmi__kg
  use import "_gnatprove_standard".Main
- use        "_gnatprove_standard".Float32
 
- function valuea #"division_check.ads" 5 0 0# 
-   : Float32.t
+ function kg #"division_check.ads" 5 0 0# "model" "model_trace:2382" 
+   : int
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
    : int
 
 end
 
-(* Module giving an empty axiom for the entity "valuea" defined at division_check.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Division_check__division_checking__valuea___axiom
+(* Module giving an empty axiom for the entity "kg" defined at division_check.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Division_check__bmi__kg___axiom
  use import "_gnatprove_standard".Main
 
 
 end
 
-(* Module for defining the constant "valueb" defined at division_check.ads:5, created in Gnat2Why.Decls.Translate_Constant *)
-module Division_check__division_checking__valueb
+(* Module for defining the constant "cm" defined at division_check.ads:5, created in Gnat2Why.Decls.Translate_Constant *)
+module Division_check__bmi__cm
  use import "_gnatprove_standard".Main
- use        "_gnatprove_standard".Float32
 
- function valueb #"division_check.ads" 5 0 0# 
-   : Float32.t
+ function cm #"division_check.ads" 5 0 0# "model" "model_trace:2389" 
+   : int
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
    : int
 
 end
 
-(* Module giving an empty axiom for the entity "valueb" defined at division_check.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Division_check__division_checking__valueb___axiom
+(* Module giving an empty axiom for the entity "cm" defined at division_check.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Division_check__bmi__cm___axiom
  use import "_gnatprove_standard".Main
 
 
 end
 
-(* Module for possibly declaring a logic function for "division_checking" defined at division_check.ads:5, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Division_check__division_checking
+(* Module for possibly declaring a logic function for "bmi" defined at division_check.ads:5, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Division_check__bmi
  use import "_gnatprove_standard".Main
- use        "_gnatprove_standard".Float32
 
- function division_checking #"division_check.ads" 5 0 0# 
-   (valuea : Float32.t) (valueb : Float32.t) : Float32.t
+ function bmi #"division_check.ads" 5 0 0# 
+   (kg : int) (cm : int) : int
  
- predicate division_checking__function_guard #"system.ads" 1 0 0# 
-   (result : Float32.t) (valuea : Float32.t) (valueb : Float32.t) 
+ predicate bmi__function_guard #"system.ads" 1 0 0# 
+   (result : int) (kg : int) (cm : int) 
 
 end
-(* Module for defining a ref holding the value of variable "sum" defined at division_check.adb:7, created in Gnat2Why.Decls.Translate_Variable *)
-module Division_check__division_checking__sum
+(* Module for defining a ref holding the value of variable "result" defined at division_check.adb:6, created in Gnat2Why.Decls.Translate_Variable *)
+module Division_check__bmi__result
  use import "_gnatprove_standard".Main
- use        "_gnatprove_standard".Float32
 
- val sum #"division_check.adb" 7 0 0#  : Float32.t__ref 
+ val result__ #"division_check.adb" 6 0 0# "model_projected" "model_trace:2335"  : int__ref 
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
    : int
 
 end
 
-(* Module giving an empty axiom for the entity "sum" defined at division_check.adb:7, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Division_check__division_checking__sum___axiom
+(* Module giving an empty axiom for the entity "result" defined at division_check.adb:6, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Division_check__bmi__result___axiom
  use import "_gnatprove_standard".Main
 
 
@@ -1937,23 +1933,23 @@ module Standard__universal_integer___axiom
   #"system.ads" 1 0 0# true
 
 end
-(* Module for declaring a program function (and possibly an axiom) for "division_checking" defined at division_check.ads:5, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Division_check__division_checking___axiom
+(* Module for declaring a program function (and possibly an axiom) for "bmi" defined at division_check.ads:5, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Division_check__bmi___axiom
  use import "_gnatprove_standard".Main
- use        "_gnatprove_standard".Float32
- use        Standard__float___axiom
- use        Division_check__division_checking
+ use import "int".Int
+ use        Standard__integer___axiom
+ use        Division_check__bmi
 
- val division_checking #"division_check.ads" 5 0 0# 
-   (valuea : Float32.t) (valueb : Float32.t) : Float32.t
-  requires { #"system.ads" 1 0 0# (Float32.gt valueb (0.0E-1:Float32.t)) }
-  ensures { #"division_check.ads" 6 0 0# ( ( (result = (Division_check__division_checking.division_checking valuea valueb)) /\ (Division_check__division_checking.division_checking__function_guard result valuea valueb) ) /\ (Standard__float___axiom.dynamic_invariant result True False True) ) }
+ val bmi #"division_check.ads" 5 0 0# 
+   (kg : int) (cm : int) : int
+  requires { #"system.ads" 1 0 0# (cm > 0) }
+  ensures { #"division_check.ads" 5 0 0# ( ( (result = (Division_check__bmi.bmi kg cm)) /\ (Division_check__bmi.bmi__function_guard result kg cm) ) /\ (Standard__integer___axiom.dynamic_invariant result True False True) ) }
  
- axiom division_checking__post_axiom :
-  (forall valuea #"division_check.ads" 5 0 0#  valueb #"division_check.ads" 5 0 0#  : Float32.t [(Division_check__division_checking.division_checking valuea valueb)].
-   ( ( ( (Standard__float___axiom.dynamic_invariant valuea True True True) /\ (Standard__float___axiom.dynamic_invariant valueb True True True) ) /\ (Float32.gt valueb (0.0E-1:Float32.t)) ) -> (let result = (Division_check__division_checking.division_checking valuea valueb) in (
-    (if ((Division_check__division_checking.division_checking__function_guard result valuea valueb)) then (
-     (Standard__float___axiom.dynamic_invariant result True False True)) else true)))
+ axiom bmi__post_axiom :
+  (forall kg #"division_check.ads" 5 0 0#  cm #"division_check.ads" 5 0 0#  : int [(Division_check__bmi.bmi kg cm)].
+   ( ( ( (Standard__integer___axiom.dynamic_invariant kg True True True) /\ (Standard__integer___axiom.dynamic_invariant cm True True True) ) /\ (cm > 0) ) -> (let result = (Division_check__bmi.bmi kg cm) in (
+    (if ((Division_check__bmi.bmi__function_guard result kg cm)) then (
+     (Standard__integer___axiom.dynamic_invariant result True False True)) else true)))
     ))
 
 end
@@ -1967,24 +1963,26 @@ module Division_check__package_def
   requires { #"division_check.ads" 5 0 0# true }
   ensures { #"division_check.ads" 5 0 0# true }
    =
-  ( "GP_Sloc:division_check.adb:15:1" () )
+  ( "GP_Sloc:division_check.adb:14:1" () )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "division_checking" defined at division_check.ads:5, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Division_check__division_checking__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "bmi" defined at division_check.ads:5, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Division_check__bmi__subprogram_def
  use import "_gnatprove_standard".Main
- use        "_gnatprove_standard".Float32
- use        Standard__float
- use        Standard__float___axiom
- use        Division_check__division_checking__valuea
- use        Division_check__division_checking__valueb
- use        Division_check__division_checking__sum
- use        Standard__float___axiom
- use        Division_check__division_checking__sum___axiom
- use        Division_check__division_checking__valuea___axiom
- use        Division_check__division_checking__valueb___axiom
+ use import "int".Int
+ use        "_gnatprove_standard".Int_Division
+ use        Standard__integer
+ use        Standard__integer___axiom
+ use        Division_check__bmi__kg
+ use        Division_check__bmi__cm
+ use        Division_check__bmi__result
+ use        Standard__integer___axiom
+ use        Standard__integer___axiom
+ use        Division_check__bmi__result___axiom
+ use        Division_check__bmi__kg___axiom
+ use        Division_check__bmi__cm___axiom
 
- val division_check__division_checking__result #"division_check.ads" 5 0 0#  : Float32.t__ref 
+ val division_check__bmi__result #"division_check.ads" 5 0 0# "model_projected" "model_trace:2375@result"  : int__ref 
  
  let def #"system.ads" 1 0 0# "W:diverges:N" "GP_Subp:division_check.ads:5" 
    (__void_param : unit)
@@ -1993,30 +1991,30 @@ module Division_check__division_checking__subprogram_def
    =
   ( () (* Assume dynamic invariants of inputs of the subprogram division_check.ads:5 *)
   ;
-  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__float___axiom.dynamic_invariant Division_check__division_checking__valuea.valuea True False True) };
-  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__float___axiom.dynamic_invariant Division_check__division_checking__valueb.valueb True False True) };
+  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Division_check__bmi__kg.kg True False True) };
+  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Division_check__bmi__cm.cm True False True) };
   #"division_check.ads" 5 0 0# assume { #"division_check.ads" 5 0 0# true };
   () (* Declarations introduced by the compiler at the beginning of the subprogram division_check.ads:5 *)
   ;
   () (* Check for RTE in the Pre of the subprogram division_check.ads:5 *)
   ;
-  #"division_check.ads" 5 0 0# abstract ensures {true}(let _ = (Float32.gt(Division_check__division_checking__valueb.valueb) ((0.0E-1:Float32.t))) in (
+  #"division_check.ads" 5 0 0# abstract ensures {true}(let _ = (Division_check__bmi__cm.cm > 0) in (
    ()))
    end ;
   () (* Assume Pre of the subprogram division_check.ads:5 *)
   ;
-  #"division_check.ads" 6 0 0# assume { #"division_check.ads" 6 0 0# (Float32.gt Division_check__division_checking__valueb.valueb (0.0E-1:Float32.t)) };
-  #"division_check.ads" 6 0 0# try
-   ( #"division_check.ads" 6 0 0# abstract ensures {true}(let _ = () in (
+  #"division_check.ads" 5 0 0# assume { #"division_check.ads" 5 0 0# (Division_check__bmi__cm.cm > 0) };
+  #"division_check.ads" 5 0 0# try
+   ( #"division_check.ads" 5 0 0# abstract ensures {true}(let _ = () in (
     ()))
     end ;
-   #"division_check.adb" 7 0 0# assume { #"division_check.adb" 7 0 0# (Standard__float___axiom.default_initial_assumption Division_check__division_checking__sum.sum.Float32.t__content False) };
-   #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__float___axiom.dynamic_invariant Division_check__division_checking__sum.sum.Float32.t__content False False True) };
-   ( "GP_Sloc:division_check.adb:9:7" #"division_check.adb" 9 0 0# Division_check__division_checking__sum.sum.Float32.t__content <- ( ( #"division_check.adb" 9 0 0# "model_vc" "keep_on_simp" "GP_Sloc:division_check.adb:9:17" "GP_Shape:sum_assign__div" "GP_Reason:VC_FP_OVERFLOW_CHECK" "GP_Id:1" "comment:  Sum := ValueA / ValueB;
-                ^ division_check.adb:9:17:VC_FP_OVERFLOW_CHECK" (Standard__float.range_check_(( #"division_check.adb" 9 0 0# "model_vc" "keep_on_simp" "GP_Sloc:division_check.adb:9:17" "GP_Reason:VC_DIVISION_CHECK" "GP_Id:0" "comment:  Sum := ValueA / ValueB;
-                ^ division_check.adb:9:17:VC_DIVISION_CHECK" "GP_Shape:sum_assign__div" (Float32.div_rne_(Division_check__division_checking__valuea.valuea) (Division_check__division_checking__valueb.valueb)) ))) ) ) );
-   ( "GP_Sloc:division_check.adb:10:3" ( #"division_check.adb" 10 0 0# division_check__division_checking__result.Float32.t__content <- ( Division_check__division_checking__sum.sum.Float32.t__content );
-   #"division_check.adb" 10 0 0# raise Return__exc ) );
+   #"division_check.adb" 6 0 0# assume { #"division_check.adb" 6 0 0# (Standard__integer___axiom.default_initial_assumption Division_check__bmi__result.result__.int__content False) };
+   #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Division_check__bmi__result.result__.int__content False False True) };
+   ( "GP_Sloc:division_check.adb:8:10" #"division_check.adb" 8 0 0# Division_check__bmi__result.result__.int__content <- ( ( #"division_check.adb" 8 0 0# "model_vc" "keep_on_simp" "GP_Sloc:division_check.adb:8:16" "GP_Shape:result_assign__div" "GP_Reason:VC_OVERFLOW_CHECK" "GP_Id:1" "comment:  Result := Kg / Cm;
+               ^ division_check.adb:8:16:VC_OVERFLOW_CHECK" (Standard__integer.range_check_(( #"division_check.adb" 8 0 0# "model_vc" "keep_on_simp" "GP_Sloc:division_check.adb:8:16" "GP_Reason:VC_DIVISION_CHECK" "GP_Id:0" "comment:  Result := Kg / Cm;
+               ^ division_check.adb:8:16:VC_DIVISION_CHECK" "GP_Shape:result_assign__div" (Int_Division.div_(Division_check__bmi__kg.kg) (Division_check__bmi__cm.cm)) ))) ) ) );
+   ( "GP_Sloc:division_check.adb:9:3" ( #"division_check.adb" 9 0 0# division_check__bmi__result.int__content <- ( Division_check__bmi__result.result__.int__content );
+   #"division_check.adb" 9 0 0# raise Return__exc ) );
    #"division_check.adb" 5 0 0# raise Return__exc )
   with
    Return__exc -> ()
@@ -2024,5 +2022,5 @@ module Division_check__division_checking__subprogram_def
   #"division_check.adb" 5 0 0# abstract ensures {true}(let _ = True in (
    ()))
    end ;
-  division_check__division_checking__result.Float32.t__content )
+  division_check__bmi__result.int__content )
 end

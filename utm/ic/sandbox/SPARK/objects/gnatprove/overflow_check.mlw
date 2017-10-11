@@ -1505,11 +1505,11 @@ module Standard__universal_integer__rep
 
 end
 
-(* Module for defining the constant "i" defined at overflow_check.ads:7, created in Gnat2Why.Decls.Translate_Constant *)
-module Overflow_check__overflow_checking__i
+(* Module for defining the constant "x" defined at overflow_check.ads:12, created in Gnat2Why.Decls.Translate_Constant *)
+module Overflow_check__add__x
  use import "_gnatprove_standard".Main
 
- function i #"overflow_check.ads" 7 0 0# "model" "model_trace:2374" 
+ function x #"overflow_check.ads" 12 0 0# "model" "model_trace:2414" 
    : int
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
@@ -1517,37 +1517,62 @@ module Overflow_check__overflow_checking__i
 
 end
 
-(* Module giving an empty axiom for the entity "i" defined at overflow_check.ads:7, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Overflow_check__overflow_checking__i___axiom
+(* Module giving an empty axiom for the entity "x" defined at overflow_check.ads:12, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Overflow_check__add__x___axiom
  use import "_gnatprove_standard".Main
 
 
 end
 
-(* Module for possibly declaring a logic function for "overflow_checking" defined at overflow_check.ads:7, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Overflow_check__overflow_checking
+(* Module for defining the constant "x" defined at overflow_check.ads:14, created in Gnat2Why.Decls.Translate_Constant *)
+module Overflow_check__sum__x
  use import "_gnatprove_standard".Main
 
- function overflow_checking #"overflow_check.ads" 7 0 0# 
-   (i : int) : int
- 
- predicate overflow_checking__function_guard #"system.ads" 1 0 0# 
-   (result : int) (i : int) 
-
-end
-(* Module for defining a ref holding the value of variable "q" defined at overflow_check.adb:7, created in Gnat2Why.Decls.Translate_Variable *)
-module Overflow_check__overflow_checking__q
- use import "_gnatprove_standard".Main
-
- val q #"overflow_check.adb" 7 0 0# "model_projected" "model_trace:2327"  : int__ref 
+ function x #"overflow_check.ads" 14 0 0# "model" "model_trace:2432" 
+   : int
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
    : int
 
 end
 
-(* Module giving an empty axiom for the entity "q" defined at overflow_check.adb:7, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Overflow_check__overflow_checking__q___axiom
+(* Module giving an empty axiom for the entity "x" defined at overflow_check.ads:14, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Overflow_check__sum__x___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+(* Module for defining a ref holding the value of variable "total" defined at overflow_check.ads:5, created in Gnat2Why.Decls.Translate_Variable *)
+module Overflow_check__total
+ use import "_gnatprove_standard".Main
+
+ val total #"overflow_check.ads" 5 0 0# "model_projected" "model_trace:2387"  : int__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "total" defined at overflow_check.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Overflow_check__total___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining a ref holding the value of variable "value" defined at overflow_check.ads:7, created in Gnat2Why.Decls.Translate_Variable *)
+module Overflow_check__value
+ use import "_gnatprove_standard".Main
+
+ val value #"overflow_check.ads" 7 0 0# "model_projected" "model_trace:2397"  : int__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "value" defined at overflow_check.ads:7, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Overflow_check__value___axiom
  use import "_gnatprove_standard".Main
 
 
@@ -1914,88 +1939,170 @@ module Standard__universal_integer___axiom
   #"system.ads" 1 0 0# true
 
 end
-(* Module for declaring a program function (and possibly an axiom) for "overflow_checking" defined at overflow_check.ads:7, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Overflow_check__overflow_checking___axiom
+
+(* Module for possibly declaring a logic function for "add" defined at overflow_check.ads:12, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Overflow_check__add
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "sum" defined at overflow_check.ads:14, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Overflow_check__sum
+ use import "_gnatprove_standard".Main
+
+
+end
+(* Module for declaring a program function (and possibly an axiom) for "add" defined at overflow_check.ads:12, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Overflow_check__add___axiom
+ use        Overflow_check__total
  use import "_gnatprove_standard".Main
  use        Standard__integer___axiom
- use        Overflow_check__overflow_checking
+ use        Overflow_check__total
 
- val overflow_checking #"overflow_check.ads" 7 0 0# 
-   (i : int) : int
+ val add #"overflow_check.ads" 12 0 0# 
+   (x : int) : unit
   requires { #"system.ads" 1 0 0# true }
-  ensures { #"system.ads" 1 0 0# ( ( (result = (Overflow_check__overflow_checking.overflow_checking i)) /\ (Overflow_check__overflow_checking.overflow_checking__function_guard result i) ) /\ (Standard__integer___axiom.dynamic_invariant result True False True) ) }
- 
- axiom overflow_checking__post_axiom :
-  (forall i #"overflow_check.ads" 7 0 0#  : int [(Overflow_check__overflow_checking.overflow_checking i)].
-   ( (Standard__integer___axiom.dynamic_invariant i True True True) -> (let result = (Overflow_check__overflow_checking.overflow_checking i) in (
-    (if ((Overflow_check__overflow_checking.overflow_checking__function_guard result i)) then (
-     (Standard__integer___axiom.dynamic_invariant result True False True)) else true)))
-    ))
+  ensures { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__total.total.int__content True True True) }
+  reads {Overflow_check__total.total}
+  writes {Overflow_check__total.total}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "sum" defined at overflow_check.ads:14, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Overflow_check__sum___axiom
+ use        Overflow_check__total
+ use        Overflow_check__value
+ use import "_gnatprove_standard".Main
+ use        Standard__integer___axiom
+ use        Overflow_check__total
+ use        Overflow_check__value
+
+ val sum #"overflow_check.ads" 14 0 0# 
+   (x : int) : unit
+  requires { #"system.ads" 1 0 0# true }
+  ensures { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__total.total.int__content True True True) }
+  reads {Overflow_check__total.total, Overflow_check__value.value}
+  writes {Overflow_check__total.total}
 
 end
 
 (* Module for checking absence of run-time errors and package initial condition on package elaboration of "overflow_check" defined at overflow_check.ads:1, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
 module Overflow_check__package_def
  use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer___axiom
+ use        Overflow_check__total
+ use        Overflow_check__value
+ use        Standard__integer___axiom
+ use        Overflow_check__total___axiom
+ use        Overflow_check__value___axiom
 
- let def #"overflow_check.ads" 7 0 0# "GP_Subp:overflow_check.ads:1" "W:diverges:N" 
+ let def #"overflow_check.ads" 5 0 0# "GP_Subp:overflow_check.ads:1" "W:diverges:N" 
    (__void_param : unit)
-  requires { #"overflow_check.ads" 7 0 0# true }
-  ensures { #"overflow_check.ads" 7 0 0# true }
+  requires { #"overflow_check.ads" 5 0 0# true }
+  ensures { #"overflow_check.ads" 5 0 0# true }
    =
-  ( "GP_Sloc:overflow_check.adb:12:1" () )
+  ( #"overflow_check.ads" 5 0 0# Overflow_check__total.total.int__content <- ( 0 );
+  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__total.total.int__content True False True) };
+  #"overflow_check.ads" 7 0 0# Overflow_check__value.value.int__content <- ( 100 );
+  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__value.value.int__content True False True) };
+  ( "GP_Sloc:overflow_check.adb:23:1" () ) )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "overflow_checking" defined at overflow_check.ads:7, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Overflow_check__overflow_checking__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "add" defined at overflow_check.ads:12, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Overflow_check__add__subprogram_def
  use import "_gnatprove_standard".Main
  use import "int".Int
  use        Standard__integer
  use        Standard__integer___axiom
- use        Overflow_check__overflow_checking__i
- use        Overflow_check__overflow_checking__q
+ use        Overflow_check__total
+ use        Overflow_check__add__x
  use        Standard__integer___axiom
  use        Standard__integer___axiom
- use        Overflow_check__overflow_checking__q___axiom
- use        Overflow_check__overflow_checking__i___axiom
+ use        Overflow_check__total___axiom
+ use        Overflow_check__add__x___axiom
 
- val overflow_check__overflow_checking__result #"overflow_check.ads" 7 0 0# "model_projected" "model_trace:2367@result"  : int__ref 
- 
- let def #"system.ads" 1 0 0# "W:diverges:N" "GP_Subp:overflow_check.ads:7" 
+ let def #"system.ads" 1 0 0# "W:diverges:N" "GP_Subp:overflow_check.ads:12" 
    (__void_param : unit)
   requires { #"system.ads" 1 0 0# true }
   ensures { #"system.ads" 1 0 0# true }
    =
-  ( () (* Assume dynamic invariants of inputs of the subprogram overflow_check.ads:7 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram overflow_check.ads:12 *)
   ;
-  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__overflow_checking__i.i True False True) };
-  #"overflow_check.ads" 7 0 0# assume { #"overflow_check.ads" 7 0 0# true };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram overflow_check.ads:7 *)
+  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__total.total.int__content True False True) };
+  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__add__x.x True False True) };
+  #"overflow_check.ads" 12 0 0# assume { #"overflow_check.ads" 12 0 0# true };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram overflow_check.ads:12 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram overflow_check.ads:7 *)
+  () (* Check for RTE in the Pre of the subprogram overflow_check.ads:12 *)
   ;
-  #"overflow_check.ads" 7 0 0# abstract ensures {true}(let _ = True in (
+  #"overflow_check.ads" 12 0 0# abstract ensures {true}(let _ = True in (
    ()))
    end ;
-  () (* Assume Pre of the subprogram overflow_check.ads:7 *)
+  () (* Assume Pre of the subprogram overflow_check.ads:12 *)
   ;
-  #"overflow_check.ads" 7 0 0# assume { #"overflow_check.ads" 7 0 0# true };
-  #"overflow_check.ads" 7 0 0# try
-   ( #"overflow_check.ads" 7 0 0# abstract ensures {true}(let _ = () in (
-    ()))
-    end ;
-   #"overflow_check.adb" 7 0 0# assume { #"overflow_check.adb" 7 0 0# (Standard__integer___axiom.default_initial_assumption Overflow_check__overflow_checking__q.q.int__content False) };
-   #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__overflow_checking__q.q.int__content False False True) };
-   ( "GP_Sloc:overflow_check.adb:9:3" #"overflow_check.adb" 9 0 0# Overflow_check__overflow_checking__q.q.int__content <- ( ( #"overflow_check.adb" 9 0 0# "model_vc" "keep_on_simp" "GP_Sloc:overflow_check.adb:9:11" "GP_Reason:VC_OVERFLOW_CHECK" "GP_Id:0" "comment:Q :=   (I + 1);
-          ^ overflow_check.adb:9:11:VC_OVERFLOW_CHECK" "GP_Shape:q_assign__add" (Standard__integer.range_check_((Overflow_check__overflow_checking__i.i + 1))) ) ) );
-   ( "GP_Sloc:overflow_check.adb:10:3" ( #"overflow_check.adb" 10 0 0# overflow_check__overflow_checking__result.int__content <- ( Overflow_check__overflow_checking__q.q.int__content );
-   #"overflow_check.adb" 10 0 0# raise Return__exc ) );
+  #"overflow_check.ads" 12 0 0# assume { #"overflow_check.ads" 12 0 0# true };
+  #"overflow_check.ads" 12 0 0# try
+   ( ( "GP_Sloc:overflow_check.adb:8:9" #"overflow_check.adb" 8 0 0# Overflow_check__total.total.int__content <- ( ( #"overflow_check.adb" 8 0 0# "model_vc" "keep_on_simp" "GP_Sloc:overflow_check.adb:8:18" "GP_Reason:VC_OVERFLOW_CHECK" "GP_Id:0" "comment:  Total := Total + X;
+                 ^ overflow_check.adb:8:18:VC_OVERFLOW_CHECK" "GP_Shape:total_assign__add" (Standard__integer.range_check_((Overflow_check__total.total.int__content + Overflow_check__add__x.x))) ) ) );
    #"overflow_check.adb" 5 0 0# raise Return__exc )
   with
    Return__exc -> ()
   end;
   #"overflow_check.adb" 5 0 0# abstract ensures {true}(let _ = True in (
    ()))
+   end  )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "sum" defined at overflow_check.ads:14, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Overflow_check__sum__subprogram_def
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer___axiom
+ use        Overflow_check__total
+ use        Overflow_check__value
+ use        Overflow_check__add___axiom
+ use        Overflow_check__sum__x
+ use        Standard__integer___axiom
+ use        Standard__integer___axiom
+ use        Overflow_check__total___axiom
+ use        Overflow_check__value___axiom
+ use        Overflow_check__add___axiom
+ use        Overflow_check__sum__x___axiom
+
+ let def #"overflow_check.adb" 5 0 0# "W:diverges:N" "GP_Subp:overflow_check.ads:14" 
+   (__void_param : unit)
+  requires { #"overflow_check.adb" 5 0 0# true }
+  ensures { #"overflow_check.adb" 5 0 0# true }
+   =
+  ( () (* Assume dynamic invariants of inputs of the subprogram overflow_check.ads:14 *)
+  ;
+  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__total.total.int__content True False True) };
+  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__value.value.int__content True False True) };
+  #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Overflow_check__sum__x.x True False True) };
+  #"overflow_check.ads" 14 0 0# assume { #"overflow_check.ads" 14 0 0# true };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram overflow_check.ads:14 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram overflow_check.ads:14 *)
+  ;
+  #"overflow_check.ads" 14 0 0# abstract ensures {true}(let _ = True in (
+   ()))
    end ;
-  overflow_check__overflow_checking__result.int__content )
+  () (* Assume Pre of the subprogram overflow_check.ads:14 *)
+  ;
+  #"overflow_check.ads" 14 0 0# assume { #"overflow_check.ads" 14 0 0# true };
+  #"overflow_check.ads" 14 0 0# try
+   ( ( "GP_Sloc:overflow_check.adb:15:3" (if ((( #"overflow_check.adb" 15 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_OVERFLOW_CHECK" "GP_Sloc:overflow_check.adb:15:12" "GP_Id:1" "comment:  if Total + X <= Value then
+           ^ overflow_check.adb:15:12:VC_OVERFLOW_CHECK" "GP_Shape:if__cmp__add" (Standard__integer.range_check_((Overflow_check__total.total.int__content + Overflow_check__sum__x.x))) ) <= Overflow_check__value.value.int__content)) then (
+    ( "GP_Sloc:overflow_check.adb:16:4" (Overflow_check__add___axiom.add(Overflow_check__sum__x.x)) )) else (
+    ( "GP_Sloc:overflow_check.adb:18:10" #"overflow_check.adb" 18 0 0# Overflow_check__total.total.int__content <- ( Overflow_check__value.value.int__content ) ))) );
+   #"overflow_check.adb" 13 0 0# raise Return__exc )
+  with
+   Return__exc -> ()
+  end;
+  #"overflow_check.adb" 13 0 0# abstract ensures {true}(let _ = True in (
+   ()))
+   end  )
 end

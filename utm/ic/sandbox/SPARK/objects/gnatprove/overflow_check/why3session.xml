@@ -90,15 +90,21 @@
 </theory>
 <theory name="Standard__universal_integer__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking__i" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__add__x" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking__i___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__add__x___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__sum__x" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking__q" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__sum__x___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking__q___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__total" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Overflow_check__total___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Overflow_check__value" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Overflow_check__value___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_short_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -144,19 +150,34 @@
 </theory>
 <theory name="Standard__universal_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__add" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__package_def" sum="e284967f6dbb6592898a5ced2974229f" expanded="true">
+<theory name="Overflow_check__sum" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Overflow_check__add___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Overflow_check__sum___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Overflow_check__package_def" sum="b14ea3f5fe5d235ad4bf7ced5f2e2890" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Overflow_check__overflow_checking__subprogram_def" sum="23c4899fd3074d0b7b59434b804374e4" expanded="true">
+<theory name="Overflow_check__add__subprogram_def" sum="e2fe5bfc7c6cd4b0745c8bb4f94f360b" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
   <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0"><result status="unknown" time="0.02"/></proof>
+  <proof prover="0"><result status="unknown" time="0.01"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Overflow_check__sum__subprogram_def" sum="fdbfbc54ead4d8ca4f253b5c55370a82" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp_conj" expanded="true">
+  <goal name="WP_parameter def.1" expl="1. precondition">
+  <proof prover="0"><result status="unknown" time="0.01"/></proof>
   </goal>
  </transf>
  </goal>

@@ -90,33 +90,21 @@
 </theory>
 <theory name="Standard__universal_integer__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Array__Int__Standard__natural" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__add__x" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__check_array" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__add__x___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__TTaSP1" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__sum__x" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__TTaSP1__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__sum__x___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__TaS" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__total" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking__i" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__total___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking__i___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__value" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking__j" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Overflow_check__overflow_checking__j___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Overflow_check__overflow_checking" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Overflow_check__a" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Overflow_check__a___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Overflow_check__overflow_checking__q" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Overflow_check__overflow_checking__q___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__value___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_short_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -162,25 +150,72 @@
 </theory>
 <theory name="Standard__universal_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__check_array___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__add" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__TTaSP1___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__sum" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__TaS___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__add___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__overflow_checking___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Overflow_check__sum___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Overflow_check__package_def" sum="6b3ca182b232d4490f82b7d3a2b41a02" expanded="true">
+<theory name="Overflow_check__package_def" sum="b14ea3f5fe5d235ad4bf7ced5f2e2890" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Overflow_check__overflow_checking__subprogram_def" sum="1ef0c6f2f417f70ce4588088e3680e4b" expanded="true">
+<theory name="Overflow_check__add__subprogram_def" sum="28ac54ce15734217b3f7ce8dd1d240eb" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
   <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0"><result status="unknown" time="0.01"/></proof>
+  <proof prover="0"><result status="valid" time="0.00" steps="9"/></proof>
+  </goal>
+  <goal name="WP_parameter def.2" expl="2. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="10"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Overflow_check__sum__subprogram_def" sum="a7cf8edf849c981a6d01d1b14265fca2" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp_conj" expanded="true">
+  <goal name="WP_parameter def.1" expl="1. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="12"/></proof>
+  </goal>
+  <goal name="WP_parameter def.2" expl="2. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter def.3" expl="3. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter def.4" expl="4. check">
+  <proof prover="0"><result status="valid" time="0.00" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter def.5" expl="5. check">
+  <proof prover="0"><result status="valid" time="0.00" steps="18"/></proof>
+  </goal>
+  <goal name="WP_parameter def.6" expl="6. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="13"/></proof>
+  </goal>
+  <goal name="WP_parameter def.7" expl="7. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="9"/></proof>
+  </goal>
+  <goal name="WP_parameter def.8" expl="8. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="9"/></proof>
+  </goal>
+  <goal name="WP_parameter def.9" expl="9. precondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="11"/></proof>
+  </goal>
+  <goal name="WP_parameter def.10" expl="10. assertion">
+  <proof prover="0"><result status="unknown" time="0.00"/></proof>
+  </goal>
+  <goal name="WP_parameter def.11" expl="11. assertion">
+  </goal>
+  <goal name="WP_parameter def.12" expl="12. assertion">
+  <proof prover="0"><result status="valid" time="0.00" steps="31"/></proof>
+  </goal>
+  <goal name="WP_parameter def.13" expl="13. assertion">
+  <proof prover="0"><result status="valid" time="0.00" steps="1"/></proof>
   </goal>
  </transf>
  </goal>

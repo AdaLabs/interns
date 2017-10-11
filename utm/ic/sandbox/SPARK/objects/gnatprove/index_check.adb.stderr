@@ -1,2 +1,1 @@
-index_check.adb:11:32: medium: range check might fail[#0]
-index_check.adb:11:32: medium: overflow check might fail[#1]
+index_check.adb:13:09: medium: array index check might fail[#0]

@@ -90,33 +90,33 @@
 </theory>
 <theory name="Standard__universal_integer__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayD1" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__index_t" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayD1__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__index_t__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Array__Int__Standard__integer" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Array__Int__Standard__natural" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__Tarr_tB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_check_array" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__arr_t" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__a" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__a" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__a___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__a___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1__T1b" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__T1b" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1__T1b__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__T1b__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__sum" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__result" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__sum___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__result___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1__i" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__j" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1__i___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__j___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_short_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -162,19 +162,19 @@
 </theory>
 <theory name="Standard__universal_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayD1___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__index_t___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayB___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__Tarr_tB___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_check_array___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__arr_t___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1__T1b___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__T1b___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Index_check__package_def" sum="e284967f6dbb6592898a5ced2974229f" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
@@ -182,14 +182,14 @@
  </transf>
  </goal>
 </theory>
-<theory name="Index_check__sumemup__subprogram_def" sum="0ad3a66130f74612509fd11a2fe0f3f2" expanded="true">
+<theory name="Index_check__init_arr_index__subprogram_def" sum="ee44891b8fa92176aba2ed621522956a" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
-  <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0"><result status="unknown" time="0.02"/></proof>
+  <goal name="WP_parameter def.1" expl="1. assertion">
+  <proof prover="0"><result status="valid" time="0.00" steps="12"/></proof>
   </goal>
-  <goal name="WP_parameter def.2" expl="2. precondition">
-  <proof prover="0"><result status="unknown" time="0.01"/></proof>
+  <goal name="WP_parameter def.2" expl="2. assertion">
+  <proof prover="0"><result status="unknown" time="0.00"/></proof>
   </goal>
  </transf>
  </goal>

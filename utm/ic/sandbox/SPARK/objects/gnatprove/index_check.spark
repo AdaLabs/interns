@@ -11,11 +11,11 @@
       "spark": "all"
     },
     {
-      "name": "Index_Check.sumEmUp",
+      "name": "Index_Check.Init_Arr_Index",
       "sloc": [
         {
           "file": "index_check.ads",
-          "line": 9
+          "line": 11
         }
       ],
       "spark": "all"
@@ -24,58 +24,58 @@
   "flow": [
     {
       "file": "index_check.adb",
-      "line": 11,
-      "col": 28,
+      "line": 13,
+      "col": 9,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
-        "name": "Index_Check.sumEmUp",
+        "name": "Index_Check.Init_Arr_Index",
         "sloc": [
           {
             "file": "index_check.ads",
-            "line": 9
+            "line": 11
           }
         ]
       },
       "check_tree": {
       },
-      "tracefile": "index_check__flow__30.trace",
+      "tracefile": "index_check__flow__32.trace",
       "how_proved": "flow"
     },
     {
       "file": "index_check.adb",
-      "line": 13,
-      "col": 24,
+      "line": 22,
+      "col": 10,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
-        "name": "Index_Check.sumEmUp",
+        "name": "Index_Check.Init_Arr_Index",
         "sloc": [
           {
             "file": "index_check.ads",
-            "line": 9
+            "line": 11
           }
         ]
       },
       "check_tree": {
       },
-      "tracefile": "index_check__flow__30.trace",
+      "tracefile": "index_check__flow__32.trace",
       "how_proved": "flow"
     }
   ],
   "proof": [
     {
       "file": "index_check.adb",
-      "line": 11,
-      "col": 32,
-      "rule": "VC_RANGE_CHECK",
+      "line": 13,
+      "col": 9,
+      "rule": "VC_INDEX_CHECK",
       "severity": "medium",
       "entity": {
-        "name": "Index_Check.sumEmUp",
+        "name": "Index_Check.Init_Arr_Index",
         "sloc": [
           {
             "file": "index_check.ads",
-            "line": 9
+            "line": 11
           }
         ]
       },
@@ -83,9 +83,20 @@
         {
           "proof_attempts": {
             "altergo": {
-              "result": "Unknown (none)",
+              "result": "Unknown (other)",
               "steps": -1,
-              "time": 1.00000000000000E-02
+              "time": 0.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 12,
+              "time": 4.00000000000000E-03
             }
           },
           "transformations": {
@@ -94,40 +105,25 @@
       ],
       "msg_id": 0,
       "how_proved": "prover"
-    },
-    {
-      "file": "index_check.adb",
-      "line": 11,
-      "col": 32,
-      "rule": "VC_OVERFLOW_CHECK",
-      "severity": "medium",
-      "entity": {
-        "name": "Index_Check.sumEmUp",
-        "sloc": [
-          {
-            "file": "index_check.ads",
-            "line": 9
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Unknown (none)",
-              "steps": -1,
-              "time": 2.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "msg_id": 1,
-      "how_proved": "prover"
     }
   ],
   "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Index_Check.Init_Arr_Index",
+          "sloc": [
+            {
+              "file": "index_check.ads",
+              "line": 11
+            }
+          ]
+        }
+      }
+    },
     {
       "assumptions": [
       ],
@@ -143,38 +139,35 @@
           ]
         }
       }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Index_Check.sumEmUp",
-          "sloc": [
-            {
-              "file": "index_check.ads",
-              "line": 9
-            }
-          ]
-        }
-      }
     }
   ],
   "timings": {
-    "marking": 2.43999995291233E-04,
-    "globals (basic)": 1.44000005093403E-04,
-    "globals/properties (advanced)": 2.87000002572313E-04,
-    "flow analysis": 1.72599998768419E-03,
-    "codepeer results": 1.99999999495049E-06,
-    "init_why_sections": 2.18999994103797E-04,
-    "translation of standard": 3.51399998180568E-03,
-    "translation of compilation unit": 1.62400002591312E-03,
-    "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "marking": 1.72999993083067E-04,
+    "globals (basic)": 1.04999999166466E-04,
+    "globals/properties (advanced)": 1.99000001884997E-04,
+    "flow analysis": 1.33100000675768E-03,
+    "codepeer results": 9.99999997475243E-07,
+    "init_why_sections": 1.42999997478910E-04,
+    "translation of standard": 2.57100001908839E-03,
+    "translation of compilation unit": 1.26900000032037E-03,
+    "gnatwhy3.run_vcs": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
     "gnatwhy3.register_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_if": 4.00000018998981E-03,
+    "gnatwhy3.transformations.explode_record_param": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eval_match": 0.00000000000000E+00,
     "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.init": 2.19999998807907E-01,
+    "gnatwhy3.init": 1.59999996423721E-01,
+    "gnatwhy3.transformations.inline_trivial": 0.00000000000000E+00,
+    "gnatwhy3.transformations.inline_tagged": 0.00000000000000E+00,
+    "gnatwhy3.transformations.simplify_formula": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_let": 0.00000000000000E+00,
     "gnatwhy3.save_session": 0.00000000000000E+00,
-    "proof": 3.30473989248276E-01
+    "gnatwhy3.transformations.eliminate_builtin": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_algebraic": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_literal": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_recursion": 0.00000000000000E+00,
+    "proof": 2.86897003650665E-01
   }
 }

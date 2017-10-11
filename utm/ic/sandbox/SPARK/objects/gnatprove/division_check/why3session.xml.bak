@@ -90,19 +90,19 @@
 </theory>
 <theory name="Standard__universal_integer__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Division_check__division_checking__valuea" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Division_check__bmi__kg" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Division_check__division_checking__valuea___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Division_check__bmi__kg___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Division_check__division_checking__valueb" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Division_check__bmi__cm" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Division_check__division_checking__valueb___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Division_check__bmi__cm___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Division_check__division_checking" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Division_check__bmi" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Division_check__division_checking__sum" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Division_check__bmi__result" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Division_check__division_checking__sum___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Division_check__bmi__result___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_short_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -148,7 +148,7 @@
 </theory>
 <theory name="Standard__universal_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Division_check__division_checking___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Division_check__bmi___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Division_check__package_def" sum="e284967f6dbb6592898a5ced2974229f" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
@@ -156,17 +156,14 @@
  </transf>
  </goal>
 </theory>
-<theory name="Division_check__division_checking__subprogram_def" sum="87523187798865366f7f8c0dff7c3c47" expanded="true">
+<theory name="Division_check__bmi__subprogram_def" sum="8892bd3b87633aa977fa5b1ed04fdd98" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
   <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0"><result status="valid" time="0.08" steps="365"/></proof>
+  <proof prover="0"><result status="unknown" time="0.02"/></proof>
   </goal>
   <goal name="WP_parameter def.2" expl="2. precondition">
-  <proof prover="0"><result status="timeout" time="1.00"/></proof>
-  </goal>
-  <goal name="WP_parameter def.3" expl="3. precondition">
-  <proof prover="0"><result status="timeout" time="1.00"/></proof>
+  <proof prover="0"><result status="unknown" time="0.02"/></proof>
   </goal>
  </transf>
  </goal>

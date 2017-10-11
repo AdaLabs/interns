@@ -2,14 +2,13 @@ package body Division_Check
 with SPARK_Mode => On
 is
 
-function  Division_Checking (ValueA, ValueB : Float) return Float
-is
-  Sum : Float;
+ function  BMI (Kg, Cm : Integer) return Integer is
+  Result : Integer;
  begin
-  Sum := ValueA / ValueB;
-  return Sum;
+  Result := Kg / Cm;
+  return Result;
 
- end Division_Checking;
+ end BMI;
 
 
 end Division_Check;

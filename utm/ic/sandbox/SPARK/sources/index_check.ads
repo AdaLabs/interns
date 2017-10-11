@@ -4,8 +4,13 @@ is
 
 
 
- type Index_Check_Array is array (1 .. 10) of Integer;
+subtype Index_T is Positive range 1 .. 1000;
 
-  function sumEmUp(a: Index_Check_Array) return Natural ;
+
+   type Arr_T is array (Index_T) of Natural;
+ function Init_Arr_Index (A : Arr_T) return Positive;
+--      with Post =>  ((Init_Arr_Index'Result in A'Range) and
+--    (for all J in A'Range =>
+--    A(J) <= A(Init_Arr_Index'Result)));
 
 end Index_Check;

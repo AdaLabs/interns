@@ -1,1 +1,2 @@
-overflow_check.adb:9:11: medium: overflow check might fail[#0]
+overflow_check.adb:8:18: medium: overflow check might fail[#0]
+overflow_check.adb:15:12: medium: overflow check might fail[#1]

@@ -90,51 +90,41 @@
 </theory>
 <theory name="Standard__universal_integer__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayD1" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__index_t" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayD1__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__index_t__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Array__Int__Standard__integer" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Array__Int__Standard__natural" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__Tarr_tB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_check_array" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__arr_t" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_checking__i" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__a" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_checking__i___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__a___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_checking__j" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L4s__T5s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_checking__j___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L4s__T5s__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__intarray" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__a" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__T1b" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__a___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__T1b__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__L4b__T5b" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1__T2b" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__L2b__T3b" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1__T2b__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__result" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__result___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__j" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_checking__q" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Index_check__index_checking__q___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Index_check__sumemup__sum" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Index_check__sumemup__sum___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Index_check__sumemup__L_1__i" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Index_check__sumemup__L_1__i___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__j___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_short_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -180,55 +170,91 @@
 </theory>
 <theory name="Standard__universal_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_checking" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__index_t___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayD1___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__Tarr_tB___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__Tindex_check_arrayB___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__arr_t___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_check_array___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L4s__T5s___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__intarray___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__T1b___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup__L_1__T2b___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__L4b__T5b___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__index_checking___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index__L_1__L2b__T3b___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__sumemup___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Index_check__init_arr_index___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Index_check__package_def" sum="d16ef0b6da47b00c191477e0c484bc67" expanded="true">
+<theory name="Index_check__package_def" sum="e284967f6dbb6592898a5ced2974229f" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Index_check__index_checking__subprogram_def" sum="ddb8050b4a515fb2587efb7c98e29ccd" expanded="true">
+<theory name="Index_check__init_arr_index__subprogram_def" sum="37eb8c056352815464ca1c9aa91039c0" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
-  <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0"><result status="unknown" time="0.01"/></proof>
+  <goal name="WP_parameter def.1" expl="1. assertion">
+  <proof prover="0"><result status="valid" time="0.00" steps="8"/></proof>
   </goal>
   <goal name="WP_parameter def.2" expl="2. assertion">
-  <proof prover="0"><result status="unknown" time="0.01"/></proof>
+  <proof prover="0"><result status="valid" time="0.00" steps="8"/></proof>
   </goal>
-  <goal name="WP_parameter def.3" expl="3. assertion">
-  <proof prover="0" obsolete="true"><result status="unknown" time="0.02"/></proof>
+  <goal name="WP_parameter def.3" expl="3. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00" steps="15"/></proof>
   </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Index_check__sumemup__subprogram_def" sum="0ad3a66130f74612509fd11a2fe0f3f2" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp_conj" expanded="true">
-  <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0"><result status="unknown" time="0.02"/></proof>
+  <goal name="WP_parameter def.4" expl="4. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00" steps="15"/></proof>
   </goal>
-  <goal name="WP_parameter def.2" expl="2. precondition">
-  <proof prover="0"><result status="unknown" time="0.01"/></proof>
+  <goal name="WP_parameter def.5" expl="5. loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter def.6" expl="6. assertion">
+  <proof prover="0"><result status="valid" time="0.00" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter def.7" expl="7. assertion">
+  <proof prover="0"><result status="valid" time="0.00" steps="21"/></proof>
+  </goal>
+  <goal name="WP_parameter def.8" expl="8. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter def.9" expl="9. assertion">
+  <proof prover="0"><result status="valid" time="0.00" steps="24"/></proof>
+  </goal>
+  <goal name="WP_parameter def.10" expl="10. assertion">
+  <proof prover="0"><result status="valid" time="0.00" steps="22"/></proof>
+  </goal>
+  <goal name="WP_parameter def.11" expl="11. assertion">
+  <proof prover="0"><result status="valid" time="0.00" steps="22"/></proof>
+  </goal>
+  <goal name="WP_parameter def.12" expl="12. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="30"/></proof>
+  </goal>
+  <goal name="WP_parameter def.13" expl="13. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="30"/></proof>
+  </goal>
+  <goal name="WP_parameter def.14" expl="14. loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.01" steps="53"/></proof>
+  </goal>
+  <goal name="WP_parameter def.15" expl="15. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter def.16" expl="16. assertion">
+  <proof prover="0"><result status="valid" time="0.01" steps="15"/></proof>
+  </goal>
+  <goal name="WP_parameter def.17" expl="17. postcondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter def.18" expl="18. postcondition">
+  <proof prover="0"><result status="valid" time="0.00" steps="14"/></proof>
+  </goal>
+  <goal name="WP_parameter def.19" expl="19. postcondition">
+  <proof prover="0"><result status="valid" time="0.01" steps="55"/></proof>
   </goal>
  </transf>
  </goal>

@@ -11,7 +11,7 @@
       "spark": "all"
     },
     {
-      "name": "Division_Check.Division_Checking",
+      "name": "Division_Check.BMI",
       "sloc": [
         {
           "file": "division_check.ads",
@@ -24,12 +24,12 @@
   "flow": [
     {
       "file": "division_check.adb",
-      "line": 10,
+      "line": 9,
       "col": 10,
       "rule": "UNINITIALIZED",
       "severity": "info",
       "entity": {
-        "name": "Division_Check.Division_Checking",
+        "name": "Division_Check.BMI",
         "sloc": [
           {
             "file": "division_check.ads",
@@ -46,43 +46,12 @@
   "proof": [
     {
       "file": "division_check.adb",
-      "line": 9,
-      "col": 17,
-      "rule": "VC_FP_OVERFLOW_CHECK",
-      "severity": "medium",
-      "entity": {
-        "name": "Division_Check.Division_Checking",
-        "sloc": [
-          {
-            "file": "division_check.ads",
-            "line": 5
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Timeout",
-              "steps": -1,
-              "time": 1.00000000000000E+00
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "msg_id": 0,
-      "how_proved": "prover"
-    },
-    {
-      "file": "division_check.adb",
-      "line": 9,
-      "col": 17,
-      "rule": "VC_DIVISION_CHECK",
+      "line": 8,
+      "col": 16,
+      "rule": "VC_OVERFLOW_CHECK",
       "severity": "info",
       "entity": {
-        "name": "Division_Check.Division_Checking",
+        "name": "Division_Check.BMI",
         "sloc": [
           {
             "file": "division_check.ads",
@@ -95,8 +64,8 @@
           "proof_attempts": {
             "altergo": {
               "result": "Valid",
-              "steps": 365,
-              "time": 8.00000000000000E-02
+              "steps": 77,
+              "time": 1.60000000000000E-02
             }
           },
           "transformations": {
@@ -107,8 +76,45 @@
       "stats": {
         "altergo": {
           "count": 1,
-          "max_steps": 366,
-          "max_time": 7.99999982118607E-02
+          "max_steps": 78,
+          "max_time": 1.60000007599592E-02
+        }
+      }
+    },
+    {
+      "file": "division_check.adb",
+      "line": 8,
+      "col": 16,
+      "rule": "VC_DIVISION_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Division_Check.BMI",
+        "sloc": [
+          {
+            "file": "division_check.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "altergo": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 8.00000000000000E-03
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 6,
+          "max_time": 8.00000037997961E-03
         }
       }
     }
@@ -120,7 +126,23 @@
       "claim": {
         "predicate": "CLAIM_EFFECTS",
         "arg": {
-          "name": "Division_Check.Division_Checking",
+          "name": "Division_Check.BMI",
+          "sloc": [
+            {
+              "file": "division_check.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Division_Check.BMI",
           "sloc": [
             {
               "file": "division_check.ads",
@@ -148,32 +170,32 @@
     }
   ],
   "timings": {
-    "marking": 1.51000000187196E-04,
-    "globals (basic)": 1.27999999676831E-04,
-    "globals/properties (advanced)": 2.28999997489154E-04,
-    "flow analysis": 1.16900005377829E-03,
-    "codepeer results": 1.99999999495049E-06,
-    "init_why_sections": 1.44000005093403E-04,
-    "translation of standard": 2.36000004224479E-03,
-    "translation of compilation unit": 4.26999991759658E-04,
+    "marking": 1.57000002218410E-04,
+    "globals (basic)": 1.51000000187196E-04,
+    "globals/properties (advanced)": 2.16000000364147E-04,
+    "flow analysis": 1.13999994937330E-03,
+    "codepeer results": 3.00000010611257E-06,
+    "init_why_sections": 1.59000002895482E-04,
+    "translation of standard": 2.73699988611042E-03,
+    "translation of compilation unit": 4.65999997686595E-04,
     "gnatwhy3.run_vcs": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_inductive": 4.00000018998981E-03,
     "gnatwhy3.register_vcs": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_if": 8.00000037997961E-03,
-    "gnatwhy3.transformations.explode_record_param": 4.00000018998981E-03,
-    "gnatwhy3.transformations.eval_match": 8.00000037997961E-03,
-    "gnatwhy3.schedule_vcs": 8.00000037997961E-03,
-    "gnatwhy3.init": 1.67999997735023E-01,
-    "gnatwhy3.transformations.inline_trivial": 1.20000001043081E-02,
+    "gnatwhy3.transformations.eliminate_if": 4.00000018998981E-03,
+    "gnatwhy3.transformations.explode_record_param": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eval_match": 0.00000000000000E+00,
+    "gnatwhy3.schedule_vcs": 4.00000018998981E-03,
+    "gnatwhy3.init": 2.19999998807907E-01,
+    "gnatwhy3.transformations.inline_trivial": 4.00000018998981E-03,
     "gnatwhy3.transformations.inline_tagged": 4.00000018998981E-03,
-    "gnatwhy3.transformations.simplify_formula": 4.00000018998981E-03,
+    "gnatwhy3.transformations.simplify_formula": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_let": 8.00000037997961E-03,
+    "gnatwhy3.transformations.eliminate_let": 0.00000000000000E+00,
     "gnatwhy3.save_session": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_builtin": 4.00000018998981E-03,
-    "gnatwhy3.transformations.eliminate_algebraic": 8.00000037997961E-03,
+    "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_algebraic": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_literal": 4.00000018998981E-03,
     "gnatwhy3.transformations.eliminate_recursion": 0.00000000000000E+00,
-    "proof": 1.40375602245331E+00
+    "proof": 3.94237995147705E-01
   }
 }

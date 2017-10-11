@@ -6,36 +6,36 @@ SPARK Analysis results        Total       Flow   Interval   CodePeer        Prov
 ----------------------------------------------------------------------------------------------------------
 Data Dependencies                 .          .          .          .              .           .          .
 Flow Dependencies                 .          .          .          .              .           .          .
-Initialization                    5          5          .          .              .           .          .
+Initialization                    6          6          .          .              .           .          .
 Non-Aliasing                      .          .          .          .              .           .          .
-Run-time Checks                   5          .          .          .    1 (altergo)           .          4
+Run-time Checks                   7          .          .          .    2 (altergo)           .          5
 Assertions                        .          .          .          .              .           .          .
 Functional Contracts              .          .          .          .              .           .          .
 LSP Verification                  .          .          .          .              .           .          .
 ----------------------------------------------------------------------------------------------------------
-Total                            10    5 (50%)          .          .        1 (10%)           .    4 (40%)
+Total                            13    6 (46%)          .          .        2 (15%)           .    5 (38%)
 
 
 Analyzed 9 units
 in unit division_check, 2 subprograms and packages out of 2 analyzed
   Division_Check at division_check.ads:1 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  Division_Check.Division_Checking at division_check.ads:5 flow analyzed (0 errors and 0 warnings) and not proved, 1 checks out of 2 proved
+  Division_Check.BMI at division_check.ads:5 flow analyzed (0 errors and 0 warnings) and proved (2 checks)
 in unit division_check-main, 0 subprograms and packages out of 1 analyzed
   Division_Check.Main at division_check-main.adb:7 skipped
 in unit index_check, 2 subprograms and packages out of 2 analyzed
   Index_Check at index_check.ads:1 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  Index_Check.sumEmUp at index_check.ads:9 flow analyzed (0 errors and 0 warnings) and not proved, 0 checks out of 2 proved
+  Index_Check.Init_Arr_Index at index_check.ads:11 flow analyzed (0 errors and 0 warnings) and not proved, 0 checks out of 1 proved
 in unit index_check-main, 0 subprograms and packages out of 1 analyzed
   Index_Check.Main at index_check-main.adb:4 skipped
-in unit overflow_check, 2 subprograms and packages out of 2 analyzed
+in unit overflow_check, 3 subprograms and packages out of 3 analyzed
   Overflow_Check at overflow_check.ads:1 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  Overflow_Check.Overflow_checking at overflow_check.ads:7 flow analyzed (0 errors and 0 warnings) and not proved, 0 checks out of 1 proved
+  Overflow_Check.Add at overflow_check.ads:12 flow analyzed (0 errors and 0 warnings) and not proved, 0 checks out of 1 proved
+  Overflow_Check.Sum at overflow_check.ads:14 flow analyzed (0 errors and 0 warnings) and not proved, 0 checks out of 1 proved
 in unit project-main, 0 subprograms and packages out of 1 analyzed
   Project_Main at project-main.adb:1 skipped
-in unit range_check, 3 subprograms and packages out of 3 analyzed
+in unit range_check, 2 subprograms and packages out of 2 analyzed
   Range_Check at range_check.ads:1 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  Range_Check.Print_and_Increment at range_check.ads:7 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
-  Range_Check.Print_and_Increment.Next at range_check.adb:10 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  Range_Check.sumEmUp at range_check.ads:12 flow analyzed (0 errors and 0 warnings) and not proved, 0 checks out of 2 proved
 in unit spark-main, 0 subprograms and packages out of 1 analyzed
   Spark.Main at spark-main.adb:4 skipped
 in unit spark-services, 2 subprograms and packages out of 2 analyzed

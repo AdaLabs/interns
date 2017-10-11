@@ -2,24 +2,17 @@ package body Range_Check
 with SPARK_Mode => On
 is
 
+ function Sum_Caculation(a: Index_Check_Array) return Natural is
 
- --     i : Number := 16;
-
-  procedure Print_and_Increment (j: in out Number) is
-
-    function Next (k: in Number) return Number is
-    begin
-      return k + 1;
-    end Next;
-
-  begin
-    j := Next (j);
-  end Print_and_Increment;
+ begin
+  for i in a'Range loop
+   total_sum := total_sum + a(i);
+  end loop;
+  return total_sum;
+ end Sum_Caculation;
 
 begin
 
- --    Print_and_Increment (i);
 
-
-null;
+ null;
 end Range_Check;

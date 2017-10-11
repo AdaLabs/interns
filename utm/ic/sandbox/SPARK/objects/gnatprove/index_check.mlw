@@ -1505,12 +1505,12 @@ module Standard__universal_integer__rep
 
 end
 
-(* Module for axiomatizing type "Tindex_check_arrayD1" defined at index_check.ads:7, created in Gnat2Why.Types.Translate_Type *)
-module Index_check__Tindex_check_arrayD1
+(* Module for axiomatizing type "index_t" defined at index_check.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Index_check__index_t
  use import "_gnatprove_standard".Main
  use import "int".Int
 
- type tindex_check_arrayD1 #"index_check.ads" 7 0 0# 
+ type index_t #"index_check.ads" 7 0 0# 
  
  function first #"index_check.ads" 7 0 0# 
    : int =
@@ -1518,43 +1518,43 @@ module Index_check__Tindex_check_arrayD1
  
  function last #"index_check.ads" 7 0 0# 
    : int =
-  10
+  1000
  
  predicate in_range #"index_check.ads" 7 0 0# 
    (x : int)  =
   #"index_check.ads" 7 0 0# ( (first <= x) /\ (x <= last) )
  
  clone export "ada__model".Static_Discrete with
- type t = tindex_check_arrayD1, 
+ type t = index_t, 
  function first = first, 
  function last = last, 
  predicate in_range = in_range
  
- type tindex_check_arrayD1__ref #"index_check.ads" 7 0 0# =
-  { mutable tindex_check_arrayD1__content "model_trace:" : tindex_check_arrayD1 }
+ type index_t__ref #"index_check.ads" 7 0 0# =
+  { mutable index_t__content "model_trace:" : index_t }
  
- function tindex_check_arrayD1__ref___projection #"index_check.ads" 7 0 0# 
-   (a : tindex_check_arrayD1__ref) : tindex_check_arrayD1 =
-  a.tindex_check_arrayD1__content
+ function index_t__ref___projection #"index_check.ads" 7 0 0# 
+   (a : index_t__ref) : index_t =
+  a.index_t__content
  
- meta "model_projection" function tindex_check_arrayD1__ref___projection
+ meta "model_projection" function index_t__ref___projection
  
- meta "inline : no" function tindex_check_arrayD1__ref___projection
+ meta "inline : no" function index_t__ref___projection
  
- val tindex_check_arrayD1__havoc #"index_check.ads" 7 0 0# 
-   (x : tindex_check_arrayD1__ref) : unit
+ val index_t__havoc #"index_check.ads" 7 0 0# 
+   (x : index_t__ref) : unit
   writes {x}
 
 end
 
-(* Module defining to_rep/of_rep for type "Tindex_check_arrayD1" defined at index_check.ads:7, created in Gnat2Why.Types.Translate_Type *)
-module Index_check__Tindex_check_arrayD1__rep
- use        Index_check__Tindex_check_arrayD1
+(* Module defining to_rep/of_rep for type "index_t" defined at index_check.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Index_check__index_t__rep
+ use        Index_check__index_t
  use import "_gnatprove_standard".Main
 
  clone export "ada__model".Rep_Proj_Int with
- type t = Index_check__Tindex_check_arrayD1.tindex_check_arrayD1, 
- predicate in_range = Index_check__Tindex_check_arrayD1.in_range
+ type t = Index_check__index_t.index_t, 
+ predicate in_range = Index_check__index_t.in_range
  
  meta "model_projection" function to_rep
  
@@ -1566,19 +1566,19 @@ module Index_check__Tindex_check_arrayD1__rep
 
 end
 
-(* Module for axiomatizing the array theory associated to type "Tindex_check_arrayB" defined at index_check.ads:7, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
-module Array__Int__Standard__integer
+(* Module for axiomatizing the array theory associated to type "Tarr_tB" defined at index_check.ads:10, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Standard__natural
  use import "_gnatprove_standard".Main
  use import "int".Int
- use        Standard__integer
- use        Standard__integer__rep
+ use        Standard__natural
+ use        Standard__natural__rep
 
  function index_I1_one #"index_check.ads" 7 0 0# 
    : int =
   1
  
  type component_type #"index_check.ads" 7 0 0# =
-  Standard__integer.integer
+  Standard__natural.natural
  
  clone export "_gnatprove_standard".Array__1 with
  type I1.t = int, 
@@ -1596,7 +1596,7 @@ module Array__Int__Standard__integer
    ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
    (b__first > b__last))) /\ (forall temp___idx_132 #"system.ads" 1 0 0#  : int.
    (if (( (a__first <= temp___idx_132) /\ (temp___idx_132 <= a__last) )) then (
-    ((Standard__integer__rep.to_rep (get a temp___idx_132)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_132))))) else true)) )
+    ((Standard__natural__rep.to_rep (get a temp___idx_132)) = (Standard__natural__rep.to_rep (get b ((b__first - a__first) + temp___idx_132))))) else true)) )
  
  axiom bool_eq_rev :
   (forall a #"system.ads" 1 0 0#  b #"system.ads" 1 0 0#  : map.
@@ -1605,7 +1605,7 @@ module Array__Int__Standard__integer
     ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
     (b__first > b__last))) /\ (forall temp___idx_132 #"system.ads" 1 0 0#  : int.
     (if (( (a__first <= temp___idx_132) /\ (temp___idx_132 <= a__last) )) then (
-     ((Standard__integer__rep.to_rep (get a temp___idx_132)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_132))))) else true)) ) )))
+     ((Standard__natural__rep.to_rep (get a temp___idx_132)) = (Standard__natural__rep.to_rep (get b ((b__first - a__first) + temp___idx_132))))) else true)) ) )))
  
  function index_Index_one #"system.ads" 1 0 0# 
    : int =
@@ -1613,7 +1613,7 @@ module Array__Int__Standard__integer
  
  clone export "ada__model".Array_Int_Rep_Comparison_Axiom with
  type component_type = component_type, 
- function to_rep = Standard__integer__rep.to_rep, 
+ function to_rep = Standard__natural__rep.to_rep, 
  type map = map, 
  type Index.t = int, 
  predicate Index.le = Int.(<=), 
@@ -1627,35 +1627,35 @@ module Array__Int__Standard__integer
 
 end
 
-(* Module for axiomatizing type "Tindex_check_arrayB" defined at index_check.ads:7, created in Gnat2Why.Types.Translate_Type *)
-module Index_check__Tindex_check_arrayB
+(* Module for axiomatizing type "Tarr_tB" defined at index_check.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Index_check__Tarr_tB
  use import "_gnatprove_standard".Main
  use import "int".Int
  use        Standard__integer
- use        Standard__integer
+ use        Standard__natural
  use        Standard__integer__rep
- use        Index_check__Tindex_check_arrayD1
- use        Array__Int__Standard__integer
+ use        Index_check__index_t
+ use        Array__Int__Standard__natural
 
  type component_type #"system.ads" 1 0 0# =
-  Standard__integer.integer
+  Standard__natural.natural
  
  function index_1_id #"system.ads" 1 0 0# 
    (x : int) : int =
   x
  
  clone export "ada__model".Unconstr_Array with
- type map = Array__Int__Standard__integer.map, 
- function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
+ type map = Array__Int__Standard__natural.map, 
+ function array_bool_eq = Array__Int__Standard__natural.bool_eq, 
  type index_base_type = Standard__integer.integer, 
  type index_rep_type = int, 
  function to_rep = Standard__integer__rep.to_rep, 
  function rep_to_int = index_1_id, 
  predicate in_range_base = Standard__integer.in_range, 
- predicate index_dynamic_property = Index_check__Tindex_check_arrayD1.dynamic_property, 
+ predicate index_dynamic_property = Index_check__index_t.dynamic_property, 
  predicate index_rep_le = Int.(<=)
  
- type tindex_check_arrayB #"index_check.ads" 7 0 0# =
+ type tarr_tB #"index_check.ads" 10 0 0# =
   __t
  
  meta "model_projection" function to_array
@@ -1670,32 +1670,32 @@ module Index_check__Tindex_check_arrayB
  
  meta "inline : no" function last
  
- type tindex_check_arrayB__ref #"index_check.ads" 7 0 0# =
-  { mutable tindex_check_arrayB__content "model_trace:" : tindex_check_arrayB }
+ type tarr_tB__ref #"index_check.ads" 10 0 0# =
+  { mutable tarr_tB__content "model_trace:" : tarr_tB }
  
- function tindex_check_arrayB__ref___projection #"index_check.ads" 7 0 0# 
-   (a : tindex_check_arrayB__ref) : tindex_check_arrayB =
-  a.tindex_check_arrayB__content
+ function tarr_tB__ref___projection #"index_check.ads" 10 0 0# 
+   (a : tarr_tB__ref) : tarr_tB =
+  a.tarr_tB__content
  
- meta "model_projection" function tindex_check_arrayB__ref___projection
+ meta "model_projection" function tarr_tB__ref___projection
  
- meta "inline : no" function tindex_check_arrayB__ref___projection
+ meta "inline : no" function tarr_tB__ref___projection
  
- val tindex_check_arrayB__havoc #"index_check.ads" 7 0 0# 
-   (x : tindex_check_arrayB__ref) : unit
+ val tarr_tB__havoc #"index_check.ads" 10 0 0# 
+   (x : tarr_tB__ref) : unit
   writes {x}
 
 end
 
-(* Module for axiomatizing type "index_check_array" defined at index_check.ads:7, created in Gnat2Why.Types.Translate_Type *)
-module Index_check__index_check_array
+(* Module for axiomatizing type "arr_t" defined at index_check.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Index_check__arr_t
  use import "_gnatprove_standard".Main
  use import "int".Int
- use        Standard__integer
- use        Array__Int__Standard__integer
+ use        Standard__natural
+ use        Array__Int__Standard__natural
 
- type component_type #"index_check.ads" 7 0 0# =
-  Standard__integer.integer
+ type component_type #"index_check.ads" 10 0 0# =
+  Standard__natural.natural
  
  function first #"system.ads" 1 0 0# 
    : int =
@@ -1703,68 +1703,68 @@ module Index_check__index_check_array
  
  function last #"system.ads" 1 0 0# 
    : int =
-  10
+  1000
  
  clone export "ada__model".Constr_Array with
- type map = Array__Int__Standard__integer.map, 
- function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
+ type map = Array__Int__Standard__natural.map, 
+ function array_bool_eq = Array__Int__Standard__natural.bool_eq, 
  function first = first, 
  function last = last, 
  type index_rep_type = int
 
 end
 
-(* Module for defining the constant "a" defined at index_check.ads:9, created in Gnat2Why.Decls.Translate_Constant *)
-module Index_check__sumemup__a
+(* Module for defining the constant "a" defined at index_check.ads:11, created in Gnat2Why.Decls.Translate_Constant *)
+module Index_check__init_arr_index__a
  use import "_gnatprove_standard".Main
- use        Array__Int__Standard__integer
+ use        Array__Int__Standard__natural
 
- function a #"index_check.ads" 9 0 0# "model_projected" "model_trace:2414" 
-   : Array__Int__Standard__integer.map
+ function a #"index_check.ads" 11 0 0# "model_projected" "model_trace:2437" 
+   : Array__Int__Standard__natural.map
  
- function attr__ATTRIBUTE_ADDRESS #"index_check.ads" 7 0 0# 
+ function attr__ATTRIBUTE_ADDRESS #"index_check.ads" 10 0 0# 
    : int
 
 end
 
-(* Module giving an empty axiom for the entity "a" defined at index_check.ads:9, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Index_check__sumemup__a___axiom
+(* Module giving an empty axiom for the entity "a" defined at index_check.ads:11, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Index_check__init_arr_index__a___axiom
  use import "_gnatprove_standard".Main
 
 
 end
 
-(* Module for possibly declaring a logic function for "sumemup" defined at index_check.ads:9, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Index_check__sumemup
+(* Module for possibly declaring a logic function for "init_arr_index" defined at index_check.ads:11, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Index_check__init_arr_index
  use import "_gnatprove_standard".Main
- use        Array__Int__Standard__integer
+ use        Array__Int__Standard__natural
 
- function sumemup #"index_check.ads" 9 0 0# 
-   (a : Array__Int__Standard__integer.map) : int
+ function init_arr_index #"index_check.ads" 11 0 0# 
+   (a : Array__Int__Standard__natural.map) : int
  
- predicate sumemup__function_guard #"system.ads" 1 0 0# 
-   (result : int) (a : Array__Int__Standard__integer.map) 
+ predicate init_arr_index__function_guard #"system.ads" 1 0 0# 
+   (result : int) (a : Array__Int__Standard__natural.map) 
 
 end
 
-(* Module for axiomatizing type "T1b" defined at index_check.adb:10, created in Gnat2Why.Types.Translate_Type *)
-module Index_check__sumemup__L_1__T1b
+(* Module for axiomatizing type "T1b" defined at index_check.adb:12, created in Gnat2Why.Types.Translate_Type *)
+module Index_check__init_arr_index__L_1__T1b
  use import "_gnatprove_standard".Main
  use import "int".Int
 
- type t1b #"index_check.adb" 10 0 0# 
+ type t1b #"index_check.adb" 12 0 0# 
  
- function first #"index_check.adb" 10 0 0# 
+ function first #"index_check.adb" 12 0 0# 
    : int =
   1
  
- function last #"index_check.adb" 10 0 0# 
+ function last #"index_check.adb" 12 0 0# 
    : int =
-  10
+  1000
  
- predicate in_range #"index_check.adb" 10 0 0# 
+ predicate in_range #"index_check.adb" 12 0 0# 
    (x : int)  =
-  #"index_check.adb" 10 0 0# ( (first <= x) /\ (x <= last) )
+  #"index_check.adb" 12 0 0# ( (first <= x) /\ (x <= last) )
  
  clone export "ada__model".Static_Discrete with
  type t = t1b, 
@@ -1772,10 +1772,10 @@ module Index_check__sumemup__L_1__T1b
  function last = last, 
  predicate in_range = in_range
  
- type t1b__ref #"index_check.adb" 10 0 0# =
+ type t1b__ref #"index_check.adb" 12 0 0# =
   { mutable t1b__content "model_trace:" : t1b }
  
- function t1b__ref___projection #"index_check.adb" 10 0 0# 
+ function t1b__ref___projection #"index_check.adb" 12 0 0# 
    (a : t1b__ref) : t1b =
   a.t1b__content
  
@@ -1783,20 +1783,20 @@ module Index_check__sumemup__L_1__T1b
  
  meta "inline : no" function t1b__ref___projection
  
- val t1b__havoc #"index_check.adb" 10 0 0# 
+ val t1b__havoc #"index_check.adb" 12 0 0# 
    (x : t1b__ref) : unit
   writes {x}
 
 end
 
-(* Module defining to_rep/of_rep for type "T1b" defined at index_check.adb:10, created in Gnat2Why.Types.Translate_Type *)
-module Index_check__sumemup__L_1__T1b__rep
- use        Index_check__sumemup__L_1__T1b
+(* Module defining to_rep/of_rep for type "T1b" defined at index_check.adb:12, created in Gnat2Why.Types.Translate_Type *)
+module Index_check__init_arr_index__L_1__T1b__rep
+ use        Index_check__init_arr_index__L_1__T1b
  use import "_gnatprove_standard".Main
 
  clone export "ada__model".Rep_Proj_Int with
- type t = Index_check__sumemup__L_1__T1b.t1b, 
- predicate in_range = Index_check__sumemup__L_1__T1b.in_range
+ type t = Index_check__init_arr_index__L_1__T1b.t1b, 
+ predicate in_range = Index_check__init_arr_index__L_1__T1b.in_range
  
  meta "model_projection" function to_rep
  
@@ -1807,37 +1807,37 @@ module Index_check__sumemup__L_1__T1b__rep
  meta "inline : no" function to_rep
 
 end
-(* Module for defining a ref holding the value of variable "sum" defined at index_check.adb:8, created in Gnat2Why.Decls.Translate_Variable *)
-module Index_check__sumemup__sum
+(* Module for defining a ref holding the value of variable "result" defined at index_check.adb:10, created in Gnat2Why.Decls.Translate_Variable *)
+module Index_check__init_arr_index__result
  use import "_gnatprove_standard".Main
 
- val sum #"index_check.adb" 8 0 0# "model_projected" "model_trace:2327"  : int__ref 
+ val result__ #"index_check.adb" 10 0 0# "model_projected" "model_trace:2327"  : int__ref 
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
    : int
 
 end
 
-(* Module giving an empty axiom for the entity "sum" defined at index_check.adb:8, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Index_check__sumemup__sum___axiom
+(* Module giving an empty axiom for the entity "result" defined at index_check.adb:10, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Index_check__init_arr_index__result___axiom
  use import "_gnatprove_standard".Main
 
 
 end
 
-(* Module for defining a ref holding the value of variable "i" defined at index_check.adb:10, created in Gnat2Why.Decls.Translate_Variable *)
-module Index_check__sumemup__L_1__i
+(* Module for defining a ref holding the value of variable "j" defined at index_check.adb:12, created in Gnat2Why.Decls.Translate_Variable *)
+module Index_check__init_arr_index__L_1__j
  use import "_gnatprove_standard".Main
 
- val i #"index_check.adb" 10 0 0# "model_projected" "model_trace:2340"  : int__ref 
+ val j #"index_check.adb" 12 0 0# "model_projected" "model_trace:2342"  : int__ref 
  
- function attr__ATTRIBUTE_ADDRESS #"index_check.adb" 10 0 0# 
+ function attr__ATTRIBUTE_ADDRESS #"index_check.adb" 12 0 0# 
    : int
 
 end
 
-(* Module giving an empty axiom for the entity "i" defined at index_check.adb:10, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Index_check__sumemup__L_1__i___axiom
+(* Module giving an empty axiom for the entity "j" defined at index_check.adb:12, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Index_check__init_arr_index__L_1__j___axiom
  use import "_gnatprove_standard".Main
 
 
@@ -1848,7 +1848,7 @@ module Standard__short_short_integer___axiom
  use import "int".Int
  use        Standard__short_short_integer
 
- predicate dynamic_invariant #"index_check.adb" 10 0 0# "inline" 
+ predicate dynamic_invariant #"index_check.adb" 12 0 0# "inline" 
    (temp___expr_3 : int) (temp___is_init_0 : bool) (temp___skip_constant_1 : bool) (temp___do_toplevel_2 : bool)  =
   #"system.ads" 1 0 0# (if (( temp___is_init_0 \/ (Standard__short_short_integer.first <= Standard__short_short_integer.last) )) then (
    (Standard__short_short_integer.dynamic_property Standard__short_short_integer.first Standard__short_short_integer.last temp___expr_3)) else true)
@@ -2205,76 +2205,86 @@ module Standard__universal_integer___axiom
 
 end
 
-(* Module for defining the loop exit exception for the loop "L_1" defined at index_check.adb:10, created in Gnat2Why.Decls.Translate_Loop_Entity *)
-module Index_check__sumemup__L_1
+(* Module for defining the loop exit exception for the loop "L_1" defined at index_check.adb:12, created in Gnat2Why.Decls.Translate_Loop_Entity *)
+module Index_check__init_arr_index__L_1
  use import "_gnatprove_standard".Main
 
  exception L_1
 
 end
 
-(* Module giving an empty axiom for the entity "L_1" defined at index_check.adb:10, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Index_check__sumemup__L_1___axiom
+(* Module giving an empty axiom for the entity "L_1" defined at index_check.adb:12, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Index_check__init_arr_index__L_1___axiom
  use import "_gnatprove_standard".Main
 
 
 end
 
-(* Module giving axioms for type "Tindex_check_arrayD1" defined at index_check.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Index_check__Tindex_check_arrayD1___axiom
+(* Module giving axioms for type "index_t" defined at index_check.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Index_check__index_t___axiom
  use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Index_check__index_t
 
-
-end
-
-(* Module giving axioms for type "Tindex_check_arrayB" defined at index_check.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Index_check__Tindex_check_arrayB___axiom
- use import "_gnatprove_standard".Main
-
-
-end
-
-(* Module giving axioms for type "index_check_array" defined at index_check.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Index_check__index_check_array___axiom
- use import "_gnatprove_standard".Main
- use        Array__Int__Standard__integer
- use        Array__Int__Standard__integer
-
- predicate dynamic_invariant #"index_check.adb" 10 0 0# "inline" 
-   (temp___expr_136 : Array__Int__Standard__integer.map) (temp___is_init_133 : bool) (temp___skip_constant_134 : bool) (temp___do_toplevel_135 : bool)  =
-  #"index_check.ads" 7 0 0# true
+ predicate dynamic_invariant #"index_check.adb" 12 0 0# "inline" 
+   (temp___expr_136 : int) (temp___is_init_133 : bool) (temp___skip_constant_134 : bool) (temp___do_toplevel_135 : bool)  =
+  #"index_check.ads" 7 0 0# (if (( temp___is_init_133 \/ (Index_check__index_t.first <= Index_check__index_t.last) )) then (
+   (Index_check__index_t.dynamic_property Index_check__index_t.first Index_check__index_t.last temp___expr_136)) else true)
  
  predicate default_initial_assumption #"index_check.ads" 7 0 0# "inline" 
-   (temp___expr_138 : Array__Int__Standard__integer.map) (temp___skip_top_level_139 : bool)  =
+   (temp___expr_137 : int) (temp___skip_top_level_138 : bool)  =
   #"index_check.ads" 7 0 0# true
 
 end
 
-(* Module giving axioms for type "T1b" defined at index_check.adb:10, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Index_check__sumemup__L_1__T1b___axiom
+(* Module giving axioms for type "Tarr_tB" defined at index_check.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Index_check__Tarr_tB___axiom
  use import "_gnatprove_standard".Main
 
 
 end
-(* Module for declaring a program function (and possibly an axiom) for "sumemup" defined at index_check.ads:9, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Index_check__sumemup___axiom
- use import "_gnatprove_standard".Main
- use        Standard__natural___axiom
- use        Index_check__index_check_array___axiom
- use        Index_check__sumemup
- use        Array__Int__Standard__integer
- use        Array__Int__Standard__integer
 
- val sumemup #"index_check.ads" 9 0 0# 
-   (a : Array__Int__Standard__integer.map) : int
-  requires { #"system.ads" 1 0 0# true }
-  ensures { #"system.ads" 1 0 0# ( ( (result = (Index_check__sumemup.sumemup a)) /\ (Index_check__sumemup.sumemup__function_guard result a) ) /\ (Standard__natural___axiom.dynamic_invariant result True False True) ) }
+(* Module giving axioms for type "arr_t" defined at index_check.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Index_check__arr_t___axiom
+ use import "_gnatprove_standard".Main
+ use        Array__Int__Standard__natural
+ use        Array__Int__Standard__natural
+
+ predicate dynamic_invariant #"index_check.ads" 7 0 0# "inline" 
+   (temp___expr_142 : Array__Int__Standard__natural.map) (temp___is_init_139 : bool) (temp___skip_constant_140 : bool) (temp___do_toplevel_141 : bool)  =
+  #"index_check.ads" 10 0 0# true
  
- axiom sumemup__post_axiom :
-  (forall a #"index_check.ads" 9 0 0#  : Array__Int__Standard__integer.map [(Index_check__sumemup.sumemup a)].
-   ( (Index_check__index_check_array___axiom.dynamic_invariant a True True True) -> (let result = (Index_check__sumemup.sumemup a) in (
-    (if ((Index_check__sumemup.sumemup__function_guard result a)) then (
-     (Standard__natural___axiom.dynamic_invariant result True False True)) else true)))
+ predicate default_initial_assumption #"index_check.ads" 10 0 0# "inline" 
+   (temp___expr_144 : Array__Int__Standard__natural.map) (temp___skip_top_level_145 : bool)  =
+  #"index_check.ads" 10 0 0# true
+
+end
+
+(* Module giving axioms for type "T1b" defined at index_check.adb:12, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Index_check__init_arr_index__L_1__T1b___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+(* Module for declaring a program function (and possibly an axiom) for "init_arr_index" defined at index_check.ads:11, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Index_check__init_arr_index___axiom
+ use import "_gnatprove_standard".Main
+ use        Standard__positive___axiom
+ use        Index_check__arr_t___axiom
+ use        Index_check__init_arr_index
+ use        Array__Int__Standard__natural
+ use        Array__Int__Standard__natural
+
+ val init_arr_index #"index_check.ads" 11 0 0# 
+   (a : Array__Int__Standard__natural.map) : int
+  requires { #"system.ads" 1 0 0# true }
+  ensures { #"system.ads" 1 0 0# ( ( (result = (Index_check__init_arr_index.init_arr_index a)) /\ (Index_check__init_arr_index.init_arr_index__function_guard result a) ) /\ (Standard__positive___axiom.dynamic_invariant result True False True) ) }
+ 
+ axiom init_arr_index__post_axiom :
+  (forall a #"index_check.ads" 11 0 0#  : Array__Int__Standard__natural.map [(Index_check__init_arr_index.init_arr_index a)].
+   ( (Index_check__arr_t___axiom.dynamic_invariant a True True True) -> (let result = (Index_check__init_arr_index.init_arr_index a) in (
+    (if ((Index_check__init_arr_index.init_arr_index__function_guard result a)) then (
+     (Standard__positive___axiom.dynamic_invariant result True False True)) else true)))
     ))
 
 end
@@ -2283,105 +2293,106 @@ end
 module Index_check__package_def
  use import "_gnatprove_standard".Main
 
- let def #"index_check.ads" 9 0 0# "GP_Subp:index_check.ads:1" "W:diverges:N" 
+ let def #"index_check.ads" 11 0 0# "GP_Subp:index_check.ads:1" "W:diverges:N" 
    (__void_param : unit)
-  requires { #"index_check.ads" 9 0 0# true }
-  ensures { #"index_check.ads" 9 0 0# true }
+  requires { #"index_check.ads" 11 0 0# true }
+  ensures { #"index_check.ads" 11 0 0# true }
    =
-  ( "GP_Sloc:index_check.adb:23:1" () )
+  ( "GP_Sloc:index_check.adb:26:2" () )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "sumemup" defined at index_check.ads:9, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Index_check__sumemup__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "init_arr_index" defined at index_check.ads:11, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Index_check__init_arr_index__subprogram_def
  use import "_gnatprove_standard".Main
  use import "int".Int
  use        "_gnatprove_standard".Boolean
- use        Standard__integer
- use        Standard__integer
- use        Standard__integer__rep
  use        Standard__natural
+ use        Standard__natural__rep
+ use        Standard__positive___axiom
+ use        Index_check__index_t
+ use        Array__Int__Standard__natural
+ use        Index_check__arr_t___axiom
+ use        Index_check__init_arr_index__a
+ use        Index_check__init_arr_index__result
+ use        Index_check__init_arr_index__L_1
+ use        Index_check__init_arr_index__L_1__j
  use        Standard__natural___axiom
- use        Array__Int__Standard__integer
- use        Index_check__index_check_array___axiom
- use        Index_check__sumemup__a
- use        Index_check__sumemup__sum
- use        Index_check__sumemup__L_1
- use        Index_check__sumemup__L_1__i
- use        Standard__integer___axiom
- use        Standard__natural___axiom
- use        Standard__integer___axiom
- use        Index_check__sumemup__sum___axiom
- use        Index_check__sumemup__L_1__i___axiom
- use        Index_check__sumemup__L_1___axiom
- use        Index_check__index_check_array___axiom
- use        Index_check__sumemup__a___axiom
+ use        Standard__positive___axiom
+ use        Index_check__init_arr_index__result___axiom
+ use        Index_check__init_arr_index__L_1__j___axiom
+ use        Index_check__init_arr_index__L_1___axiom
+ use        Index_check__index_t___axiom
+ use        Index_check__arr_t___axiom
+ use        Index_check__init_arr_index__a___axiom
 
- val index_check__sumemup__result #"index_check.ads" 9 0 0# "model_projected" "model_trace:2407@result"  : int__ref 
+ val index_check__init_arr_index__result #"index_check.ads" 11 0 0# "model_projected" "model_trace:2430@result"  : int__ref 
  
- let def #"system.ads" 1 0 0# "W:diverges:N" "GP_Subp:index_check.ads:9" 
+ let def #"system.ads" 1 0 0# "W:diverges:N" "GP_Subp:index_check.ads:11" 
    (__void_param : unit)
   requires { #"system.ads" 1 0 0# true }
   ensures { #"system.ads" 1 0 0# true }
    =
-  ( () (* Assume dynamic invariants of inputs of the subprogram index_check.ads:9 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram index_check.ads:11 *)
   ;
-  #"index_check.ads" 7 0 0# assume { #"index_check.ads" 7 0 0# (Index_check__index_check_array___axiom.dynamic_invariant Index_check__sumemup__a.a True False True) };
-  #"index_check.ads" 9 0 0# assume { #"index_check.ads" 9 0 0# true };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram index_check.ads:9 *)
+  #"index_check.ads" 10 0 0# assume { #"index_check.ads" 10 0 0# (Index_check__arr_t___axiom.dynamic_invariant Index_check__init_arr_index__a.a True False True) };
+  #"index_check.ads" 11 0 0# assume { #"index_check.ads" 11 0 0# true };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram index_check.ads:11 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram index_check.ads:9 *)
+  () (* Check for RTE in the Pre of the subprogram index_check.ads:11 *)
   ;
-  #"index_check.ads" 9 0 0# abstract ensures {true}(let _ = True in (
+  #"index_check.ads" 11 0 0# abstract ensures {true}(let _ = True in (
    ()))
    end ;
-  () (* Assume Pre of the subprogram index_check.ads:9 *)
+  () (* Assume Pre of the subprogram index_check.ads:11 *)
   ;
-  #"index_check.ads" 9 0 0# assume { #"index_check.ads" 9 0 0# true };
-  #"index_check.ads" 9 0 0# try
-   ( #"index_check.adb" 8 0 0# Index_check__sumemup__sum.sum.int__content <- ( 0 );
-   #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__natural___axiom.dynamic_invariant Index_check__sumemup__sum.sum.int__content True False True) };
-   ( "GP_Sloc:index_check.adb:10:34" (let temp___145 = 1 in (
-   (let temp___146 = 10 in (
-    ( #"index_check.adb" 10 0 0# Index_check__sumemup__L_1__i.i.int__content <- ( temp___145 );
-    () (* Translation of an Ada loop from index_check.adb:10 *)
+  #"index_check.ads" 11 0 0# assume { #"index_check.ads" 11 0 0# true };
+  #"index_check.ads" 11 0 0# try
+   ( #"index_check.adb" 10 0 0# Index_check__init_arr_index__result.result__.int__content <- ( 1 );
+   #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__positive___axiom.dynamic_invariant Index_check__init_arr_index__result.result__.int__content True False True) };
+   ( "GP_Sloc:index_check.adb:12:28" (let temp___151 = 1 in (
+   (let temp___152 = 1000 in (
+    ( #"index_check.adb" 12 0 0# Index_check__init_arr_index__L_1__j.j.int__content <- ( temp___151 );
+    () (* Translation of an Ada loop from index_check.adb:12 *)
     ;
-    (if ((Boolean.andb((temp___145 <= Index_check__sumemup__L_1__i.i.int__content)) ((Index_check__sumemup__L_1__i.i.int__content <= temp___146)))) then (
-     #"index_check.adb" 10 0 0# try
-      ( #"index_check.adb" 10 0 0# abstract ensures {true}(let _ = Index_check__sumemup__sum.sum.int__content in (
+    (if ((Boolean.andb((temp___151 <= Index_check__init_arr_index__L_1__j.j.int__content)) ((Index_check__init_arr_index__L_1__j.j.int__content <= temp___152)))) then (
+     #"index_check.adb" 12 0 0# try
+      ( #"index_check.adb" 12 0 0# abstract ensures {true}(let _ = Index_check__init_arr_index__result.result__.int__content in (
        ()))
        end ;
-      (let temp___144 = #"index_check.adb" 8 0 0# (any int
-      ensures {#"system.ads" 1 0 0# (result = Index_check__sumemup__sum.sum.int__content)} 
+      (let temp___150 = #"index_check.adb" 10 0 0# (any int
+      ensures {#"system.ads" 1 0 0# (result = Index_check__init_arr_index__result.result__.int__content)} 
       ) in (
-       ( () (* First unroling of the loop statements appearing before the loop invariant of loop index_check.adb:10 *)
+       ( () (* First unroling of the loop statements appearing before the loop invariant of loop index_check.adb:12 *)
        ;
-       () (* While loop translating the Ada loop from index_check.adb:10 *)
+       () (* While loop translating the Ada loop from index_check.adb:12 *)
        ;
-       #"index_check.adb" 10 0 0# while True do
-        ( () (* Assume implicit invariants from the loop index_check.adb:10 *)
+       #"index_check.adb" 12 0 0# while True do
+        ( () (* Assume implicit invariants from the loop index_check.adb:12 *)
         ;
-        #"index_check.adb" 10 0 0# assume { #"index_check.adb" 10 0 0# (Boolean.andb(( ( true /\ (Standard__natural___axiom.dynamic_invariant Index_check__sumemup__sum.sum.int__content False True True) ) /\ true )) (( (1 <= Index_check__sumemup__L_1__i.i.int__content) /\ (Index_check__sumemup__L_1__i.i.int__content <= 10) ))) };
-        () (* Check for absence of RTE in the invariant of loop index_check.adb:10 *)
+        #"index_check.adb" 12 0 0# assume { #"index_check.adb" 12 0 0# (Boolean.andb(( ( true /\ (Standard__positive___axiom.dynamic_invariant Index_check__init_arr_index__result.result__.int__content False True True) ) /\ true )) (( (1 <= Index_check__init_arr_index__L_1__j.j.int__content) /\ (Index_check__init_arr_index__L_1__j.j.int__content <= 1000) ))) };
+        () (* Check for absence of RTE in the invariant of loop index_check.adb:12 *)
         ;
-        () (* Loop statements appearing after the loop invariant of loop index_check.adb:10 *)
+        () (* Loop statements appearing after the loop invariant of loop index_check.adb:12 *)
         ;
-        ( "GP_Sloc:index_check.adb:11:25" #"index_check.adb" 11 0 0# Index_check__sumemup__sum.sum.int__content <- ( ( #"index_check.adb" 11 0 0# "model_vc" "keep_on_simp" "GP_Sloc:index_check.adb:11:32" "GP_Shape:L_1_while__sum_assign__add" "GP_Reason:VC_RANGE_CHECK" "GP_Id:1" "comment:                    sum := sum + a(i);
-                               ^ index_check.adb:11:32:VC_RANGE_CHECK" (Standard__natural.range_check_(( #"index_check.adb" 11 0 0# "model_vc" "keep_on_simp" "GP_Sloc:index_check.adb:11:32" "GP_Reason:VC_OVERFLOW_CHECK" "GP_Id:0" "comment:                    sum := sum + a(i);
-                               ^ index_check.adb:11:32:VC_OVERFLOW_CHECK" "GP_Shape:L_1_while__sum_assign__add" (Standard__integer.range_check_((Index_check__sumemup__sum.sum.int__content + (Standard__integer__rep.to_rep((Array__Int__Standard__integer.get(Index_check__sumemup__a.a) (Index_check__sumemup__L_1__i.i.int__content))))))) ))) ) ) );
-        () (* Check for the exit condition and loop statements appearing before the loop invariant of loop index_check.adb:10 *)
+        ( "GP_Sloc:index_check.adb:13:3" (if (((Standard__natural__rep.to_rep((Array__Int__Standard__natural.get(Index_check__init_arr_index__a.a) (( #"index_check.adb" 13 0 0# assert { #"index_check.adb" 13 0 0# ( #"index_check.adb" 13 0 0# "model_vc" "keep_on_simp" "GP_Sloc:index_check.adb:13:9" "GP_Reason:VC_INDEX_CHECK" "GP_Id:0" "comment:  if  A(Result) < A(J) then
+        ^ index_check.adb:13:9:VC_INDEX_CHECK" "GP_Shape:L_1_while__if__cmp__ixdcomp" ( (Index_check__index_t.first <= Index_check__init_arr_index__result.result__.int__content) /\ (Index_check__init_arr_index__result.result__.int__content <= Index_check__index_t.last) ) ) };
+        Index_check__init_arr_index__result.result__.int__content ))))) < (Standard__natural__rep.to_rep((Array__Int__Standard__natural.get(Index_check__init_arr_index__a.a) (Index_check__init_arr_index__L_1__j.j.int__content)))))) then (
+         ( "GP_Sloc:index_check.adb:14:10" #"index_check.adb" 14 0 0# Index_check__init_arr_index__result.result__.int__content <- ( Index_check__init_arr_index__L_1__j.j.int__content ) )) else (
+         ())) );
+        () (* Check for the exit condition and loop statements appearing before the loop invariant of loop index_check.adb:12 *)
         ;
-        (if ((Index_check__sumemup__L_1__i.i.int__content = temp___146)) then (
-         #"index_check.adb" 10 0 0# raise Index_check__sumemup__L_1.L_1));
-        #"index_check.adb" 10 0 0# Index_check__sumemup__L_1__i.i.int__content <- ( (Index_check__sumemup__L_1__i.i.int__content + 1) ) )
+        (if ((Index_check__init_arr_index__L_1__j.j.int__content = temp___152)) then (
+         #"index_check.adb" 12 0 0# raise Index_check__init_arr_index__L_1.L_1));
+        #"index_check.adb" 12 0 0# Index_check__init_arr_index__L_1__j.j.int__content <- ( (Index_check__init_arr_index__L_1__j.j.int__content + 1) ) )
        done )))
        )
      with
-      Index_check__sumemup__L_1.L_1 -> ()
+      Index_check__init_arr_index__L_1.L_1 -> ()
      end)) )))
    ))
     );
-   ( "GP_Sloc:index_check.adb:13:17" ( #"index_check.adb" 13 0 0# index_check__sumemup__result.int__content <- ( Index_check__sumemup__sum.sum.int__content );
-   #"index_check.adb" 13 0 0# raise Return__exc ) );
+   ( "GP_Sloc:index_check.adb:22:3" ( #"index_check.adb" 22 0 0# index_check__init_arr_index__result.int__content <- ( Index_check__init_arr_index__result.result__.int__content );
+   #"index_check.adb" 22 0 0# raise Return__exc ) );
    #"index_check.adb" 7 0 0# raise Return__exc )
   with
    Return__exc -> ()
@@ -2389,5 +2400,5 @@ module Index_check__sumemup__subprogram_def
   #"index_check.adb" 7 0 0# abstract ensures {true}(let _ = True in (
    ()))
    end ;
-  index_check__sumemup__result.int__content )
+  index_check__init_arr_index__result.int__content )
 end
