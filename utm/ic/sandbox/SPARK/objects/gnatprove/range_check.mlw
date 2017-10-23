@@ -1505,56 +1505,56 @@ module Standard__universal_integer__rep
 
 end
 
-(* Module for axiomatizing type "Tindex_check_arrayD1" defined at range_check.ads:10, created in Gnat2Why.Types.Translate_Type *)
-module Range_check__Tindex_check_arrayD1
+(* Module for axiomatizing type "TcB" defined at range_check.ads:9, created in Gnat2Why.Types.Translate_Type *)
+module Range_check__TcB
  use import "_gnatprove_standard".Main
  use import "int".Int
 
- type tindex_check_arrayD1 #"range_check.ads" 10 0 0# 
+ type tcB #"range_check.ads" 9 0 0# 
  
- function first #"range_check.ads" 10 0 0# 
+ function first #"range_check.ads" 9 0 0# 
    : int =
-  1
+  ( -128 )
  
- function last #"range_check.ads" 10 0 0# 
+ function last #"range_check.ads" 9 0 0# 
    : int =
-  10
+  127
  
- predicate in_range #"range_check.ads" 10 0 0# 
+ predicate in_range #"range_check.ads" 9 0 0# 
    (x : int)  =
-  #"range_check.ads" 10 0 0# ( (first <= x) /\ (x <= last) )
+  #"range_check.ads" 9 0 0# ( (first <= x) /\ (x <= last) )
  
  clone export "ada__model".Static_Discrete with
- type t = tindex_check_arrayD1, 
+ type t = tcB, 
  function first = first, 
  function last = last, 
  predicate in_range = in_range
  
- type tindex_check_arrayD1__ref #"range_check.ads" 10 0 0# =
-  { mutable tindex_check_arrayD1__content "model_trace:" : tindex_check_arrayD1 }
+ type tcB__ref #"range_check.ads" 9 0 0# =
+  { mutable tcB__content "model_trace:" : tcB }
  
- function tindex_check_arrayD1__ref___projection #"range_check.ads" 10 0 0# 
-   (a : tindex_check_arrayD1__ref) : tindex_check_arrayD1 =
-  a.tindex_check_arrayD1__content
+ function tcB__ref___projection #"range_check.ads" 9 0 0# 
+   (a : tcB__ref) : tcB =
+  a.tcB__content
  
- meta "model_projection" function tindex_check_arrayD1__ref___projection
+ meta "model_projection" function tcB__ref___projection
  
- meta "inline : no" function tindex_check_arrayD1__ref___projection
+ meta "inline : no" function tcB__ref___projection
  
- val tindex_check_arrayD1__havoc #"range_check.ads" 10 0 0# 
-   (x : tindex_check_arrayD1__ref) : unit
+ val tcB__havoc #"range_check.ads" 9 0 0# 
+   (x : tcB__ref) : unit
   writes {x}
 
 end
 
-(* Module defining to_rep/of_rep for type "Tindex_check_arrayD1" defined at range_check.ads:10, created in Gnat2Why.Types.Translate_Type *)
-module Range_check__Tindex_check_arrayD1__rep
- use        Range_check__Tindex_check_arrayD1
+(* Module defining to_rep/of_rep for type "TcB" defined at range_check.ads:9, created in Gnat2Why.Types.Translate_Type *)
+module Range_check__TcB__rep
+ use        Range_check__TcB
  use import "_gnatprove_standard".Main
 
  clone export "ada__model".Rep_Proj_Int with
- type t = Range_check__Tindex_check_arrayD1.tindex_check_arrayD1, 
- predicate in_range = Range_check__Tindex_check_arrayD1.in_range
+ type t = Range_check__TcB.tcB, 
+ predicate in_range = Range_check__TcB.in_range
  
  meta "model_projection" function to_rep
  
@@ -1566,237 +1566,56 @@ module Range_check__Tindex_check_arrayD1__rep
 
 end
 
-(* Module for axiomatizing the array theory associated to type "Tindex_check_arrayB" defined at range_check.ads:10, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
-module Array__Int__Standard__integer
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        Standard__integer
- use        Standard__integer__rep
-
- function index_I1_one #"range_check.ads" 10 0 0# 
-   : int =
-  1
- 
- type component_type #"range_check.ads" 10 0 0# =
-  Standard__integer.integer
- 
- clone export "_gnatprove_standard".Array__1 with
- type I1.t = int, 
- predicate I1.le = Int.(<=), 
- predicate I1.lt = Int.(<), 
- predicate I1.gt = Int.(>), 
- function I1.add = Int.(+), 
- function I1.sub = Int.(-), 
- function I1.one = index_I1_one, 
- type component_type = component_type
- 
- function bool_eq #"system.ads" 1 0 0# 
-   (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) : bool =
-  ( (if ((a__first <= a__last)) then (
-   ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
-   (b__first > b__last))) /\ (forall temp___idx_132 #"system.ads" 1 0 0#  : int.
-   (if (( (a__first <= temp___idx_132) /\ (temp___idx_132 <= a__last) )) then (
-    ((Standard__integer__rep.to_rep (get a temp___idx_132)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_132))))) else true)) )
- 
- axiom bool_eq_rev :
-  (forall a #"system.ads" 1 0 0#  b #"system.ads" 1 0 0#  : map.
-  (forall a__first #"system.ads" 1 0 0#  a__last #"system.ads" 1 0 0#  b__first #"system.ads" 1 0 0#  b__last #"system.ads" 1 0 0#  : int.
-   ( ((bool_eq b b__first b__last a a__first a__last) = True) -> ( (if ((a__first <= a__last)) then (
-    ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
-    (b__first > b__last))) /\ (forall temp___idx_132 #"system.ads" 1 0 0#  : int.
-    (if (( (a__first <= temp___idx_132) /\ (temp___idx_132 <= a__last) )) then (
-     ((Standard__integer__rep.to_rep (get a temp___idx_132)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_132))))) else true)) ) )))
- 
- function index_Index_one #"system.ads" 1 0 0# 
-   : int =
-  1
- 
- clone export "ada__model".Array_Int_Rep_Comparison_Axiom with
- type component_type = component_type, 
- function to_rep = Standard__integer__rep.to_rep, 
- type map = map, 
- type Index.t = int, 
- predicate Index.le = Int.(<=), 
- predicate Index.lt = Int.(<), 
- predicate Index.gt = Int.(>), 
- function Index.add = Int.(+), 
- function Index.sub = Int.(-), 
- function Index.one = index_Index_one, 
- function get = get, 
- function bool_eq = bool_eq
-
-end
-
-(* Module for axiomatizing type "Tindex_check_arrayB" defined at range_check.ads:10, created in Gnat2Why.Types.Translate_Type *)
-module Range_check__Tindex_check_arrayB
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        Standard__integer
- use        Standard__integer
- use        Standard__integer__rep
- use        Range_check__Tindex_check_arrayD1
- use        Array__Int__Standard__integer
-
- type component_type #"system.ads" 1 0 0# =
-  Standard__integer.integer
- 
- function index_1_id #"system.ads" 1 0 0# 
-   (x : int) : int =
-  x
- 
- clone export "ada__model".Unconstr_Array with
- type map = Array__Int__Standard__integer.map, 
- function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
- type index_base_type = Standard__integer.integer, 
- type index_rep_type = int, 
- function to_rep = Standard__integer__rep.to_rep, 
- function rep_to_int = index_1_id, 
- predicate in_range_base = Standard__integer.in_range, 
- predicate index_dynamic_property = Range_check__Tindex_check_arrayD1.dynamic_property, 
- predicate index_rep_le = Int.(<=)
- 
- type tindex_check_arrayB #"range_check.ads" 10 0 0# =
-  __t
- 
- meta "model_projection" function to_array
- 
- meta "inline : no" function to_array
- 
- meta "model_projection" function first
- 
- meta "inline : no" function first
- 
- meta "model_projection" function last
- 
- meta "inline : no" function last
- 
- type tindex_check_arrayB__ref #"range_check.ads" 10 0 0# =
-  { mutable tindex_check_arrayB__content "model_trace:" : tindex_check_arrayB }
- 
- function tindex_check_arrayB__ref___projection #"range_check.ads" 10 0 0# 
-   (a : tindex_check_arrayB__ref) : tindex_check_arrayB =
-  a.tindex_check_arrayB__content
- 
- meta "model_projection" function tindex_check_arrayB__ref___projection
- 
- meta "inline : no" function tindex_check_arrayB__ref___projection
- 
- val tindex_check_arrayB__havoc #"range_check.ads" 10 0 0# 
-   (x : tindex_check_arrayB__ref) : unit
-  writes {x}
-
-end
-
-(* Module for axiomatizing type "index_check_array" defined at range_check.ads:10, created in Gnat2Why.Types.Translate_Type *)
-module Range_check__index_check_array
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        Standard__integer
- use        Array__Int__Standard__integer
-
- type component_type #"range_check.ads" 10 0 0# =
-  Standard__integer.integer
- 
- function first #"system.ads" 1 0 0# 
-   : int =
-  1
- 
- function last #"system.ads" 1 0 0# 
-   : int =
-  10
- 
- clone export "ada__model".Constr_Array with
- type map = Array__Int__Standard__integer.map, 
- function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
- function first = first, 
- function last = last, 
- type index_rep_type = int
-
-end
-
-(* Module for defining the constant "a" defined at range_check.ads:12, created in Gnat2Why.Decls.Translate_Constant *)
-module Range_check__sumemup__a
- use import "_gnatprove_standard".Main
- use        Array__Int__Standard__integer
-
- function a #"range_check.ads" 12 0 0# "model_projected" "model_trace:2412" 
-   : Array__Int__Standard__integer.map
- 
- function attr__ATTRIBUTE_ADDRESS #"range_check.ads" 10 0 0# 
-   : int
-
-end
-
-(* Module giving an empty axiom for the entity "a" defined at range_check.ads:12, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Range_check__sumemup__a___axiom
- use import "_gnatprove_standard".Main
-
-
-end
-
-(* Module for possibly declaring a logic function for "sumemup" defined at range_check.ads:12, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
-module Range_check__sumemup
- use import "_gnatprove_standard".Main
- use        Array__Int__Standard__integer
-
- function sumemup #"range_check.ads" 12 0 0# 
-   (a : Array__Int__Standard__integer.map) : int
- 
- predicate sumemup__function_guard #"system.ads" 1 0 0# 
-   (result : int) (a : Array__Int__Standard__integer.map) 
-
-end
-
-(* Module for axiomatizing type "T1b" defined at range_check.adb:8, created in Gnat2Why.Types.Translate_Type *)
-module Range_check__sumemup__L_1__T1b
+(* Module for axiomatizing type "c" defined at range_check.ads:9, created in Gnat2Why.Types.Translate_Type *)
+module Range_check__c
  use import "_gnatprove_standard".Main
  use import "int".Int
 
- type t1b #"range_check.adb" 8 0 0# 
+ type c #"range_check.ads" 9 0 0# 
  
- function first #"range_check.adb" 8 0 0# 
+ function first #"range_check.ads" 9 0 0# 
    : int =
   1
  
- function last #"range_check.adb" 8 0 0# 
+ function last #"range_check.ads" 9 0 0# 
    : int =
-  10
+  100
  
- predicate in_range #"range_check.adb" 8 0 0# 
+ predicate in_range #"range_check.ads" 9 0 0# 
    (x : int)  =
-  #"range_check.adb" 8 0 0# ( (first <= x) /\ (x <= last) )
+  #"range_check.ads" 9 0 0# ( (first <= x) /\ (x <= last) )
  
  clone export "ada__model".Static_Discrete with
- type t = t1b, 
+ type t = c, 
  function first = first, 
  function last = last, 
  predicate in_range = in_range
  
- type t1b__ref #"range_check.adb" 8 0 0# =
-  { mutable t1b__content "model_trace:" : t1b }
+ type c__ref #"range_check.ads" 9 0 0# =
+  { mutable c__content "model_trace:" : c }
  
- function t1b__ref___projection #"range_check.adb" 8 0 0# 
-   (a : t1b__ref) : t1b =
-  a.t1b__content
+ function c__ref___projection #"range_check.ads" 9 0 0# 
+   (a : c__ref) : c =
+  a.c__content
  
- meta "model_projection" function t1b__ref___projection
+ meta "model_projection" function c__ref___projection
  
- meta "inline : no" function t1b__ref___projection
+ meta "inline : no" function c__ref___projection
  
- val t1b__havoc #"range_check.adb" 8 0 0# 
-   (x : t1b__ref) : unit
+ val c__havoc #"range_check.ads" 9 0 0# 
+   (x : c__ref) : unit
   writes {x}
 
 end
 
-(* Module defining to_rep/of_rep for type "T1b" defined at range_check.adb:8, created in Gnat2Why.Types.Translate_Type *)
-module Range_check__sumemup__L_1__T1b__rep
- use        Range_check__sumemup__L_1__T1b
+(* Module defining to_rep/of_rep for type "c" defined at range_check.ads:9, created in Gnat2Why.Types.Translate_Type *)
+module Range_check__c__rep
+ use        Range_check__c
  use import "_gnatprove_standard".Main
 
  clone export "ada__model".Rep_Proj_Int with
- type t = Range_check__sumemup__L_1__T1b.t1b, 
- predicate in_range = Range_check__sumemup__L_1__T1b.in_range
+ type t = Range_check__c.c, 
+ predicate in_range = Range_check__c.in_range
  
  meta "model_projection" function to_rep
  
@@ -1807,37 +1626,19 @@ module Range_check__sumemup__L_1__T1b__rep
  meta "inline : no" function to_rep
 
 end
-(* Module for defining a ref holding the value of variable "sum" defined at range_check.adb:6, created in Gnat2Why.Decls.Translate_Variable *)
-module Range_check__sumemup__sum
+(* Module for defining a ref holding the value of variable "x" defined at range_check.ads:10, created in Gnat2Why.Decls.Translate_Variable *)
+module Range_check__count__x
  use import "_gnatprove_standard".Main
 
- val sum #"range_check.adb" 6 0 0# "model_projected" "model_trace:2327"  : int__ref 
+ val x #"range_check.ads" 10 0 0# "model_projected" "model_trace:2370"  : int__ref 
  
- function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+ function attr__ATTRIBUTE_ADDRESS #"range_check.ads" 9 0 0# 
    : int
 
 end
 
-(* Module giving an empty axiom for the entity "sum" defined at range_check.adb:6, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Range_check__sumemup__sum___axiom
- use import "_gnatprove_standard".Main
-
-
-end
-
-(* Module for defining a ref holding the value of variable "i" defined at range_check.adb:8, created in Gnat2Why.Decls.Translate_Variable *)
-module Range_check__sumemup__L_1__i
- use import "_gnatprove_standard".Main
-
- val i #"range_check.adb" 8 0 0# "model_projected" "model_trace:2340"  : int__ref 
- 
- function attr__ATTRIBUTE_ADDRESS #"range_check.adb" 8 0 0# 
-   : int
-
-end
-
-(* Module giving an empty axiom for the entity "i" defined at range_check.adb:8, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Range_check__sumemup__L_1__i___axiom
+(* Module giving an empty axiom for the entity "x" defined at range_check.ads:10, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Range_check__count__x___axiom
  use import "_gnatprove_standard".Main
 
 
@@ -1848,7 +1649,7 @@ module Standard__short_short_integer___axiom
  use import "int".Int
  use        Standard__short_short_integer
 
- predicate dynamic_invariant #"range_check.adb" 8 0 0# "inline" 
+ predicate dynamic_invariant #"range_check.ads" 9 0 0# "inline" 
    (temp___expr_3 : int) (temp___is_init_0 : bool) (temp___skip_constant_1 : bool) (temp___do_toplevel_2 : bool)  =
   #"system.ads" 1 0 0# (if (( temp___is_init_0 \/ (Standard__short_short_integer.first <= Standard__short_short_integer.last) )) then (
    (Standard__short_short_integer.dynamic_property Standard__short_short_integer.first Standard__short_short_integer.last temp___expr_3)) else true)
@@ -2205,77 +2006,47 @@ module Standard__universal_integer___axiom
 
 end
 
-(* Module for defining the loop exit exception for the loop "L_1" defined at range_check.adb:8, created in Gnat2Why.Decls.Translate_Loop_Entity *)
-module Range_check__sumemup__L_1
- use import "_gnatprove_standard".Main
-
- exception L_1
-
-end
-
-(* Module giving an empty axiom for the entity "L_1" defined at range_check.adb:8, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
-module Range_check__sumemup__L_1___axiom
+(* Module for possibly declaring a logic function for "count" defined at range_check.ads:10, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Range_check__count
  use import "_gnatprove_standard".Main
 
 
 end
 
-(* Module giving axioms for type "Tindex_check_arrayD1" defined at range_check.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Range_check__Tindex_check_arrayD1___axiom
+(* Module giving axioms for type "TcB" defined at range_check.ads:9, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Range_check__TcB___axiom
  use import "_gnatprove_standard".Main
 
 
 end
 
-(* Module giving axioms for type "Tindex_check_arrayB" defined at range_check.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Range_check__Tindex_check_arrayB___axiom
+(* Module giving axioms for type "c" defined at range_check.ads:9, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Range_check__c___axiom
  use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Range_check__c
 
-
-end
-
-(* Module giving axioms for type "index_check_array" defined at range_check.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Range_check__index_check_array___axiom
- use import "_gnatprove_standard".Main
- use        Array__Int__Standard__integer
- use        Array__Int__Standard__integer
-
- predicate dynamic_invariant #"range_check.adb" 8 0 0# "inline" 
-   (temp___expr_136 : Array__Int__Standard__integer.map) (temp___is_init_133 : bool) (temp___skip_constant_134 : bool) (temp___do_toplevel_135 : bool)  =
-  #"range_check.ads" 10 0 0# true
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_135 : int) (temp___is_init_132 : bool) (temp___skip_constant_133 : bool) (temp___do_toplevel_134 : bool)  =
+  #"range_check.ads" 9 0 0# (if (( temp___is_init_132 \/ (Range_check__c.first <= Range_check__c.last) )) then (
+   (Range_check__c.dynamic_property Range_check__c.first Range_check__c.last temp___expr_135)) else true)
  
- predicate default_initial_assumption #"range_check.ads" 10 0 0# "inline" 
-   (temp___expr_138 : Array__Int__Standard__integer.map) (temp___skip_top_level_139 : bool)  =
-  #"range_check.ads" 10 0 0# true
+ predicate default_initial_assumption #"range_check.ads" 9 0 0# "inline" 
+   (temp___expr_136 : int) (temp___skip_top_level_137 : bool)  =
+  #"range_check.ads" 9 0 0# true
 
 end
-
-(* Module giving axioms for type "T1b" defined at range_check.adb:8, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Range_check__sumemup__L_1__T1b___axiom
+(* Module for declaring a program function (and possibly an axiom) for "count" defined at range_check.ads:10, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Range_check__count___axiom
  use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Range_check__c___axiom
 
-
-end
-(* Module for declaring a program function (and possibly an axiom) for "sumemup" defined at range_check.ads:12, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
-module Range_check__sumemup___axiom
- use import "_gnatprove_standard".Main
- use        Standard__natural___axiom
- use        Range_check__index_check_array___axiom
- use        Range_check__sumemup
- use        Array__Int__Standard__integer
- use        Array__Int__Standard__integer
-
- val sumemup #"range_check.ads" 12 0 0# 
-   (a : Array__Int__Standard__integer.map) : int
-  requires { #"system.ads" 1 0 0# true }
-  ensures { #"system.ads" 1 0 0# ( ( (result = (Range_check__sumemup.sumemup a)) /\ (Range_check__sumemup.sumemup__function_guard result a) ) /\ (Standard__natural___axiom.dynamic_invariant result True False True) ) }
- 
- axiom sumemup__post_axiom :
-  (forall a #"range_check.ads" 12 0 0#  : Array__Int__Standard__integer.map [(Range_check__sumemup.sumemup a)].
-   ( (Range_check__index_check_array___axiom.dynamic_invariant a True True True) -> (let result = (Range_check__sumemup.sumemup a) in (
-    (if ((Range_check__sumemup.sumemup__function_guard result a)) then (
-     (Standard__natural___axiom.dynamic_invariant result True False True)) else true)))
-    ))
+ val count #"range_check.ads" 10 0 0# 
+   (x : int__ref) : unit
+  requires { #"range_check.ads" 9 0 0# (x.int__content < 100) }
+  ensures { #"range_check.ads" 9 0 0# (Range_check__c___axiom.dynamic_invariant x.int__content True True True) }
+  writes {x}
 
 end
 
@@ -2283,111 +2054,51 @@ end
 module Range_check__package_def
  use import "_gnatprove_standard".Main
 
- let def #"range_check.ads" 12 0 0# "GP_Subp:range_check.ads:1" "W:diverges:N" 
+ let def #"range_check.ads" 10 0 0# "GP_Subp:range_check.ads:1" "W:diverges:N" 
    (__void_param : unit)
-  requires { #"range_check.ads" 12 0 0# true }
-  ensures { #"range_check.ads" 12 0 0# true }
+  requires { #"range_check.ads" 10 0 0# true }
+  ensures { #"range_check.ads" 10 0 0# true }
    =
-  ( "GP_Sloc:range_check.adb:17:1" () )
+  ( "GP_Sloc:range_check.adb:11:1" () )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "sumemup" defined at range_check.ads:12, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Range_check__sumemup__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "count" defined at range_check.ads:10, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Range_check__count__subprogram_def
  use import "_gnatprove_standard".Main
  use import "int".Int
- use        "_gnatprove_standard".Boolean
- use        Standard__integer
- use        Standard__integer
- use        Standard__integer___axiom
- use        Standard__integer__rep
- use        Standard__natural
- use        Array__Int__Standard__integer
- use        Range_check__index_check_array___axiom
- use        Range_check__sumemup__a
- use        Range_check__sumemup__sum
- use        Range_check__sumemup__L_1
- use        Range_check__sumemup__L_1__i
- use        Standard__integer___axiom
- use        Standard__natural___axiom
- use        Standard__integer___axiom
- use        Range_check__sumemup__sum___axiom
- use        Range_check__sumemup__L_1__i___axiom
- use        Range_check__sumemup__L_1___axiom
- use        Range_check__index_check_array___axiom
- use        Range_check__sumemup__a___axiom
+ use        Range_check__c
+ use        Range_check__c___axiom
+ use        Range_check__count__x
+ use        Range_check__c___axiom
+ use        Range_check__count__x___axiom
 
- val range_check__sumemup__result #"range_check.ads" 12 0 0# "model_projected" "model_trace:2405@result"  : int__ref 
- 
- let def #"system.ads" 1 0 0# "W:diverges:N" "GP_Subp:range_check.ads:12" 
+ let def #"range_check.ads" 10 0 0# "W:diverges:N" "GP_Subp:range_check.ads:10" 
    (__void_param : unit)
-  requires { #"system.ads" 1 0 0# true }
-  ensures { #"system.ads" 1 0 0# true }
+  requires { #"range_check.ads" 10 0 0# true }
+  ensures { #"range_check.ads" 10 0 0# true }
    =
-  ( () (* Assume dynamic invariants of inputs of the subprogram range_check.ads:12 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram range_check.ads:10 *)
   ;
-  #"range_check.ads" 10 0 0# assume { #"range_check.ads" 10 0 0# (Range_check__index_check_array___axiom.dynamic_invariant Range_check__sumemup__a.a True False True) };
-  #"range_check.ads" 12 0 0# assume { #"range_check.ads" 12 0 0# true };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram range_check.ads:12 *)
+  #"range_check.ads" 9 0 0# assume { #"range_check.ads" 9 0 0# (Range_check__c___axiom.dynamic_invariant Range_check__count__x.x.int__content True False True) };
+  #"range_check.ads" 9 0 0# assume { #"range_check.ads" 9 0 0# true };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram range_check.ads:10 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram range_check.ads:12 *)
+  () (* Check for RTE in the Pre of the subprogram range_check.ads:10 *)
   ;
-  #"range_check.ads" 12 0 0# abstract ensures {true}(let _ = True in (
+  #"range_check.ads" 9 0 0# abstract ensures {true}(let _ = (Range_check__count__x.x.int__content < 100) in (
    ()))
    end ;
-  () (* Assume Pre of the subprogram range_check.ads:12 *)
+  () (* Assume Pre of the subprogram range_check.ads:10 *)
   ;
-  #"range_check.ads" 12 0 0# assume { #"range_check.ads" 12 0 0# true };
-  #"range_check.ads" 12 0 0# try
-   ( #"range_check.adb" 6 0 0# Range_check__sumemup__sum.sum.int__content <- ( 0 );
-   #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Range_check__sumemup__sum.sum.int__content True False True) };
-   ( "GP_Sloc:range_check.adb:8:42" (let temp___145 = 1 in (
-   (let temp___146 = 10 in (
-    ( #"range_check.adb" 8 0 0# Range_check__sumemup__L_1__i.i.int__content <- ( temp___145 );
-    () (* Translation of an Ada loop from range_check.adb:8 *)
-    ;
-    (if ((Boolean.andb((temp___145 <= Range_check__sumemup__L_1__i.i.int__content)) ((Range_check__sumemup__L_1__i.i.int__content <= temp___146)))) then (
-     #"range_check.adb" 8 0 0# try
-      ( #"range_check.adb" 8 0 0# abstract ensures {true}(let _ = Range_check__sumemup__sum.sum.int__content in (
-       ()))
-       end ;
-      (let temp___144 = #"range_check.adb" 6 0 0# (any int
-      ensures {#"system.ads" 1 0 0# (result = Range_check__sumemup__sum.sum.int__content)} 
-      ) in (
-       ( () (* First unroling of the loop statements appearing before the loop invariant of loop range_check.adb:8 *)
-       ;
-       () (* While loop translating the Ada loop from range_check.adb:8 *)
-       ;
-       #"range_check.adb" 8 0 0# while True do
-        ( () (* Assume implicit invariants from the loop range_check.adb:8 *)
-        ;
-        #"range_check.adb" 8 0 0# assume { #"range_check.adb" 8 0 0# (Boolean.andb(( ( true /\ (Standard__integer___axiom.dynamic_invariant Range_check__sumemup__sum.sum.int__content False True True) ) /\ true )) (( (1 <= Range_check__sumemup__L_1__i.i.int__content) /\ (Range_check__sumemup__L_1__i.i.int__content <= 10) ))) };
-        () (* Check for absence of RTE in the invariant of loop range_check.adb:8 *)
-        ;
-        () (* Loop statements appearing after the loop invariant of loop range_check.adb:8 *)
-        ;
-        ( "GP_Sloc:range_check.adb:9:33" #"range_check.adb" 9 0 0# Range_check__sumemup__sum.sum.int__content <- ( ( #"range_check.adb" 9 0 0# "model_vc" "keep_on_simp" "GP_Sloc:range_check.adb:9:40" "GP_Reason:VC_OVERFLOW_CHECK" "GP_Id:0" "comment:                            sum := sum + a(i);
-                                       ^ range_check.adb:9:40:VC_OVERFLOW_CHECK" "GP_Shape:L_1_while__sum_assign__add" (Standard__integer.range_check_((Range_check__sumemup__sum.sum.int__content + (Standard__integer__rep.to_rep((Array__Int__Standard__integer.get(Range_check__sumemup__a.a) (Range_check__sumemup__L_1__i.i.int__content))))))) ) ) );
-        () (* Check for the exit condition and loop statements appearing before the loop invariant of loop range_check.adb:8 *)
-        ;
-        (if ((Range_check__sumemup__L_1__i.i.int__content = temp___146)) then (
-         #"range_check.adb" 8 0 0# raise Range_check__sumemup__L_1.L_1));
-        #"range_check.adb" 8 0 0# Range_check__sumemup__L_1__i.i.int__content <- ( (Range_check__sumemup__L_1__i.i.int__content + 1) ) )
-       done )))
-       )
-     with
-      Range_check__sumemup__L_1.L_1 -> ()
-     end)) )))
-   ))
-    );
-   ( "GP_Sloc:range_check.adb:11:25" ( #"range_check.adb" 11 0 0# range_check__sumemup__result.int__content <- ( ( #"range_check.adb" 11 0 0# "model_vc" "keep_on_simp" "GP_Sloc:range_check.adb:11:32" "GP_Reason:VC_RANGE_CHECK" "GP_Id:1" "comment:                        return sum;
-                               ^ range_check.adb:11:32:VC_RANGE_CHECK" "GP_Shape:return" (Standard__natural.range_check_(Range_check__sumemup__sum.sum.int__content)) ) );
-   #"range_check.adb" 11 0 0# raise Return__exc ) );
-   #"range_check.adb" 5 0 0# raise Return__exc )
+  #"range_check.ads" 9 0 0# assume { #"range_check.ads" 9 0 0# (Range_check__count__x.x.int__content < 100) };
+  #"range_check.ads" 9 0 0# try
+   ( ( "GP_Sloc:range_check.adb:7:5" #"range_check.adb" 7 0 0# Range_check__count__x.x.int__content <- ( ( #"range_check.adb" 7 0 0# "model_vc" "keep_on_simp" "GP_Sloc:range_check.adb:7:10" "GP_Reason:VC_RANGE_CHECK" "GP_Id:0" "comment:  X := X + 1;
+         ^ range_check.adb:7:10:VC_RANGE_CHECK" "GP_Shape:x_assign__add" (Range_check__c.range_check_((Range_check__count__x.x.int__content + 1))) ) ) );
+   #"range_check.adb" 4 0 0# raise Return__exc )
   with
    Return__exc -> ()
   end;
-  #"range_check.adb" 5 0 0# abstract ensures {true}(let _ = True in (
+  #"range_check.adb" 4 0 0# abstract ensures {true}(let _ = True in (
    ()))
-   end ;
-  range_check__sumemup__result.int__content )
+   end  )
 end

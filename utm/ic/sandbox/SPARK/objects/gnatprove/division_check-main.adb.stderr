@@ -1,0 +1,2 @@
+division_check-main.adb:1:09: warning: no entities of "Ada.Text_IO" are referenced
+division_check-main.adb:2:06: warning: no entities of "Division_Check" are referenced

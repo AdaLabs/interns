@@ -1,1 +1,1 @@
-cannot generate code for file range_check.ads (package spec)
+range_check.ads:15:39: missing ";"

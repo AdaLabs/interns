@@ -2,15 +2,16 @@ package Index_Check
 with  SPARK_Mode => On
 is
 
+ subtype Checking is Positive range 1 .. 1000;
+
+ type Arrray_Checking is array (Checking) of Natural;
+
+ function Index_Checking (A : Arrray_Checking) return Positive;
 
 
-subtype Index_T is Positive range 1 .. 1000;
-
-
-   type Arr_T is array (Index_T) of Natural;
- function Init_Arr_Index (A : Arr_T) return Positive;
---      with Post =>  ((Init_Arr_Index'Result in A'Range) and
---    (for all J in A'Range =>
---    A(J) <= A(Init_Arr_Index'Result)));
+--  function Index_Checking (A : Arrray_Checking) return Positive
+--    with Post =>  ((Index_Checking'Result in A'Range) and
+--                     (for all J in A'Range =>
+--                        A(J) <= A(Index_Checking'Result)));
 
 end Index_Check;

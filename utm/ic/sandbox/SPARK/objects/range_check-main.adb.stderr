@@ -1,3 +1,1 @@
-range_check-main.adb:7:26: warning: value not in range of type "Number" defined at range_check.ads:6
-range_check-main.adb:7:26: warning: "Constraint_Error" will be raised at run time
-range_check-main.adb:7:26: actual for "j" must be a variable
+range_check-main.adb:8:01: statement expected

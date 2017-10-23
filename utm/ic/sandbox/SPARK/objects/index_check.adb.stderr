@@ -1,0 +1,3 @@
+index_check.adb:12:28: "return" statement missing following this statement
+index_check.adb:12:28: Program_Error might have been raised at run time
+index_check.adb:39:141: (style) this line is too long

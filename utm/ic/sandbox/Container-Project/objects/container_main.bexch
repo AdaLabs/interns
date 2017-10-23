@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__container_main.o
+[PROJECT FILES]
+/home/ingrid/adalabs/interns/utm/ic/sandbox/Container-Project/containerexample.gpr
+20171023035423
+[BOUND OBJECT FILES]
+/home/ingrid/adalabs/interns/utm/ic/sandbox/Container-Project/objects/container_main.o
+[GENERATED SOURCE FILES]
+b__container_main.ads
+b__container_main.adb
+b__container_main.ali
+[RESULTING OPTIONS]
+-L/home/ingrid/adalabs/interns/utm/ic/sandbox/Container-Project/objects/
+-L/home/ingrid/adalabs/interns/utm/ic/sandbox/Container-Project/objects/
+-L/opt/gnat2017/lib/gcc/x86_64-pc-linux-gnu/6.3.1/adalib/
+-static
+-static-libgcc
+/opt/gnat2017/lib/gcc/x86_64-pc-linux-gnu/6.3.1/adalib/libgnat.a
+-ldl

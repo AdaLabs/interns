@@ -1,0 +1,2 @@
+link_list.ads:3:09: package "Link_List" does not allow a body
+link_list.ads:3:09: remove incorrect body in file "link_list.adb"

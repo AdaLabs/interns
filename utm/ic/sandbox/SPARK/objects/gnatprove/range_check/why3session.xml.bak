@@ -90,23 +90,17 @@
 </theory>
 <theory name="Standard__universal_integer__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__value" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__TcB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__amount" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__TcB__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__amount__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__c" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__add__x" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__c__rep" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__add__x___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__count__x" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__sum__x" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Range_check__sum__x___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Range_check__total" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Range_check__total___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__count__x___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_short_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -152,34 +146,21 @@
 </theory>
 <theory name="Standard__universal_integer___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__add" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__count" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__sum" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__TcB___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__amount___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__c___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__value___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Range_check__count___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Range_check__add___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Range_check__sum___axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Range_check__package_def" sum="e0965b813551311b166794c7b4a4a8cb" expanded="true">
+<theory name="Range_check__package_def" sum="e284967f6dbb6592898a5ced2974229f" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Range_check__add__subprogram_def" sum="9e53eef96ba20a79967c81814dca4ef8" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp_conj" expanded="true">
-  <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0"><result status="unknown" time="0.00"/></proof>
-  </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Range_check__sum__subprogram_def" sum="9e2814c713323144ce8e2be5591afb20" expanded="true">
+<theory name="Range_check__count__subprogram_def" sum="a2f75596540c02e131883a68b4fac919" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp_conj" expanded="true">
   <goal name="WP_parameter def.1" expl="1. precondition">

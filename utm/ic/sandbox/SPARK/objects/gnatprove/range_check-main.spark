@@ -1,0 +1,31 @@
+{
+  "spark": [
+    {
+      "name": "Range_Check.Main",
+      "sloc": [
+        {
+          "file": "range_check-main.adb",
+          "line": 6
+        }
+      ],
+      "spark": "no"
+    }
+  ],
+  "flow": [
+  ],
+  "proof": [
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "marking": 1.77199998870492E-03,
+    "globals (basic)": 3.15180987119675E-01,
+    "globals/properties (advanced)": 4.86999982967973E-03,
+    "flow analysis": 8.70000003487803E-05,
+    "codepeer results": 9.99999997475243E-07,
+    "init_why_sections": 1.51000000187196E-04,
+    "translation of standard": 2.36200005747378E-03,
+    "translation of compilation unit": 2.70899999886751E-02,
+    "proof": 1.99999999495049E-06
+  }
+}

@@ -1,0 +1,4 @@
+vector.adb:5:01: spec of this package does not allow a body
+vector.adb:12:11: unconstrained subtype not allowed (need initialization)
+vector.adb:12:11: provide initial value or explicit discriminant values
+vector.adb:12:11: or give default discriminant values for type "Vector_Type"

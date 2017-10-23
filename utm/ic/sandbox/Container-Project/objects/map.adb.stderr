@@ -1,0 +1,4 @@
+map.adb:5:01: spec of this package does not allow a body
+map.adb:13:09: unconstrained subtype not allowed (need initialization)
+map.adb:13:09: provide initial value or explicit discriminant values
+map.adb:13:09: or give default discriminant values for type "Map_Type"

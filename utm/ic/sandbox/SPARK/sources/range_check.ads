@@ -4,13 +4,14 @@ is
 
 
  ------------------------
----Contracts procedure---
--------------------------
-  total_sum: Integer := 0;
- type Index_Check_Array is array (1 .. 10) of Integer;
+ ---Contracts procedure---
+ -------------------------
+ type C is range 1 .. 100;
+ procedure Count (X : in out C);
 
-          function Sum_Caculation(a: Index_Check_Array) return  Natural;
-     --     with pre => total_sum <= Index_Check_Array'Last ;
+ --  procedure Count (X : in out C)
+ --  with pre => (X < C'Last);
+
 
 
 

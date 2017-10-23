@@ -1,0 +1,5 @@
+range_check.adb:1:14: missing body for "Lemma_Mult_Scale" declared at range_check.ads:16
+range_check.adb:13:02: declarations must come before "begin"
+range_check.adb:26:01: statement expected
+range_check.ads:23:20: warning: conjunct in postcondition does not check the outcome of calling "Lemma_Mult_Scale"
+range_check.ads:24:15: warning: conjunct in postcondition does not check the outcome of calling "Lemma_Mult_Scale"

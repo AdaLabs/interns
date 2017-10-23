@@ -1,0 +1,2 @@
+length_check.ads:2:09: package "Length_Check" does not allow a body
+length_check.ads:2:09: remove incorrect body in file "length_check.adb"

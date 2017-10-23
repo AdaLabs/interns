@@ -1,0 +1,4 @@
+tree.adb:6:01: spec of this package does not allow a body
+tree.adb:15:08: missing argument for parameter "Before" in call to "Insert_Child" declared at a-comutr.ads:205, instance at line 8
+tree.adb:15:08: missing argument for parameter "Before" in call to "Insert_Child" declared at a-comutr.ads:212, instance at line 8
+tree.adb:15:08: missing argument for parameter "Before" in call to "Insert_Child" declared at a-comutr.ads:220, instance at line 8

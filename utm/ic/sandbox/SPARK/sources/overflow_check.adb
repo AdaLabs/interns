@@ -8,9 +8,7 @@ is
   Total := Total + X;
  end Add;
 
-
-
- Procedure Sum(X:in Integer) is
+ Procedure Sum (X : in Integer) is
  begin
   if Total + X <= Value then
    Add(X);
@@ -18,6 +16,4 @@ is
    Total := Value;
   end if;
  end Sum;
-
-
 end Overflow_Check;

@@ -11,71 +11,31 @@
       "spark": "all"
     },
     {
-      "name": "Range_Check.sumEmUp",
+      "name": "Range_Check.Count",
       "sloc": [
         {
           "file": "range_check.ads",
-          "line": 12
+          "line": 10
         }
       ],
       "spark": "all"
     }
   ],
   "flow": [
-    {
-      "file": "range_check.adb",
-      "line": 9,
-      "col": 36,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Range_Check.sumEmUp",
-        "sloc": [
-          {
-            "file": "range_check.ads",
-            "line": 12
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "range_check__flow__30.trace",
-      "how_proved": "flow"
-    },
-    {
-      "file": "range_check.adb",
-      "line": 11,
-      "col": 32,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Range_Check.sumEmUp",
-        "sloc": [
-          {
-            "file": "range_check.ads",
-            "line": 12
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "tracefile": "range_check__flow__30.trace",
-      "how_proved": "flow"
-    }
   ],
   "proof": [
     {
       "file": "range_check.adb",
-      "line": 11,
-      "col": 32,
+      "line": 7,
+      "col": 10,
       "rule": "VC_RANGE_CHECK",
-      "severity": "medium",
+      "severity": "info",
       "entity": {
-        "name": "Range_Check.sumEmUp",
+        "name": "Range_Check.Count",
         "sloc": [
           {
             "file": "range_check.ads",
-            "line": 12
+            "line": 10
           }
         ]
       },
@@ -83,51 +43,58 @@
         {
           "proof_attempts": {
             "altergo": {
-              "result": "Unknown (other)",
-              "steps": -1,
-              "time": 1.00000000000000E-02
+              "result": "Valid",
+              "steps": 6,
+              "time": 0.00000000000000E+00
             }
           },
           "transformations": {
           }
         }
       ],
-      "msg_id": 0,
-      "how_proved": "prover"
-    },
-    {
-      "file": "range_check.adb",
-      "line": 9,
-      "col": 40,
-      "rule": "VC_OVERFLOW_CHECK",
-      "severity": "medium",
-      "entity": {
-        "name": "Range_Check.sumEmUp",
-        "sloc": [
-          {
-            "file": "range_check.ads",
-            "line": 12
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "altergo": {
-              "result": "Unknown (other)",
-              "steps": -1,
-              "time": 1.00000000000000E-02
-            }
-          },
-          "transformations": {
-          }
+      "how_proved": "prover",
+      "stats": {
+        "altergo": {
+          "count": 1,
+          "max_steps": 7,
+          "max_time": 0.00000000000000E+00
         }
-      ],
-      "msg_id": 1,
-      "how_proved": "prover"
+      }
     }
   ],
   "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Range_Check.Count",
+          "sloc": [
+            {
+              "file": "range_check.ads",
+              "line": 10
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Range_Check.Count",
+          "sloc": [
+            {
+              "file": "range_check.ads",
+              "line": 10
+            }
+          ]
+        }
+      }
+    },
     {
       "assumptions": [
       ],
@@ -143,51 +110,35 @@
           ]
         }
       }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Range_Check.sumEmUp",
-          "sloc": [
-            {
-              "file": "range_check.ads",
-              "line": 12
-            }
-          ]
-        }
-      }
     }
   ],
   "timings": {
-    "marking": 2.36000007134862E-04,
-    "globals (basic)": 1.40000003739260E-04,
-    "globals/properties (advanced)": 2.20000001718290E-04,
-    "flow analysis": 1.20000005699694E-03,
+    "marking": 1.55999994603917E-04,
+    "globals (basic)": 9.79999967967160E-05,
+    "globals/properties (advanced)": 1.84999997145496E-04,
+    "flow analysis": 7.24999990779907E-04,
     "codepeer results": 1.99999999495049E-06,
-    "init_why_sections": 1.48999999510124E-04,
-    "translation of standard": 2.36700009554625E-03,
-    "translation of compilation unit": 9.52999980654567E-04,
+    "init_why_sections": 1.59999995958060E-04,
+    "translation of standard": 2.81199999153614E-03,
+    "translation of compilation unit": 5.60000014957041E-04,
     "gnatwhy3.run_vcs": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
     "gnatwhy3.register_vcs": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_if": 0.00000000000000E+00,
     "gnatwhy3.transformations.explode_record_param": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eval_match": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eval_match": 0.00000000000000E+00,
     "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
-    "gnatwhy3.init": 1.59999996423721E-01,
-    "gnatwhy3.transformations.inline_trivial": 4.00000018998981E-03,
+    "gnatwhy3.init": 1.40000000596046E-01,
+    "gnatwhy3.transformations.inline_trivial": 0.00000000000000E+00,
     "gnatwhy3.transformations.inline_tagged": 0.00000000000000E+00,
-    "gnatwhy3.transformations.simplify_formula": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_epsilon": 4.00000018998981E-03,
-    "gnatwhy3.transformations.eliminate_let": 4.00000018998981E-03,
+    "gnatwhy3.transformations.simplify_formula": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_let": 0.00000000000000E+00,
     "gnatwhy3.save_session": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_algebraic": 4.00000018998981E-03,
     "gnatwhy3.transformations.eliminate_literal": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_recursion": 0.00000000000000E+00,
-    "proof": 2.90951997041702E-01
+    "proof": 2.44090005755424E-01
   }
 }
